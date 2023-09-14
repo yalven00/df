@@ -1,0 +1,270 @@
+dfm_home:
+ name: dfm_home
+ css_snippet: " 
+   .vp_txt{padding-left:160px;}
+   .coreg {width:400px;margin:5px auto; font-size:12px !important}
+   .coregBlock {width:100%;margin:0 auto;clear:both}
+   .coregBlock * { vertical-align: middle}
+   .coregBlock label{font-size:12px !important}
+   img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+   .coregBlock ul.coreg_taken {float:left;width:80px;height:60px; vertical-align: middle; list-style-type:none;margin: 15px 8px 0 0}
+   .coregBlock ul.coreg_taken li {display: inline !important;vertical-align: middle; float:left; margin:0 5px}
+   .coreg_description{width: 150px; float:left;line-height: 80px;vertical-align: middle;}
+   .coreg_description p{line-height:15px !important;}
+   .coregEmphasis{border:1px solid #ccc; background-color:#fff;padding:5px; width:80%; }
+   .coreg_body label{width:150px;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle;float:left;}
+   .coreg_body input['text']{margin:2px 0 0 0;vertical-align:middle; width:25px; display:block !important;}
+   .coreg_body input['password']{margin:2px 0 0 0;vertical-align:middle; width:30px; display:block !important;}
+   .coreg_body select{margin:2px 0 0 0;vertical-align:middle; display:block !important;}
+   .coreg_body p{margin:15px 0}
+   .coreg_body{clear:both}
+   .checkbox_group_item label{width:auto;margin:0}
+   .checkbox_group_item input{height:15px !important}
+   div.checkbox_group{float: left;width: 320px;}
+   div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+   input.coreg_param[type='text']{padding:0 !important}
+   div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+   div.coregEmphasis{background-color:rgba(255,255,255,0.5);}
+   label.error{display:none !important}"
+dfm_step2:
+ name: dfm_step2
+ css_snippet: "
+ .vp_txt{font-size:10px;padding-left:180px;}
+ .coreg {width:539px; margin:5px auto; font-size:12px !important; border:2px solid #BBE3FB;background-color:#f4f4f4}
+ .coregBlock {width:501px;margin:10px auto; clear:both;padding:9px}
+ .coregBlock * { vertical-align: middle}
+ .coregBlock label{font-size:12px !important}
+ img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+ .coregBlock ul.coreg_taken {float:left;width:85px;height:60px; vertical-align: middle; list-style-type:none;margin: 25px 8px 0}
+ .coregBlock ul.coreg_taken li {display: inline !important;vertical-align: middle;}
+ .coreg_description{width: 320px; float:left;line-height: 80px;height: 100px;vertical-align: middle;}
+ .coreg_description p{line-height:15px !important;}
+ .coregEmphasis{border:1px solid #ccc; background-color:#fff }
+ .coreg_body label{width:170px;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle}
+ .coreg_body input['text']{margin:2px 0 0 0;vertical-align:middle; width:30px; display:block !important;}
+ .coreg_body select{margin:2px 0 0 0;vertical-align:middle; display:block !important;}
+ .coreg_body p{margin:5px 0}
+ .coreg_body{clear:both}
+ .checkbox_group_item label{width:auto;margin:0}
+ .checkbox_group_item input{height:20px !important}
+ div.checkbox_group{float: left;width: 320px;}
+ div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+ input.coreg_param[type='text']{padding:0 !important}
+ div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+ div.highlightBox2 label.error{display:none !important}
+ div.coreg_body label.error{width:auto !important;margin:0;padding:0;background:none;border:0;float:left;font-size:11px !important;}"
+dfm_step3:
+ name: dfm_step3
+ css_snippet: "
+ .vp_txt{font-size:10px;padding-left:180px;}
+  .checkbox_group_item label{width:auto !important;margin:0}
+  .checkbox_group_item input{height:15px !important;float: none !important}
+  div.checkbox_group{float: left;width: auto;}
+  .coreg_body table{margin:0 auto}
+  .coreg {width:100%; margin:1px auto; font-size:12px !important; border:2px solid #BBE3FB;background-color:#f4f4f4}
+  .coregBlock {width:96%;margin:10px auto;clear:both;padding:9px}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important; float:left;}
+  .coregBlock ul.coreg_taken {float:left;width:85px;height:60px; vertical-align: middle; list-style-type:none;margin: 25px 8px 0}
+  .coregBlock ul.coreg_taken li {display: inline !important;vertical-align: middle;}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coreg_description{width: 550px; float:left;line-height: 80px;height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff }  
+  .coreg_body label{width:170px;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle}
+  .coreg_body input['text']{margin:2px 0 0 0;vertical-align:middle; width:30px; display:block !important;}
+  .coreg_body .coreg_field label{width:250px !important;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle;float:left}
+  .coreg_body .coreg_field input[type='text'], .coreg_body .coreg_field input[type='password']{margin:2px 0 0 0;vertical-align:middle; width:200px; float:none !important;display:inline !important}
+  .coreg_body .coreg_field select{margin:2px 0 0 0;vertical-align:middle;  float:none !important}
+  .coreg_body p{margin:5px 0}
+  .coreg_body{clear:both}
+  div.coreg_field{margin:8px 0 0 0;width:100%}
+  input.coreg_param[type='text']{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.highlightBox2 label.error{display:none !important}
+  div.coreg_body label.error{width:auto !important;margin:0;padding:0;background:none;border:0;float:left;font-size:11px !important;}"
+dfm_hotdeals:
+ name: dfm_hotdeals
+ css_snippet: "
+  .vp_txt{font-size:10px;padding-left:180px;}
+  .coreg {width:539px; margin:5px auto; font-size:12px !important; border:2px solid #BBE3FB;background-color:#f4f4f4}
+  .coregBlock {width:501px;margin:10px auto;clear:both;padding:9px}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coregBlock ul.coreg_taken {float:left;width:85px;height:60px; vertical-align: middle; list-style-type:none;margin: 25px 8px 0}
+  .coregBlock ul.coreg_taken li {display: inline !important;vertical-align: middle;}
+  .coreg_description{width: 320px; float:left;line-height: 80px;height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff }
+  .coreg_body label{width:170px;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle}
+  .coreg_body input['text']{margin:2px 0 0 0;vertical-align:middle; width:30px; display:block !important;}
+  .coreg_body select{margin:2px 0 0 0;vertical-align:middle; display:block !important;}
+  .coreg_body p{margin:5px 0}
+  .coreg_body{clear:both}
+  .checkbox_group_item label{width:auto;margin:0}
+  .checkbox_group_item input{height:15px !important}
+  div.checkbox_group{float: left;width: 320px;}
+  div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+  input.coreg_param[type=&quot;text&quot;]{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.highlightBox2 label.error{display:none !important}
+  div.coreg_body label.error{width:auto !important;margin:0;padding:0;background:none;border:0;float:left;font-size:11px !important;}"
+dfm_full_reg:
+ name: dfm_full_reg
+ css_snippet: "
+  .coreg {width:100%; margin:5px auto; font-size:12px !important; border:2px solid #BBE3FB;background-color:#f4f4f4}
+  .coregBlock {width:96%;margin:10px auto;clear:both;padding:9px}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coregBlock ul.coreg_taken {float:left;width:100px;height:60px; vertical-align: middle; list-style-type:none;margin: 25px 8px 0}
+  .coregBlock ul.coreg_taken li {float:left;display: inline !important;vertical-align: middle;width:50px}
+  .coreg_description{width: 76%; float:left;line-height: 80px;height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff }
+  .coreg_body .coreg_field label{width:250px !important;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle;float:left}
+  .coreg_body .coreg_field input[type='text'], .coreg_body .coreg_field input[type='password']{margin:2px 0 0 0;vertical-align:middle; width:200px; float:none !important;display:inline !important}
+  .coreg_body .coreg_field select{margin:2px 0 0 0;vertical-align:middle;  float:none !important}
+  .coreg_body p{margin:5px 0}
+  .coreg_body{clear:both}
+  .checkbox_group_item label{width:auto;margin:0}
+  .checkbox_group_item input{height:15px !important}
+  div.checkbox_group{float: left;width: 320px;}
+  div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+  input.coreg_param[type='text']{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.highlightBox2 label.error{display:none !important}
+  div.coreg_body label.error{width:auto !important;margin:0;padding:0;background:none;border:0;float:left;font-size:11px !important;}"
+dfm_full_step3:
+ name: dfm_full_step3
+ css_snippet: "
+  .checkbox_group_item label{width:auto !important;margin:0}
+  .checkbox_group_item input{height:15px !important;float: none !important}
+  div.checkbox_group{float: left;width: auto;}
+  .coreg_body table{margin:0 auto}
+  .coreg {width:100%; margin:5px auto; font-size:12px !important; border:2px solid #BBE3FB;background-color:#f4f4f4}
+  .coregBlock {width:96%;margin:10px auto;clear:both;padding:9px}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coregBlock ul.coreg_taken {float:left;width:100px;height:60px; vertical-align: middle; list-style-type:none;margin: 10px 8px 0}
+  .coregBlock ul.coreg_taken li {float:left;display: inline !important;vertical-align: middle;width:50px}
+  .coreg_description{width: 550px; float:left;line-height: 80px;height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff }
+  .coreg_body .coreg_field label{width:250px !important;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle;float:left}
+  .coreg_body .coreg_field input[type='text'], .coreg_body .coreg_field input[type='password']{margin:2px 0 0 0;vertical-align:middle; width:200px; float:none !important;display:inline !important}
+  .coreg_body .coreg_field select{margin:2px 0 0 0;vertical-align:middle;  float:none !important}
+  .coreg_body p{margin:5px 0}
+  .coreg_body{clear:both}
+  div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+  input.coreg_param[type='text']{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.highlightBox2 label.error{display:none !important}
+  div.coreg_body label.error{width:auto !important;margin:0;padding:0;background:none;border:0;float:left;font-size:11px !important;}"
+dfm_virtual_piggy:
+ name: dfm_virtual_piggy
+ css_snippet: " 
+  .vp_txt{padding-left:160px;}
+  .coreg {width:400px;margin:5px auto; font-size:12px !important}
+  .coregBlock {width:100%;margin:0 auto;clear:both}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coregBlock ul.coreg_taken {float:left;width:80px;height:60px; vertical-align: middle; list-style-type:none;margin: 15px 8px 0 0}
+  .coregBlock ul.coreg_taken li {display: inline !important;vertical-align: middle; float:left; margin:0 5px}
+  .coreg_description{width: 150px; float:left;line-height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff;padding:5px; width:80%; }
+  .coreg_body label{width:150px;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle;float:left;}
+  .coreg_body input['text']{margin:2px 0 0 0;vertical-align:middle; width:25px; display:block !important;}
+  .coreg_body input['password']{margin:2px 0 0 0;vertical-align:middle; width:30px; display:block !important;}
+  .coreg_body select{margin:2px 0 0 0;vertical-align:middle; display:block !important;}
+  .coreg_body p{margin:15px 0}
+  .coreg_body{clear:both}
+  .checkbox_group_item label{width:auto;margin:0}
+  .checkbox_group_item input{height:15px !important}
+  div.checkbox_group{float: left;width: 320px;}
+  div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+  input.coreg_param[type='text']{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.coregEmphasis{background-color:rgba(255,255,255,0.5);}
+  label.error{display:none !important}"
+dfm_virtual_piggy_full_reg:
+ name: dfm_virtual_piggy_full_reg
+ css_snippet: "
+  .coreg {width:100%; margin:5px auto; font-size:12px !important; border:2px solid #BBE3FB;background-color:#f4f4f4}
+  .coregBlock {width:96%;margin:10px auto;clear:both;padding:9px}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coregBlock ul.coreg_taken {float:left;width:100px;height:60px; vertical-align: middle; list-style-type:none;margin: 25px 8px 0}
+  .coregBlock ul.coreg_taken li {float:left;display: inline !important;vertical-align: middle;width:50px}
+  .coreg_description{width: 76%; float:left;line-height: 80px;height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff }
+  .coreg_body .coreg_field label{margin:5px 8px 8px 0;line-height:15px !important;float:left}
+  .coreg_body .coreg_field input[type='text'], .coreg_body .coreg_field input[type='password']{margin:2px 0 0 0;vertical-align:middle; width:200px; float:none !important;display:inline !important}
+  .coreg_body .coreg_field select{margin:2px 0 0 0;vertical-align:middle;  float:none !important}
+  .coreg_body p{margin:5px 0}
+  .coreg_body{clear:both}
+  .checkbox_group_item label{width:auto;margin:0}
+  .checkbox_group_item input{height:15px !important}
+  div.checkbox_group{float: left;width: 320px;}
+  div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+  input.coreg_param[type='text']{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.highlightBox2 label.error{display:none !important}
+  div.coreg_body label.error{width:auto !important;margin:0;padding:0;background:none;border:0;float:left;font-size:11px !important;}"
+dfm_palm_beach:
+ name: dfm_palm_beach
+ css_snippet: " .coreg {width:400px;margin:5px auto; font-size:12px !important}
+  .coregBlock {width:100%;margin:0 auto;clear:both}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coregBlock ul.coreg_taken {float:left;width:80px;height:60px; vertical-align: middle; list-style-type:none;margin: 15px 8px 0 0}
+  .coregBlock ul.coreg_taken li {display: inline !important;vertical-align: middle; float:left; margin:0 5px}
+  .coreg_description{width: 150px; float:left;line-height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff;padding:5px; width:80%; }
+  .coreg_body label{width:170px;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle;float:left;}
+  .coreg_body input['text']{margin:2px 0 0 0;vertical-align:middle; width:30px; display:block !important;}
+  .coreg_body select{margin:2px 0 0 0;vertical-align:middle; display:block !important;}
+  .coreg_body p{margin:15px 0}
+  .coreg_body{clear:both}
+  .checkbox_group_item label{width:auto;margin:0}
+  .checkbox_group_item input{height:15px !important}
+  div.checkbox_group{float: left;width: 320px;}
+  div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+  input.coreg_param[type='text']{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.coregEmphasis{background-color:rgba(255,255,255,0.5);}
+  label.error{display:none !important}"
+dfm_palm_beach_full_reg:
+ name: dfm_palm_beach_full_reg
+ css_snippet: "
+  .coreg {width:100%; margin:5px auto; font-size:12px !important; border:2px solid #BBE3FB;background-color:#f4f4f4}
+  .coregBlock {width:96%;margin:10px auto;clear:both;padding:9px}
+  .coregBlock * { vertical-align: middle}
+  .coregBlock label{font-size:12px !important}
+  img.coreg_icon{float:left;width:80px;height:80px;border:0px}
+  .coregBlock ul.coreg_taken {float:left;width:100px;height:60px; vertical-align: middle; list-style-type:none;margin: 25px 8px 0}
+  .coregBlock ul.coreg_taken li {float:left;display: inline !important;vertical-align: middle;width:50px}
+  .coreg_description{width: 76%; float:left;line-height: 80px;height: 80px;vertical-align: middle;}
+  .coreg_description p{line-height:15px !important;}
+  .coregEmphasis{border:1px solid #ccc; background-color:#fff }
+  .coreg_body .coreg_field label{width:250px !important;text-align:right;margin:5px 8px 8px 0;line-height:15px !important;vertical-align:middle;float:left}
+  .coreg_body .coreg_field input[type='text'], .coreg_body .coreg_field input[type='password']{margin:2px 0 0 0;vertical-align:middle; width:200px; float:none !important;display:inline !important}
+  .coreg_body .coreg_field select{margin:2px 0 0 0;vertical-align:middle;  float:none !important}
+  .coreg_body p{margin:5px 0}
+  .coreg_body{clear:both}
+  .checkbox_group_item label{width:auto;margin:0}
+  .checkbox_group_item input{height:15px !important}
+  div.checkbox_group{float: left;width: 320px;}
+  div.coreg_field{float:left;margin:8px 0 0 0;width:100%}
+  input.coreg_param[type='text']{padding:0 !important}
+  div.checkbox_group_item{width: auto;float:left;padding:10px 10px 0 0}
+  div.highlightBox2 label.error{display:none !important}
+  div.coreg_body label.error{width:auto !important;margin:0;padding:0;background:none;border:0;float:left;font-size:11px !important;}"

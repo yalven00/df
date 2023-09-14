@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dob: 2011-04-27 15:34:55
+  gender: MyString
+  member: 
+
+two:
+  dob: 2011-04-27 15:34:55
+  gender: MyString
+  member: 

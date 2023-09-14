@@ -1,0 +1,73 @@
+
+$(function() {
+
+  function d(txt) {
+    str = '00' + txt
+    return str.substring(str.length-2, str.length);
+  };
+
+  $('#coregs').html("<%= escape_javascript(render(:partial => 'coregs')) %>");
+
+  $('#coregs').parents('form:first').submit(function() {
+    //alert('Handler for .submit() called.');
+    // create the data json
+    // validate the json
+    if (($('div.coreg').length == 0) || ($('div.coreg_body:visible').length ==0))
+      return true;
+
+    // sets the hidden values
+    <% @coregs.collect{|x| x.coreg_params}.flatten.select {|x| x.virtual? }.each do |coreg_param| %>
+      $('#{input[name="<%=field_name(coreg_param)%>"]}').val( eval("<%=coreg_param.match%>") );
+    <% end %> 
+
+    var bValid = true; 
+    var values = {}
+    $('.coreg_param_virtual').each(function(index) {
+      lValid = $(this).valid()
+      if(!lValid) {
+        bValid = lValid;
+      } 
+    });
+    $('div.coreg_body:visible .coreg_param').not('input:checkbox:not(:checked)').each(function(index) {
+      lValid = $(this).valid();
+      values[$(this).attr('data_coreg_param_id')] = $(this).val();
+      if(!lValid) {
+        bValid = lValid;
+      }
+    });
+    if(bValid) {
+      // form authenticate 
+      if ($('input[name="xxTrustedFormCertUrl"]').length > 0) {
+        values['xxTrustedFormCertUrl'] = $('input[name="xxTrustedFormCertUrl"]').val();
+        values['xxTrustedFormToken'] = $('input[name="xxTrustedFormToken"]').val();
+      }
+
+      $(this).validate().cancelSubmit = true; // disable validation
+      $.ajaxSetup({async:false});
+      $.post('/api/optins/register', values);
+      return true;
+    } else {
+      return false;
+    }
+    return false;
+  });
+
+  <% @coregs.collect{|x| x.coreg_params}.flatten.select {|x| x.virtual? }.each do |coreg_param| %>
+    <%coreg_param.matches.each do |match|%>
+      <%if (coreg_param.required)%> <%=match%>.removeClass("required").addClass("required").addClass("coreg_param_virtual"); <%end%>
+      <%if (coreg_param.min_length)%> <%=match%>.attr('minlength', <%=coreg_param.min_length%>).addClass("coreg_param_virtual"); <%end%>
+      <%=match%>.siblings().removeClass('date');
+    <%end%>
+  <% end %>
+
+  $('input.coreg_taken_yes').change(function() {
+    $(this).parents('div.coreg_header').next('div.coreg_body').show();
+    $(this).parents('div.coreg_header').parent('div.coregBlock').addClass('coregEmphasis');
+  });
+  $('input.coreg_taken_no').change(function() {
+    $(this).parents('div.coreg_header').next('div.coreg_body').hide();
+    $(this).parents('div.coreg_header').parent('div.coregBlock').removeClass('coregEmphasis');
+  });
+
+  validate_pw();
+})

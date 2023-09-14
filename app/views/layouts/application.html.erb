@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="viewport" content="height=device-height, width=device-width,initial-scale = auto,maximum-scale = 1.0"/>
+  <title><%= title %></title>
+  <meta name="keywords"  content="<%= meta_keywords %>" />
+  <meta name="description" content="<%= meta_description %>" />
+  <meta property="og:title" content="Deals For Mommy"/>
+  <meta property="og:type" content="Website"/>
+  <meta property="og:url" content="http://www.dealsformommy.com"/>
+  <meta property="og:image" content=""/>
+  <meta property="og:site_name" content="Deals For Mommy"/>
+  <meta property="og:description" content="Bringing local and internet deals to one place;Pick the deals that best suit you and your family"/>
+  <meta name="google-site-verification" content="m-CclVStlFA_9h4UyOhkcnFwVJBc8Vt6SYF-lDQbiv0" />
+  <meta name="msvalidate.01" content="083A40942ACE34A6C48A002F42F2CE3F" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <%= stylesheet_link_tag  "reset","scaffold", "screen","z-jquery.notifications", :cache => cache_name %>
+  <%= javascript_include_tag "application", "DD_roundies_0.0.2a", "gears_init", "geo", "jquery.min", "jquery.qtip-1.0.0-rc3.min", "jquery.notifications-1.1.min", "rails","american_baby","helper", :cache => cache_name %>
+  <%= csrf_meta_tag %>
+  <script type="text/javascript">
+      /* IE only */
+      DD_roundies.addRule('span.roundify', '8px 8px 0 0');
+  </script>
+	<script type="text/javascript">
+$(document).ready(function() {
+		$('#header').click(function() {
+			 document.location = '/';
+			});
+});
+	</script>
+  <!-- socialize.js script should only be included once -->
+    <script type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=3_0OAYe8f0P9hsXZ_bxRaQ_OYClbeY6pAGaTUbVVtR0IJNE5wmWomeK5C3bfA14oLU"></script>
+    <script type="text/javascript">
+				var showFollowBarUI_params=
+				{
+				containerID: 'componentDiv',
+				iconSize: 32,
+				buttons: [
+				{
+				provider: 'facebook',
+				actionURL: 'http://www.facebook.com/dealsformommy',
+				action: 'dialog'
+				},
+				{
+				provider: 'twitter',
+				action: 'dialog',
+				followUsers: 'dealsformommy'
+				},
+				{
+				provider: 'googleplus',
+				actionURL: 'https://plus.google.com/112908439013325803220/posts'
+				},
+				{
+				provider: 'custom',
+				actionURL: 'http://pinterest.com/dealsformommy/',
+				iconURL: 'http://passets-cdn.pinterest.com/images/about/buttons/big-p-button.png'
+				}
+				]
+				}
+			</script>
+
+  <script type='text/javascript'>
+      SSConfig = {
+          partner_id: '6063bf009a8cebe8aaae1853b0abcd4e' /*REQUIRED: Also known as Account ID */
+      };
+      _ssq = (typeof _ssq === 'undefined')?[]:_ssq;
+      _ssq.push(['init', SSConfig]);
+      (function() {
+          var ss = document.createElement('script');ss.src = '//shopsocially.com/js/all.js';
+          ss.type = 'text/javascript';ss.async = 'true';
+          var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ss, s);
+      })();
+  </script>
+</head>
+<body>
+<%= render :partial => "partials/com_score" %>
+<%= render :partial => "partials/flash", :locals => { :flash => flash } %>
+<%#= flash %>
+<!-- Start background -->
+<div id="background">
+  <!-- Start topContainer -->
+  <div id="topContainer">
+    <!-- Start mainNav begins -->
+    <div id="mainNav">
+      <%= link_to image_tag("dfm-logo-header1.png", :alt=>"Deals For Mommy - The Power Of Moms", :size=>"345x92",:style=>"margin-left:10px;float:left"),'/' %>
+      <ul>
+        <li class="mainNav-right">
+ 
+		<% unless @hide_members_link %>|
+          <% if signed_in_dfm? %>
+          <%= link_to "my home", home_path %>&nbsp;|&nbsp;<%= link_to 'sign out', signout_path %>
+          <% else %>
+          <%= link_to "join now", :controller => 'members' , :action => 'new' %>&nbsp;|&nbsp;<%= link_to "sign in", signin_path %>
+          <% end %>&nbsp;&nbsp;
+		<% end %>
+        </li>
+        <li class="mainNav-right"><%= link_to 'about us', about_path %>&nbsp;</li>
+        <li class="mainNav-right"><%= link_to 'how it works', howitworks_path %>&nbsp;|&nbsp;</li>
+        <li class="mainNav-right"><div id="componentDiv" style="width:150px"></div></li>
+      </ul>
+      <script type="text/javascript">
+        gigya.socialize.showFollowBarUI(showFollowBarUI_params);
+      </script>
+      <br style="clear:both" />
+    </div>
+    <!-- End mainNav -->
+    <!-- Start header -->
+    <!--div id="header"></div-->
+    <!-- End header -->
+    <!-- Start mainContent -->
+
+    <% if signed_in_dfm? && @show == 1 %>
+ 	<br />
+     <div style="display:inline-block;">
+        <ul id="dashboardNav">
+			<li class="navitem"><%= link_to 'My Home', home_path %></li>
+			<li class="navitem"><%= link_to 'Print Coupons', coupons_path %></li>
+			<li class="navitem"><%= link_to 'Freebies & Coupons', freebies_path %></li>
+			<li class="navitem"><%= link_to 'Local Deals', offers_path %></li>
+			<li class="navitem"><%= link_to 'Travel Deals', traveldeals_path %></li>
+            <li class="navitem"><%= link_to 'Hot Deals', hotdeals_path %></li>
+
+        </ul>
+		<div style="clear:left;"></div>
+   </div>
+    <div id="mainContentDash">
+    <% else %>
+     <div id="mainContent">
+    <%end%>
+    <%= yield %>
+    </div>
+    <!-- End mainContent -->
+  </div>
+  <!-- End topContainer -->
+  <!-- Start bottomContainer -->
+  <div id="bottomContainer">
+    <%= render :partial => 'partials/daily_promo' if @show_daily_promo %>
+    <!-- Start footer -->
+    <div id="footer">
+      <!-- Start footerContainer -->
+      <div id="footerContainer">
+        <span class="footerLeft"><%= image_tag '/images/delia-child.png', :size=>'171x205',:alt=>'Find great deals, coupons, and savings inside' %></span>
+        <div>
+          <h2>What's our deal?</h2>
+          <p>Deals for Mommy is working hard to be the best spot to find the greatest deals on the web. With the help of members like you, we are pinpointing the deals that are the perfect fit for busy moms.<br /><br />As a member, you'll receive instant coupons, free samples, and valuable offers from brands you know and trust. Join the power of moms working together!</p>
+
+          <h2>What you'll find inside:</h2>
+          <span class="roundify">Deal of the Day</span>
+          <span class="roundify">Free Deals</span>
+          <span class="roundify">Yum Deals</span>
+          <span class="roundify">Hot Deals</span>
+          <span class="roundify">Printable Coupons</span>
+          <span class="roundify">Local Deals</span>
+        </div>
+        <span class="footerRight"><%= image_tag '/images/more-characters.png', :size=>'220x146',:alt=>'Moms will love the deals and savings we offer' %> </span>
+      </div>
+      <!-- End footerContainer -->
+    </div>
+    <!-- End footer -->
+    <div class="clear"></div>
+    <!-- Start legal -->
+    <div id="legal">
+    <%= render :partial => 'layouts/footer' %>
+    <%= render :partial => 'partials/legal' %>
+    </div>
+    <!-- End legal -->
+  </div>
+  <!-- End bottomContainer -->
+</div>
+<!-- End background -->
+
+<% if @member %>
+<img src="https://parentmediagroup.go2jump.org/aff_l?offer_id=20&adv_sub=<%=@member.id%>&amount=0" width="1" height="1" />
+<% end %>
+
+    <%= render :partial => 'partials/remarketing_pixel' if @remarketing_pixel == true %>
+    <%= render :partial => 'partials/thankyou_pixel' %>
+
+<script>
+  var pmga = pmga || {};
+  var protocol =  ('https:' == document.location.protocol ? 'https://' : 'http://') 
+  pmga.collector = protocol + "a.parentmediainc.com/collector";
+  pmga.token = "50a1186ee0cea52e48000001";
+ 
+  (function() {
+    var sf = document.createElement("script"), script = document.getElementsByTagName("script")[0];
+    sf.type = "text/javascript"; sf.async = true; sf.src = protocol + "a.parentmediainc.com/tracker.js";
+    script.parentNode.insertBefore(sf, script);
+  })();
+</script>
+
+
+  <%=  render 'pixels/google_analytics' %>
+  <%=  render 'pixels/steelhouse_conversion_and_tracking' %>
+
+</div>
+
+
+</body>
+
+</html>

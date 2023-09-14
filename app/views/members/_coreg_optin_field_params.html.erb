@@ -1,0 +1,21 @@
+<% coreg_param = f.object.coreg_param%>
+<div class='coreg'>
+  <p class="floatLeft" style="font-size:12px; position:relative; top:1px; left:0; width:90px;">
+    <abbr title="required">*</abbr> <%= coreg_param.label %>:
+  </p>
+  <%= f.hidden_field :coreg_param_id %>
+  <%= f.hidden_field :name %>
+  <% case coreg_param.field_type %>
+  <% when 'select'%>
+    <%=f.send(:select, :value, coreg_param.select_options.split(','), :prompt => coreg_param.select_prompt, :class => 'floatLeft', :style => "margin-bottom:5px; margin-top:5px;", :size => 23 ) %>
+  <% when 'date_select'%>
+    <%=f.send(:date_select, :value, :prompt => true,  :class => 'floatLeft', :style => "margin-bottom:5px; margin-top:5px;", :size => 23 ) %>
+  <% when 'month_select'%>
+    <%=f.send(:date_select, :value, :prompt => true, :discard_day => true, :class => 'floatLeft', :style => "margin-bottom:5px; margin-top:5px;", :size => 23 ) %>
+  <% else %>
+    <%=f.send(coreg_param.field_type, :value, :class => 'floatLeft', :style => "margin-bottom:5px; margin-top:5px;", :size => 23 ) %>
+  <% end %>
+</div>
+
+<div class="clear"></div>
+

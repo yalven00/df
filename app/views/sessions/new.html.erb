@@ -1,0 +1,51 @@
+<!-- Start message -->
+<div id="message">
+	<%= image_tag "/images/thmb-Delia.gif", :alt=>"Delia helps you find Deals", :align=>"left", :style=>"float:left;margin:0 10px 20px 0;text-align: left;" %>
+	<h1>Welcome Back</h1>
+	<p>Login to your account to check out new deals and offers</p>
+</div>
+<!-- End message -->
+<div id="mainDiv">
+<!-- Start formContainer-->
+<div id="formContainer">
+	<%= simple_form_for(:session, :url => sessions_path, :html => {:novalidate => true, :class => 'registerForm1'}) do |f| %>
+	<fieldset id="loginForm">
+	<legend class="hide"></legend>
+	<% if flash[:notice] %>
+	<p class="notice"><%= flash[:notice] %></p>
+   <% end %>
+   <% if flash[:error] %>
+  <p class="error"><%= flash[:error] %></p>
+  <% end %>
+ 	<div>
+		<%= f.input :email, :input_html =>{ :style => 'width:330px' } %>
+		<%= f.input :password, :input_html => { :style => 'width:330px;clear:both'} %>
+		<%= f.label :remember_me, :required => false, :style =>'clear:both;display:inline'%>
+		<%= f.check_box :remember_me, :checked_value => '1'  %>
+		<%= image_submit_tag 'bt-login-orange.png', :name => 'submitButton',  :class => 'textAlignCenter', :style => 'margin-left:30%;width:115px;height:35px' %>
+	</div>
+	<br class="clear" /><br class="clear" />
+	<div><%= link_to 'Forgot password?',recover_password_path, :class => 'color3 fs14' %>&nbsp;&nbsp;<br /><%= link_to 'CuteKid Members - Set Your Password Here',recover_password_path(:m => "ck"), :class => 'color7 fs14' %></div>
+	<div class="strong color4">Don't have an account? <%= link_to "Sign up now!", signup_path, :class => 'color4' %></div>
+	</fieldset>
+	<% end %>
+</div>
+<!-- End formContainer -->
+<!-- Start promoContainer -->
+<div id="promoContainer" style="background-color:#57c065">
+<!-- Start Promo -->
+<div id="promo">
+<%= image_tag  'bg-promo-green.png', :alt=>"Get access to the Best Free Samples, Local Savings, Weekly Coupons, and Daily Deals", :title=>"Best Free Samples, Local Savings, Weekly Coupons", :size=>'416x210' %>
+</div>
+<!-- End Promo -->
+</div>
+<div class="clear"></div>
+<!-- End promoContainer -->
+</div>
+<!-- Start logoPromo -->
+<div id="logoPromo">
+<h2>Pull great deals from brands you know and trust.</h2>
+
+<%= render :partial => 'partials/logo_promo' %>
+</div>
+<!-- End logoPromo -->

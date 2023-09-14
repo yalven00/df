@@ -1,0 +1,74 @@
+<div id="mainDiv" class="member-offers">
+	<% if @show_deals %>
+	<!-- Start of Members Deals of the Day Section -->
+	<div id="mem-deal-of-day">
+		<%= render :partial => 'partials/division_dropdown' %>
+		<%
+			# Check Groupon Deal Count
+			if @groupon_deals.length then
+			flag = 0
+			@groupon_deals.each do |other_deal|
+				if flag%2 == 0
+					concat raw '<br class="clear" />'
+				end
+				flag += 1
+				# need to run the address fields otherwise website will break
+				other_deal_address1 = 'Redeem From Home'
+				unless other_deal.options.first.redemptionLocations[0].nil?
+					if other_deal.options.first.redemptionLocations.count > 1 then
+						other_deal_address1 = 'Multiple Locations'
+					else
+						other_deal_address1 = ''
+						other_deal_city =  other_deal.options.first.redemptionLocations.first.city ||= ''
+						other_deal_state = other_deal.options.first.redemptionLocations.first.state ||= ''
+						other_deal_address1 = other_deal_city + ", " + other_deal_state
+					end
+				end
+		%>
+		<!-- Featured Deal Div -->
+		<div class="offer">
+			<div class="offer-header" style="color:white;background-color: #2c90be;line-height:30px;height:30px;text-indent:10px">
+				<h4><%= link_to other_deal.merchant.name, APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl), :target=>'_blank',:style=>'color:#fff;text-decoration:none' %></h4>
+			</div>
+			<div class="offer-body">
+				<div class="fdb-top">
+					<span><%= other_deal_address1 %></span><br />
+					<p style="height:30px"><%= link_to(truncate(other_deal.title , :length => 216, :separator => ' ', :omission => '... more'), APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl),:target => '_blank',:style=>'text-decoration:none;color:#000;') %></p>
+				</div>
+				<br class="clear" />
+				<div style="margin-top:10px">
+					<div class="fdb-column-1"><%= image_tag other_deal.sidebarImageUrl, :size => '200x121', :style => 'align:left' %></div>
+					<div class="fdb-column-2" style="width:125px">
+						<ul class="featured-price-details" style="margin-left:28px !important;width:140px;">
+							<li class="fpd-first">$<%= (other_deal.options[0].price.amount/100) %></li>
+							<li><span>Value:</span> <strong>$<%= (other_deal.options[0].value.amount/100) %></strong></li>
+							<li><span>Discount:</span> <strong><%= (other_deal .options[0].discountPercent).to_s + '%' %></strong></li>
+							<li><span>Savings:</span> <strong>$<%= (other_deal.options[0].discount.amount/100) %></strong></li>
+						</ul>
+					</div>
+					<div class="fdb-column-3" style="width:85px !important;">
+						<ul>
+							<li><%= link_to (image_tag 'see-deal-link.gif',:size => '85x28'),  APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl), :target=>'_blank' %></li>
+							<li>&nbsp;</li>
+							<li>&nbsp;</li>
+							<li><span><br /><%= other_deal.soldQuantity %> Sold</span><br /><%= image_tag 'logo-groupon-sm.jpg',:size => "74x34", :alt=>"" %></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End of Featured Deal Div -->
+		<% end %>
+		<% else %>
+		<div id="no-deal-notice">Sorry, we are unable to locate any deals</div>
+		<% end %>
+		<br class="clear" />
+	</div>
+	<% else %>
+	<div id="mem-deal-of-day">
+		<%= render :partial => 'partials/division_dropdown' %>
+		<%= render :partial => 'partials/cp_offer' %>
+	</div>
+	<% end %>
+</div>
+<br class="clear" />

@@ -1,0 +1,6 @@
+<% if @coregs.present? %>
+  <div class='coreg'>
+    <style type="text/css"><%=@page.css_snippet%></style>
+    <%= render :partial => "coreg_optin", :collection => @coregs, :as => :coreg, :spacer_template=>'separator'  %>
+  </div>
+<% end %>

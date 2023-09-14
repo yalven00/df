@@ -1,0 +1,32 @@
+<div id="message">
+  <%= render :partial => 'partials/delias_promise' %>
+</div>
+<!-- End message -->
+<div id="mainDiv">
+  <!-- Start formContainer-->
+  <div id="formContainer" title="Become a member and start saving with deals and coupons">
+    <%if session[:pm_form]=~/piggy/%>
+        <%= render session[:pm_form] %>
+    <%else%>
+        <%= render session[:form] %>
+    <%end%>
+  </div>
+  <!-- End formContainer -->
+  <% if session[:form] == "partial_member" %>
+      <%= render 'partials/promoContainer' %>
+  <% end %>
+</div>
+<% if @promo && !@promo.empty? %>
+<div id="promo-display"><%= render :partial => "partials/#{@promo}_promo" %></div>
+<% end %>
+<!-- Start logoPromo -->
+<div id="logoPromo">
+  <% if session[:form] == 'partial_member'%>
+  <script>utmx_section("section5")</script>
+  <h2>Pull great deals from brands you know and trust.</h2>
+  </noscript>
+  <%= render :partial => 'partials/logo_promo' %>
+  <% end %>
+  &nbsp;
+</div>
+<!-- End logoPromo -->

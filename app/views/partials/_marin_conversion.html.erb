@@ -1,0 +1,34 @@
+<% if flash[:conversion_membership] %>
+<script type="text/javascript">
+    var _mTrack = _mTrack || [];
+    _mTrack.push(['addTrans', {
+        orderId : '<%=@member.id%>',
+        total :   '0',
+        currency : 'USD',
+        items : [
+         {
+         orderId : '<%=@member.id%>',
+         convType : 'membership',
+         price :    '0'
+        	}
+        ]
+    }]);
+    
+    _mTrack.push(['processOrders']);
+    (function() {
+        var mClientId = 'y7apyzuji0';
+        var mProto = ('https:' == document.location.protocol ? 'https://' : 'http://');
+        var mHost = 'tracker.marinsm.com';
+        var mt = document.createElement('script'); mt.type = 'text/javascript'; mt.async = true; mt.src = mProto + mHost + '/tracker/async/' + mClientId + '.js';
+        var fscr = document.getElementsByTagName('script')[0]; fscr.parentNode.insertBefore(mt, fscr);
+    })();
+</script>
+<noscript>
+    <img src="https://tracker.marinsm.com/tp?act=2&cid=4438pj420635&script=no" >
+</noscript>
+
+<!-- END: Copyright Marin Software -->
+
+
+
+<% end %>

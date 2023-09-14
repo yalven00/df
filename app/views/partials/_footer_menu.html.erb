@@ -1,0 +1,17 @@
+<div style="border: 1px solid #0cd;float:left;width:100%">
+<ul style="width:70%;margin:0 auto">
+	<li style="width:50%;display:inline;float:left;text-align:left">Get To Know Us
+		<ul>
+			<li><%= link_to 'About Us', about_path %></li>
+        	<li><%= link_to 'How It Works', howitworks_path %></li>
+        	<li><%= link_to 'Join Now', :controller => 'members' , :action => 'new' %></li>
+        	<li><%= link_to 'Sign In', signin_path %></li>
+		</ul>
+	</li>
+	<li style="width:50%;display:inline;float:left">Resources
+		<ul>
+			<li><%= link_to 'Mom Articles', :controller=>'articles', :action=>'new' %></li>
+		</ul>
+	</li>
+</div>
+<br />

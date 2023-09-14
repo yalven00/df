@@ -1,0 +1,73 @@
+<div id="mainDiv">
+  <div id="mem-hot-stuff">
+  		<h3 class="blockHead textAlignCenter"><strong class="color2">HOTDEALS: </strong>&nbsp;
+            <span class="color5 fs12">Here are some hot deals we have for you!</span>
+        </h3>
+  </div>
+  	<br class="clear" />
+  <div style="width:100%;">
+    <div id="hot-deals-col1">
+      <%= simple_form_for(@member, :html => { :novalidate => true, :class => 'registerForm2' }) do |member_form| %>
+            <%= hidden_field(:member, :first_name)%>
+            <%= hidden_field(:member, :last_name)%>
+            <%= hidden_field(:member, :email)%>
+            <%= hidden_field(:member, :gender)%>
+            <%= hidden_field(:member, :postal_code)%>
+            <%= hidden_field_tag('member_address_attributes_address1', @member.address.try(:address1) )%>
+            <%= hidden_field_tag('member_address_attributes_address2', @member.address.try(:address2) )%>
+            <%= hidden_field_tag('member_address_attributes_city', @member.address.try(:city) )%>
+            <%= hidden_field_tag('member_address_attributes_state', @member.address.try(:state) )%>
+            <%= hidden_field_tag('member_address_attributes_postal', @member.address.try(:postal) )%>
+            <div style="display:none;">
+              <%= date_select(:member, :dob, :style=> 'display:none')%>
+            </div>
+          <%if @submit>0 %>
+      <div id="coregs"></div>
+          <script src="http://api.trustedform.com/trustedform.js" type="text/javascript"></script>
+             <% if Rails.env.staging? %>
+               <script src="http://staging.dealsformommy.com/javascripts/jquery.validate.min.js" type="text/javascript"></script>
+               <script src="http://staging.dealsformommy.com/api/optins/coregs.js?key=dfm_hotdeals" type="text/javascript"></script>
+             <% else %>
+               <script src="/javascripts/jquery.validate.min.js" type="text/javascript"></script>
+               <script src="/api/optins/coregs.js?key=dfm_hotdeals" type="text/javascript"></script>
+            <% end %>
+      </div>
+              <%else%>
+          Were sorry. there doesnt seem to be any offer available for you at this time. Please come back later to see if any new deals are available.
+          <%end%>
+  </div>
+
+    <div id="hot-deals-col2" style="float:right;">
+      <div class="ad300x250">
+      <%= link_to image_tag('ck_s73_cutekid_ofthe_year_300x250.jpg'), 'http://parentmediagroup.go2jump.org/aff_c?offer_id=3&aff_id=640&aff_sub=hotdeals&url_id=9' %>
+      </div>
+      <div class="fullpage">
+          <ul>Other great offers.
+            <%@full_page_coregs.each do | fp | %>
+            <li>
+                <div class="floatLeft"><%=link_to(image_tag(fp.image.to_s),new_coreg_coreg_optin_path(:coreg_id =>fp.id))%></div>
+                <div class="floatLeft" style="width:210px;margin-left: 10px;">
+                    <%=link_to(fp.name.upcase,new_coreg_coreg_optin_path(:coreg_id =>fp.id)) %><br /><%=fp.description%>
+                </div>
+            </li>
+            <%end%>
+          </ul>
+      </div>
+  </div>
+  
+  
+  </div>
+  <br class="clear" />
+<div style="width:150px;margin:20px auto">
+
+  <%if @submit>0%>
+        <%= image_submit_tag 'bt-submit-orng.png', :name => 'submitButton', :style => 'width:149px;height:44px' %>
+   <%end%>
+      </div>
+ <%end%>
+  </div>
+
+  </div>
+<!--[if IE ]>
+</div>
+<![endif]-->

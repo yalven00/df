@@ -1,0 +1,60 @@
+<!-- Start promoContainer -->
+  <div id="promoContainer">
+    <h2><span style="width:145px">Moms Joined Today</span></h2>
+    <h2><span>Members Inside</span></h2>
+    <h2><span>Savings Inside</span></h2>
+
+    <div id="stats">
+      <span class="statsBorder" style="width:145px"><%= number_with_delimiter(@joined_today ||= 0) %></span>
+      <span class="statsBorder"><%= number_with_delimiter(@member_count ||= 0) %></span>
+      <span>$<%= savings_total %></span>
+    </div>
+    <!-- Start Promo -->
+    <div id="promo">
+	  <%if session[:pm_form]=~/piggy/%>
+      	 <%= image_tag("dfm-ad-virtual-piggy_2.gif",:size=>'413x270') %>
+	     <br /><br />
+	<%= image_tag("dfm-ad-virtual-piggy-hiw-hdr_red.png")%>
+	<div  style="margin:15px 5px 0 8px;">
+		Virtual Piggy helps kids to learn money <br />management, by tracking:
+		<br /><br />
+		<div class="vp">
+		<ol>
+			<li >savings goals</li>
+			<li>wishlists</li>
+			<li>spending habits</li>
+			<li>donations to charity</li>
+		</ol>
+		</div>
+		<div class="clear"></div>
+		<br />
+
+		Kids have fun as they learn to manage their online budget and parents always have access to when and where money is being spent via controls you set up! Virtual Piggy is always 100% free to use. 
+		<br /><br />
+
+		<a href="" style="color:#f36e25;" onclick="window.open('/images/How-it-Works-2.jpg', 'mywindow', 'location=1,status=1,scrollbars=1,width=612,height=792');return false;"> Learn More</a> 
+		or
+		<a href="" style="color:#f36e25;" onclick="window.open('/virtual_piggy/video.html', 'mywindow', 'location=0,status=1,scrollbars=1,width=590,height=370');return false;"> Watch the Video</a> 
+		
+		</div>
+		
+      <%elsif params[:f]=~/moolala/%>
+          <%= image_tag("dfm-diapers-ad_moolala.gif") %>
+      <%elsif params[:f]=~/shopsocial/%>
+      	  <%= image_tag("partner_pages/dfm_shopsocial_rightside.jpg") %>
+	  <%else%>
+          <% if @promo.try(:empty?) %>
+            <script>utmx_section("section4")</script>
+                <%= image_tag("dfm_bg-promo-green.jpg", :alt=>"Get access to the Best Free Samples, Local Savings, Weekly Coupons, and Daily Deals", :title=>"Best Free Samples, Local Savings, Weekly Coupons", :size=>'413x210') %>
+            </noscript>
+	      <% else %>
+	        <%= image_tag("bg-promo-green-#{@promo}.png", :alt=>"Get access to the Best Free Samples, Local Savings, Weekly Coupons, and Daily Deals", :title=>"Best Free Samples, Local Savings, Weekly Coupons", :size=>'413x210') %>
+	      <% end %>
+      <% end %>
+
+
+    </div>
+    <!-- End Promo -->
+  </div>
+  <div class="clear"></div>
+<!-- End promoContainer -->

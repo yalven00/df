@@ -1,0 +1,31 @@
+<div id="mainDiv" class="about">
+	<h1 class="color2">Feature a Deal</h1>
+	<br class="clear"/>
+	<%= link_to image_tag("delias-message3.gif", :alt => "Advertise Deals and Coupons", :style=>"float:right;margin-left:15px"), :howitworks %>
+	<p>Have a deal or special you'd like to feature to DealsForMommy members, tell us about it. Once we've had a chance to check out your company and deal, we'll get back with you regarding the next steps. Thanks... we're excited to get to know you better.</p>
+	<%= simple_form_for(:advertiser, :url => advertisers_path, :html => {:method => :post, :novalidate => true, :class => ''} ) do |f| %>
+	<fieldset><legend class="hidden"></legend>
+		<%= f.error_messages :header_message => '' %>
+		<div style="float:left;width:100%"><%= f.input :business_name, :label => 'Business Name' %></div>
+		<div style="float:left;width:100%"><%= f.input :email, :label => 'Email' %></div>
+		<div style="float:left;width:100%"><%= f.input :first_name, :label => 'First Name' %></div>
+		<div style="float:left;width:100%"><%= f.input :last_name, :label => 'Last Name ' %></div>
+		<div style="float:left;width:100%"><%= f.input :address, :label => 'Address', :required => false %></div>
+		<div style="float:left;width:100%">
+			<div style="width:200px;float:left;"><%= f.input :city, :label => 'City', :input_html => { :class => 'formFieldInputLarge'} ,:required => false  %></div>
+			<div style="width:70px;float:left;"><%= f.input :state, :label => 'State', :collection => State.all.map { |state| state.code }, :required => false, :input_html =>{:style =>'clear: left'} %></div>
+		<div  style="width:200px;float:left;"><%= f.input :postal, :label => 'Postal', :input_html => {:size => '10',:style =>'clear: left'}, :required => false %></div>
+		</div>
+		<br class="clear" />
+		<div style="float:left;width:100%"><%= f.input :phone, :label => 'Phone'  %></div>
+		<div style="float:left;width:100%"><%= f.input :website, :label => 'Website', :required => false  %></div>
+		<div style="float:left;width:100%"><%= f.input :business_desc, :as => :text, :required => false , :input_html => { :style => 'width:324px;height:100px'}, :label => 'Tell us a little bit about your business' %></div>
+		<div style="float:left;width:100%"><%= f.input :deal_desc, :as => :text, :required => false , :input_html => { :style => 'width:324px;height:100px'}, :label => 'Tell us a little bit about your deal offer' %></div>
+		<div class="clear"></div><br />
+		<div class="actions">
+			<%= image_submit_tag 'bt-submit.gif', :name => 'submitButton',  :class => 'ml10', :style => 'width:119px;height:38px' %>
+		</div>
+	</fieldset>
+<% end %>
+</div>
+	<br class="clear" />

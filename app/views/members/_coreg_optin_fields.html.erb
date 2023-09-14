@@ -1,0 +1,34 @@
+    <!-- Co Reg Section -->
+    <%= f.hidden_field :coreg_id %>
+    <div style="margin:0px; padding:0px;" class="coreg_header">
+      <div class="floatLeft" style="margin:12px 5px 0;">
+        <%= image_tag(f.object.coreg.image.url(:thumb), :class => 'floatLeft') %>
+        <div class="clear"></div>
+      </div> 
+      <div class="floatLeft"  style="margin:12px 5px 0;font-size:11px;width:55px">
+        <div style="float:left;width:20px;text-align:center">Yes
+          <%= f.radio_button :taken, true, :class => 'coreg_taken_yes' %>
+        </div>
+        <div style="float:left;width:20px;margin-left:5px;text-align:center">No
+          <%= f.radio_button :taken, false, :class => 'coreg_taken_no' %>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="floatLeft" style="width:185px;margin:12px 5px 0;font-size:11px">
+        <%= raw f.object.coreg.description %>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!-- Co Reg Section -->
+    <!-- Addditional Co Reg Section -->
+    <div style="width:358px;margin:12px 5px 0;<%= f.object.taken ? '' : 'display:none'%>" class="coreg_body clear">
+      <p style="font-size:12px; margin-top:0px;">
+        <%= raw f.object.coreg.prompt %>
+      </p>
+      <%= f.fields_for :coreg_optin_params do |builder| %>
+        <%= render "coreg_optin_field_params", :f => builder %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+      <!-- Addditional Co Reg Section -->
+

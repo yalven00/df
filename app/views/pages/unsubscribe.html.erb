@@ -1,0 +1,23 @@
+<div id="mainDiv">
+	<div style="padding:15px 0 0 15px;">
+		To never receive an email from DealsForMommy.com again, please enter your <br />
+		email address and click the "Unsubscribe" button.<br /><br />
+	</div>
+	<form action="http://link.onlinedialog.com/s/link/rmv" method="POST">
+	<input type="hidden" name="rc" value="cp">
+	<input type="hidden" name="rti" value="y8346">
+	<input type="hidden" name="b" value="y">
+	<div style ="margin:0px;padding:15px;">
+	Enter email:<br /> 
+	<input type="text" name="email" width="100"><br /><br />
+	</div>
+	<%= image_submit_tag("btn-unsubscribe.gif", :class=>'unsubscribeButton')%>
+	<%= link_to(image_tag("btn-cancel.gif"), home_path) %>
+	</form>
+
+	<br /><br />
+
+
+<!--[if IE ]>
+</div>
+<![endif]-->

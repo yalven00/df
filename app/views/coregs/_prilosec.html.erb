@@ -1,0 +1,927 @@
+<style type="text/css">
+  .friendly{display: none;}
+  .original{display: block;}
+  #custom_form { text-align: center; width: 700px; }
+  #coreg_tagline { width: 700px; }
+  #submit_col1 { width: 250px; }
+  #submit_col2 { background-color: #6699FF }
+  #submit_col3 { width: 200px; }
+</style>
+<style type="text/css"> body, td { font-family:arial, sans-serif;font-size:small } </style>
+<!--[if IE]>
+<STYLE TYPE="text/css"> body, td { font-family:arial, sans-serif;font-size:x-small } </STYLE>
+<![endif]--> 
+<SCRIPT LANGUAGE="JavaScript">
+	<!--
+	var verified=true;
+	-->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function load_image(img_src, img){ img.src = img_src; }
+function processPUnder()
+{
+}
+function nw(addr, w, h)
+{
+	if (w > window.screen.availWidth - 100)
+	{
+		w = window.screen.availWidth - 100;
+	}
+
+	if (h > window.screen.availHeight - 100)
+	{
+		h = window.screen.availHeight - 100;
+	}
+
+	var x = (window.screen.availWidth - w) / 2;
+	var y = (window.screen.availHeight - h) / 2;
+	var s = "resizable=yes,scrollbars=2,toolbar=no,menubar=no,location=no,status=yes,width=" + w + ", height=" + h + "screenX=" + x + "screenY=" + y;
+	window.open(addr, '_blank', s).focus();
+}
+
+function ci(fieldname, fieldlabel, acceptonly)
+{
+	var s = new String();
+	v_char = new RegExp ("[^A-Za-z .'-]", "i");
+	v_num = new RegExp ("[^0-9]","i");
+	v_numchar = new RegExp ("[^0-9A-Za-z &/#;,.'-]", "i");
+	s = document.fm[fieldname].value;
+	result = s.search(eval(acceptonly));
+
+	if (result != -1)
+	{
+		if (fieldlabel.length > 0)
+		{
+			msg = "The following field:\n\n\"" + fieldlabel + "\"\n\n";
+		}
+		else
+		{
+			msg = "This field ";
+		}
+
+		if (acceptonly == "v_char")
+		{
+			msg += "can only contain characters";
+		}
+		else if (acceptonly == "v_num")
+		{
+			msg += "can only contain numbers";
+		}
+		else if (acceptonly == "v_numchar")
+		{
+			msg += "can only contain numbers and characters";
+		}
+
+		document.fm[fieldname].value = s.substring(0, s.length - 1);
+		alert(msg);
+		return false;
+	}
+
+	return true;
+}
+
+function check_fm(index)
+{
+	var d = document;
+	var e = "Your input contained the following error(s)\n_________________________________________________________\n\n";
+
+	switch (index)
+	{
+		case '0':
+	var me = "You didn't answer a required question:";
+	var ms = "Your response to a required field was INCOMPLETE for the following offer:";
+	var mf = "Please fill in/correct your response for that field. Not interested in that offer? Click \"No\" to the left of the offer tagline or click the \"Skip\" button found at the bottom of the page.";
+
+	if (d.fm.q7079[0].checked == true || d.fm.q7079.value == 'y')
+	{
+		var i_7079 = "\n\n            Prilosec OTC® provides 24 hours of zero heartburn with one pill a day.*        \n\nThe input field is: ";
+
+		d.getElementById('error_38545').style.display = 'none';
+
+		if (d.fm.f38545.value == "" || d.fm.f38545.value.length < 2)
+		{
+			if (d.fm.f38545.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_7079 + "First Name\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f38545.focus();
+			alert(e);
+			d.getElementById('error_38545').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38546').style.display = 'none';
+
+		if (d.fm.f38546.value == "" || d.fm.f38546.value.length < 2)
+		{
+			if (d.fm.f38546.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_7079 + "Last Name\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f38546.focus();
+			alert(e);
+			d.getElementById('error_38546').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38547').style.display = 'none';
+
+		if (d.fm.f38547.value == "" || d.fm.f38547.value.length < 5)
+		{
+			if (d.fm.f38547.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_7079 + "Email Address\n\nYour input for this field must be at least 5 characters long\n\n" + mf;
+			d.fm.f38547.focus();
+			alert(e);
+			d.getElementById('error_38547').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38548').style.display = 'none';
+
+		if (d.fm.f38548.value == "" || d.fm.f38548.value.length < 5)
+		{
+			if (d.fm.f38548.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_7079 + "Confirm Email Address\n\nYour input for this field must be at least 5 characters long\n\n" + mf;
+			d.fm.f38548.focus();
+			alert(e);
+			d.getElementById('error_38548').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38549').style.display = 'none';
+
+		if (d.fm.f38549.selectedIndex < 1)
+		{
+			e += me;
+			e += i_7079 + "Birth Date Month\n\n" + mf;
+			d.fm.f38549.focus();
+			alert(e);
+			d.getElementById('error_38549').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38550').style.display = 'none';
+
+		if (d.fm.f38550.selectedIndex < 1)
+		{
+			e += me;
+			e += i_7079 + "Birth Date Year\n\n" + mf;
+			d.fm.f38550.focus();
+			alert(e);
+			d.getElementById('error_38550').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38551').style.display = 'none';
+
+		if (d.fm.f38551.value == "" || d.fm.f38551.value.length < 2)
+		{
+			if (d.fm.f38551.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_7079 + "Address 1\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f38551.focus();
+			alert(e);
+			d.getElementById('error_38551').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38553').style.display = 'none';
+
+		if (d.fm.f38553.value == "" || d.fm.f38553.value.length < 2)
+		{
+			if (d.fm.f38553.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_7079 + "City\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f38553.focus();
+			alert(e);
+			d.getElementById('error_38553').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38554').style.display = 'none';
+
+		if (d.fm.f38554.selectedIndex < 1)
+		{
+			e += me;
+			e += i_7079 + "State\n\n" + mf;
+			d.fm.f38554.focus();
+			alert(e);
+			d.getElementById('error_38554').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_38555').style.display = 'none';
+
+		if (d.fm.f38555.value == "" || d.fm.f38555.value.length < 5)
+		{
+			if (d.fm.f38555.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_7079 + "Zip Code\n\nYour input for this field must be at least 5 characters long\n\n" + mf;
+			d.fm.f38555.focus();
+			alert(e);
+			d.getElementById('error_38555').style.display = 'block';
+			return false;
+		}
+
+		for (i = 0, n = d.fm.f38556.length; i < n; i++)
+		{
+			if (d.fm.f38556[i].checked)
+			{
+				var radio_f38556_checked = d.fm.f38556[i].value;
+				break;
+			}
+		}
+
+		d.getElementById('error_38556').style.display = 'none';
+
+		if (!radio_f38556_checked)
+		{
+			e += me;
+			e += i_7079 + "How frequently do you suffer from heartburn?\n\n" + mf;
+			alert(e);
+			d.getElementById('error_38556').style.display = 'block';
+			return false;
+		}
+
+		for (i = 0, n = d.fm.f38557.length; i < n; i++)
+		{
+			if (d.fm.f38557[i].checked)
+			{
+				var radio_f38557_checked = d.fm.f38557[i].value;
+				break;
+			}
+		}
+
+		d.getElementById('error_38557').style.display = 'none';
+
+		if (!radio_f38557_checked)
+		{
+			e += me;
+			e += i_7079 + "How frequently do you take medication for heartburn?\n\n" + mf;
+			alert(e);
+			d.getElementById('error_38557').style.display = 'block';
+			return false;
+		}
+
+
+
+var fnameCheck = document.fm.f38545.value;
+var lnameCheck = document.fm.f38546.value;
+
+if (fnameCheck.toLowerCase() == lnameCheck.toLowerCase()) {
+document.fm.f38575.value ="N";
+}
+
+var msg = "";
+var msg_flag = false;
+
+var email1 = d.fm.f38547.value;
+var email2 = d.fm.f38548.value;
+
+if (email1 != email2){
+msg+= "*\"Email Address\" and \"Confirm Email Address\" are not the same\nPlease try again\n";
+msg_flag=true;
+}
+
+if (msg_flag){
+alert(msg);
+return false;
+}
+
+
+
+if (((document.fm.f38556[3].checked == true) || (document.fm.f38556[4].checked == true)) && ((document.fm.f38557[3].checked == true) || (document.fm.f38557[4].checked == true))){
+//scrub
+document.fm.f38575.value = "N";
+}
+
+var dropdownMonth = document.fm.f38549;
+var getMonthValue = dropdownMonth.options[dropdownMonth.selectedIndex].value;
+var month = parseFloat(getMonthValue) - 1;
+
+//get due date date
+//var dropdownDate = document.fm.fXXXX;
+//var getDateValue = dropdownDate.options[dropdownDate.selectedIndex].value;
+var date = 1;
+
+//get due date year
+var dropdownYear = document.fm.f38550;
+var getYearValue = dropdownYear.options[dropdownYear.selectedIndex].value;
+var year = parseFloat(getYearValue);
+
+var now = new Date(); //get current time
+var birthDate = new Date(now); //copy current time
+birthDate.setMonth(month); //set due date month
+birthDate.setDate(date); //set due date Day
+birthDate.setFullYear(year); //set due date year
+var time_left = now.getTime() - birthDate.getTime(); //time in milliseconds
+var days_left = Math.ceil( time_left / 86400000 ); //convert to days
+
+if (days_left < 6480) {
+document.fm.f38575.value = "N";
+}
+
+if (document.fm.f38575.value == "N"){
+alert("We're sorry but we can't accept your messages or personal information because you do not meet our eligibility requirements. But that doesn't mean you can't explore www.PrilosecOTC.com and learn more about us.");
+return true;
+}
+
+// invoke the briteverify 
+// *** pass the field value for the email ***
+/*
+bv_answer = briteVerify(d.fm.f38547.value);
+if(bv_answer != true)
+{
+if(bv_answer === false)
+{
+// skip
+noMsg=1;
+
+// *** this has the coreg_id for the q####
+document.fm.q7079[1].checked=true;
+document.fm.js_status.value = 'y';
+make_exit_win=0;
+document.fm.submit();	
+}
+else
+{
+alert("*The E-mail address you have entered is invalid.\n");
+return false;
+}
+}
+*/
+
+	}
+
+			break;
+		case 'all':
+			e += "Please select your answer choice for each offer.\n\nYou did not answer the question for 1 or more of the offers.";
+			e += "\n_________________________________________________________\n\nPlease answer all of the questions to continue.\n\nThank You!";
+
+		var tagElem = d.fm.q7079;
+		if (tagElem != undefined)
+		{
+		if (!d.fm.q7079[0].checked && !d.fm.q7079[1].checked)
+		{
+			alert(e);
+			cleanExit = 0;
+			return false;
+		}
+		}
+
+			break;
+		}
+
+				if(!document.fm.q7079)
+
+				{
+
+					return true;
+
+				}
+
+				if(document.fm.q7079[1].checked == true)
+
+				{
+
+					return true;
+
+				}
+
+				else
+
+				{
+		return verified;
+	}
+}
+   v43 = 1;   block = 1;   x96 = 1;   n23 = 1;   l22 = 0;   o77 = 0;   d44 = 'block';   h54 = 'yknot88';   h75 = 'ok';   answered = new Array(0);   u963 = new Array(0);   coreg = new Array(0);   creative = new Array(0);   hidden = new Array(0);   i686 = new Array(0);   changed = new Array(0);    for (x = 0; x < 0; x++)   {    answered[x] = 0;    hidden[x] = 0;     switch (x)    {        default:      u963[x] = 0;      break;    }   }       function hide(index)   {    document.getElementById('r' + index).style.display = 'none';     if (!u963[index])    {     o77--;    }     if (d = document.getElementById('d' + index))    {     d.style.display = 'none';    }     hidden[index] = 1;    eval('document.fm.cim_' + coreg[index] + '.value="y"');    document.fm.js_status.value = 'y';    document.fm.submitType.value = 'hidden';    document.fm.coreg_submitted.value = coreg[index];    document.fm.coreg_creative_submitted.value = creative[index];    document.fm.submit();    document.fm.submitType.value = 'default';    v43--;   }    function handleDisplay(index)   {    blockDone = ba784();        if (h54 == 'yknot88')    {     if ((h75 == 'ok') || (v43 > x96))     {      hide(index);     }    }    else if (blockDone && (h75 == 'ok' || v43 > x96))    {     for (x = 0; x < (n23 - block); x++)     {      if (!hidden[ol012()])      {       hide(ol012());      }     }    }    if ((d44 == 'yknot88') && (n23 < l22))    {     s722();    }    else if (blockDone)    {     for (x = 0; (x < block) && (n23 < l22); x++)     {      s722();     }    }   }    function ho76(index)   {    for (x = 0; x < index; x++)    {     if (!hidden[x] && u963[x] && !answered[x])     {      answered[x] = 1;      handleDisplay(x);     }    }   }    function optOut(counter)   {    if(document.getElementById('oo_submit' + counter))    {     document.getElementById('oo_submit' + counter).style.display = 'none';    }    if(document.getElementById('oo_msg' + counter))    {     document.getElementById('oo_msg' + counter).style.display = 'none';    }     switch (counter)    {     default:      index = 0;      break;    }     if (index)    {     ho76(index);    }   }    function s722()   {    document.getElementById('r' + n23).style.display = 'block';    if (document.getElementById('r' + n23).getAttribute('coo') == 'yes')    {     document.getElementById('d' + n23).style.display = 'block';    }    load_image('http://qitrck.com/cg_tp?reportRef=3_4_18_5131_14_21&tp=cim&coreg_id=' + coreg[n23] + '&coreg_creative_id=' + creative[n23] + '&user_pin_id=1&user_ref_id=&page_id=10313863&optimizer_flag=&redirectPath=5131&rand=1327939736', document.images['img_cim_' + coreg[n23]]);    eval('document.fm.cim_' + coreg[n23] + '.value="y"');     switch (n23)    {     default:      counter = 0;      break;    }     if (counter)    {     switch (n23)     {     case '0':        document.getElementById('oo_submit' + counter).style.display = 'block';;      default:       break;     }      document.getElementById('oo_msg' + counter).style.display = 'block';;    }     if (!u963[n23])    {     o77++;    }     i686.push(n23);    n23++;    v43++;   }    function s986(index)   {    document.getElementById('d' + index).style.display = 'block';    if(document.images['img_pim_' + coreg[index]].src == '')    {     load_image('http://qitrck.com/cg_tp?reportRef=3_4_18_5131_14_21&tp=pim&coreg_id=' + coreg[index] + '&coreg_creative_id=' + creative[index] + '&user_pin_id=1&page_id=10313863&user_ref_id=&rand=1327939736', document.images['img_pim_' + coreg[index]]);    }    if(eval('document.fm.pim_' + coreg[index]))    {     eval('document.fm.pim_' + coreg[index] + '.value="y"');    }     switch (index)    {     default:      break;    }    }    function a9321()   {    count = 0;     for (x = 0; x < l22; x++)    {     count += answered[x];    }     return count;   }    function ba784()   {    done = 1;     for (x = 0; (x < n23) && done; x++)    {     if (!answered[x])     {      done = 0;     }    }     return done;   }    function ol012()   {    x = 0;     while ((x < l22) && (!answered[x] || hidden[x]))    {     x++;    }     return x;   }    for (x = 0; x < v43; x++)   {    if (!u963[x])    {     o77++;    }   }    function processClick(key, answer)   {    postback = true;    processPUnder();if (u963[key])    {     postback = false;     return;    }     ho76(key);     switch (key)    {     case '0':       if (answer == 'y')      {       s986(key);          postback = false;       return false;      }       break;     default:      break;    }     if (answer == 'e' && !check_fm(key))    {     postback = false;     return false;    }       answered[key] = 1;     switch (parseInt(key) + 1)    {     default:      counter = 0;      break;    }     if (counter)    {     optOut(counter);    }     if (a9321() == l22)    {     cleanExit = 1;     make_exit_win = 0;     document.fm.js_status.value = 'y';     document.fm.submitType.value = 'standard';      if (check_fm('all'))     {      document.getElementById('processing').style.display = 'block';      document.fm.submit();     }       }    else    {     handleDisplay(key);    }     while (u963[n23] && (n23 < l22))    {     s722();    }    postback = false;   }    // -->
+</SCRIPT>
+
+<div  BGCOLOR="#FFFFFF">
+<CENTER>
+<TABLE width="740" border="0" align="center" cellpadding="6" cellspacing="1">
+<TR>
+	<TD>
+	<TABLE BORDER=0 CELLPADDING=6 CELLSPACING=0 WIDTH=735>
+	<TR>
+		<TD ALIGN=center>
+		<FONT FACE="verdana,sans-serif" SIZE=-1>
+<div align="left">
+	<!-- hidden fields -->
+<INPUT TYPE=hidden NAME='optin' VALUE='y'>
+<INPUT TYPE=hidden NAME='email' VALUE='<%=current_member.email%>'>
+<INPUT TYPE=hidden NAME='cmd' VALUE='exe_cg'>
+<INPUT TYPE=hidden NAME='js_status' VALUE='n'>
+<INPUT TYPE=hidden NAME='submitType' VALUE='default'>
+<INPUT TYPE=hidden NAME='user_pin_id' VALUE='1'>
+<INPUT TYPE=hidden NAME='pin_key' VALUE='551102'>
+<INPUT TYPE=hidden NAME='cg_list' VALUE='7079'>
+<INPUT TYPE=hidden NAME='cg_opt' VALUE=''>
+<INPUT TYPE=hidden NAME='cg_shown' VALUE=''>
+<INPUT TYPE=hidden NAME='page_id' VALUE='10313863'>
+<INPUT TYPE=hidden NAME='page_tmp_id' VALUE='11951'>
+<INPUT TYPE=hidden NAME='cat' VALUE='sr'>
+<INPUT TYPE=hidden NAME='page_num' VALUE='1'>
+<INPUT TYPE=hidden NAME='path' VALUE=''>
+<INPUT TYPE=hidden NAME='sv' VALUE=''>
+<INPUT TYPE=hidden NAME='preview' VALUE='7079'>
+<INPUT TYPE=hidden NAME='previewkey' VALUE='6J9Gj2KT'>
+<INPUT TYPE=hidden NAME='previewlive' VALUE='1'>
+<INPUT TYPE=hidden NAME='prev_js_status' VALUE='y'>
+<INPUT TYPE=hidden NAME='prev_page_type' VALUE='dynamic_js_yes'>
+<INPUT TYPE=hidden NAME='coreg_submitted' VALUE='7079'>
+<INPUT TYPE=hidden NAME='coreg_creative_submitted' VALUE='10588'>
+<INPUT TYPE=hidden NAME='cim_7079' VALUE='n'>
+<INPUT TYPE=hidden NAME='f38572' VALUE='319994'>
+<INPUT TYPE=hidden NAME='f38573' VALUE='<%=current_member.ip_address%>'>
+<INPUT TYPE=hidden NAME='f38574' VALUE='<%=current_member.dob.strftime("%d")%>'>
+<INPUT TYPE=hidden NAME='f38576' VALUE='dealsformommy.com'>
+<INPUT TYPE=hidden NAME='f38646' VALUE='<%=current_member.gender%>'>     <!-- gender -->
+  </div>
+
+
+<div ID="r0" style="background:#FFFFCC;text-align:left; float:none !important;">
+	<table width="640" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="76">
+				<!--<img border="0" valign="middle" src="http://i.pcp001.com/media/arrow_red.gif"/>-->
+			</td>
+			<td id="pril_y_n" width="120">
+				<div style="float:left !important;">
+					<INPUT TYPE=radio NAME='q7079' VALUE='y' onClick="noMsg=1; processClick('0', 'y');document.getElementById('d0').style.display = 'block';"><span class="yesbutton" id="yesbuttonradio">Yes</span>
+				</div>
+				<div style="float:left !important;">
+				<INPUT TYPE=radio NAME='q7079' VALUE='n'onClick="noMsg=1;document.fm.js_status.value='n';document.fm.optin.value = 'n';make_exit_win=0;document.fm.submit();" ><span class="nobutton" id="nobuttonradio">No</span>
+				</div>
+			</td>
+			<td width="444">
+				<table cellpadding="0" cellspacing="0">
+					<tr>
+						<td>
+							<img src="http://i.pcp001.com/c/7079/POTC-Logo-120x60.jpg">
+						</td>
+						<td>
+							<div style="padding-left:10px;">Prilosec OTC® provides 24 hours of zero heartburn with one pill a day.*</div>
+						</td>
+					</tr>
+				</table>
+			</td>		
+		</tr>			
+	</table>
+</div>
+	
+<table ID="d0"  STYLE='display:none;'>
+	<TR>
+		<TD>
+			<style>
+			.tableBorder{
+			border-style:solid;
+			border-color:#BE78DA;
+			}
+			.style3 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; padding-right: 8px; }
+			.style4 {
+                font-size:12px;
+				color: #704483;
+				font-weight: bold;
+			}
+			.style6 {color: #BE78DA}
+			.style7 {
+				color: #6B4381;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 18px;
+			}
+			.style8 {
+				font-family: Arial, Helvetica, sans-serif;
+				color: #ED42A8;
+				font-size: 14px;
+			}
+			.style9 {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 12px;
+			}
+			</style>
+<!--Start of Custom Error Tags-->
+	<div>
+	<table width="700">
+		<TR ID='error_38545' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (First Name)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38546' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Last Name)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38547' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Email Address)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38548' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Confirm Email Address)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38549' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Birth Date Month)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38550' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Birth Date Year)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38551' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Address 1)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38552' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Address 2)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38553' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (City)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38554' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (State)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38555' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Zip Code)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38556' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (How frequently do you ...)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38557' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (How frequently do you ...)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38558' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Tums)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38559' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Rolaids)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38560' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Zantac 75)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38561' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Pepcid AC)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38562' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Tagamet HB 200)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38563' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Pepto-Bismol)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38564' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Zegerid)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38565' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Store-Brand Omeprazole)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38566' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Prilosec OTC)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38567' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Prevacid 24HR)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38568' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Other acid reducer or ...)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38569' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Please send me periodi...)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38570' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Register to receive P&...)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38571' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (SOD Trusted Form Field)</B></FONT>
+		</TD></TR>
+
+		<TR ID='error_38575' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+		<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (hidden scrub (leave bl...)</B></FONT>
+		</TD></TR>
+
+
+		<tr>
+		<td width="100%">&nbsp;</td>
+		</tr>
+</table>
+</div>
+<!--End of Custom Error Tags-->
+
+<table width="700" class="tableBorder" align="center">
+  <tr>
+    <td><div align="center"><img src="http://i.pcp001.com/c/7079/Prilosec_500x250.jpg" width="500" height="250" vspace="17" /></div>
+    <div style="text-align:justify; padding-left:10px; padding-right:10px;"><p><strong><span class="style7">With just one Prilosec OTC&reg; pill a day, you can block frequent heartburn symptoms before they begin for a full 24 hours with zero heartburn.</span><br>  
+        <span class="style8">So you can get through the day and rest at night without the worry of heartburn flare-ups on your mind. That's because Prilosec OTC fights heartburn by shutting down many of the acid pumps in your stomach, giving you zero heartburn for 24 hours with one pill a day*.</span></strong></p>
+    </div>
+      <p><br /><span class="style6">* </span><span class="style4"> Required Fields</span></p>
+      <table width="650" border="0" align="center">
+      <tr>
+        <td width="130"><div align="right" class="style3">First Name</div></td>
+        <td width="182">
+        	<INPUT TYPE=text NAME= 'f38545' MAXLENGTH='30' SIZE='20' VALUE='<%=current_member.first_name%>'  onFocus="" onChange="changed[7079] = 1;" onKeyUp = "return ci('f38545', 'First Name', 'v_char');" > <span class="style6">*</span></td>
+        <td width="95" class="style3"><div align="right">Address 1</div></td>
+        <td width="225">
+			<INPUT TYPE=text NAME= 'f38551' MAXLENGTH='50' SIZE='20' VALUE='<%=current_member.address.address1%>'  onFocus="" onChange="changed[7079] = 1;" onKeyUp = "return ci('f38551', 'Address 1', 'v_numchar');" > <span class="style6">*</span></td>
+      </tr>
+      <tr>
+        <td><div align="right" class="style3">Last Name</div></td>
+        <td>
+<INPUT TYPE=text NAME= 'f38546' MAXLENGTH='30' SIZE='20' VALUE='<%=current_member.last_name%>' onFocus="" onChange="changed[7079] = 1;" onKeyUp = "return ci('f38546', 'Last Name', 'v_char');" > <span class="style6">*</span></td>
+        <td class="style3"><div align="right">Address 2<br>
+          (optional)</div></td>
+        <td>
+<INPUT TYPE=text NAME= 'f38552' MAXLENGTH='50' SIZE='20' VALUE='<%=current_member.address.address2%>'  onFocus="" onChange="changed[7079] = 1;"  > </td>
+      </tr>
+      <tr>
+        <td><div align="right" class="style3">Email Address</div></td>
+        <td>
+          <INPUT TYPE=text NAME= 'f38547' MAXLENGTH='80' SIZE='20' VALUE='<%=current_member.email%>'  onFocus="" onChange="changed[7079] = 1;"  > <span class="style6">*</span></td>
+        <td class="style3"><div align="right">City</div></td>
+        <td>
+			<INPUT TYPE=text NAME='f38553' MAXLENGTH='30' SIZE='20' VALUE='<%=current_member.address.city%>'  onFocus="" onChange="changed[7079] = 1;" onKeyUp = "return ci('f38554', 'City', 'v_char');" > <span class="style6">*</span></td>
+      </tr>
+      <tr>
+        <td><div align="right" class="style3">Confirm Email Address</div></td>
+        <td>
+			<INPUT TYPE=text NAME= 'f38548' MAXLENGTH='80' SIZE='20' VALUE=''  onFocus="" onChange="changed[7079] = 1;"  > <span class="style6">*</span></td>
+        <td class="style3"><div align="right">State</div></td>
+        <td>
+          <%= select_tag "f38554", options_from_collection_for_select(State.all, "code", "name", current_member.address.state), :onchange => ";changed[7079] = 1;" %>
+        <span class="style6">*</span></td>
+      </tr>
+      <tr>
+        <td><div align="right" class="style3">Birth Date</div></td>
+        <td>
+          <%= select_tag :f38549, options_for_select(%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec).to_enum(:each_with_index).collect {|x,i| [x, "0#{i}"[-2,2]]}, current_member.dob.strftime("%m")), :onchange => ";changed[7079] = 1;" %>
+          <%= select_tag :f38550, options_for_select((1900..Time.now.year).to_a, current_member.dob.year), :onchange => ";changed[7079] = 1;" %>
+          <span class="style6">*</span></td>
+        <td class="style3"><div align="right">ZIP Code</div></td>
+        <td>
+<INPUT TYPE=text NAME= 'f38555' MAXLENGTH='10' SIZE='5' VALUE='<%=current_member.address.postal%>'  onFocus="" onChange="changed[7079] = 1;"  > <span class="style6">*</span></td>
+      </tr>
+    </table>
+      <br>
+      <table id="test" width="650" border="0" align="center">
+        <tr>
+          <td width="287" class="style3">How frequently do you suffer from heartburn? <span class="style6">*</span><br>
+			<INPUT TYPE=radio NAME='f38556'  onFocus=""  onChange="changed[7079] = 1;" VALUE='A' >7 days per week<br />
+			<INPUT TYPE=radio NAME='f38556'  onFocus=""  onChange="changed[7079] = 1;" VALUE='B' >4 - 6 days per week<br />
+			<INPUT TYPE=radio NAME='f38556'  onFocus=""  onChange="changed[7079] = 1;" VALUE='C' >2 - 3 days per week<br />
+			<INPUT TYPE=radio NAME='f38556'  onFocus=""  onChange="changed[7079] = 1;" VALUE='D' >One day per week or less<br />
+			<INPUT TYPE=radio NAME='f38556'  onFocus=""  onChange="changed[7079] = 1;" VALUE='E' >Never</td>
+          <td width="353" class="style3">How frequently do you take medication for heartburn? <span class="style6">*</span><br> 
+			<INPUT TYPE=radio NAME='f38557'  onFocus=""  onChange="changed[7079] = 1;" VALUE='A' >7 days per week<br />
+			<INPUT TYPE=radio NAME='f38557'  onFocus=""  onChange="changed[7079] = 1;" VALUE='B' >4 - 6 days per week<br />
+			<INPUT TYPE=radio NAME='f38557'  onFocus=""  onChange="changed[7079] = 1;" VALUE='C' >2 - 3 days per week<br />
+			<INPUT TYPE=radio NAME='f38557'  onFocus=""  onChange="changed[7079] = 1;" VALUE='D' >One day per week or less<br />
+			<INPUT TYPE=radio NAME='f38557'  onFocus=""  onChange="changed[7079] = 1;" VALUE='E' >Never</td>
+        </tr>
+        <tr>
+          <td class="style3">&nbsp;</td>
+          <td class="style3">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="style3">What OTC heartburn medications have you used in the last 12 months?</td>
+        </tr>
+        <tr>
+          <td class="style3">
+			<INPUT TYPE=checkbox NAME='f38558'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Tums&reg;<br>
+			<INPUT TYPE=checkbox NAME='f38559'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Rolaids&reg;<br>       
+			<INPUT TYPE=checkbox NAME='f38560'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Zantac 75&reg;<br>         
+			<INPUT TYPE=checkbox NAME='f38561'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Pepcid&reg; AC&reg;<br>
+			<INPUT TYPE=checkbox NAME='f38562'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Tagamet HB 200&reg;<br>
+			<INPUT TYPE=checkbox NAME='f38563'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Pepto-Bismol&reg;</td>
+          <td class="style3" valign="top">
+			<INPUT TYPE=checkbox NAME='f38564'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Zegerid OTC&#8482;<br>
+			<INPUT TYPE=checkbox NAME='f38565'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Store-Brand Omeprazole&reg;<br>
+			<INPUT TYPE=checkbox NAME='f38566'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Prilosec OTC&reg;<br>
+			<INPUT TYPE=checkbox NAME='f38567'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Prevacid&reg; 24HR<br>
+			<INPUT TYPE=checkbox NAME='f38568'  onFocus=""  onChange="changed[7079] = 1;" VALUE='Y' > Other acid reducer or antacid</td>
+         </tr>
+      </table>
+      <br>
+      <table width="650" border="0" align="center">
+        <tr>
+          <td class="style9">
+			<INPUT TYPE=checkbox NAME='f38569'  onFocus=""  onChange="changed[7079] = 1;" VALUE='I' >
+            <lable>Yes! Please send me periodic e-mail updates with healthy recipes, fun family activities, tips for fighting frequent heartburn, and more! </lable>
+		  </td>
+        </tr>
+        <tr>
+          <td class="style9">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="style9">
+			<div style="height:35px;float:left;"><INPUT TYPE=checkbox NAME='f38570'  onFocus=""  onChange="changed[7079] = 1;" VALUE='I' ></div>
+            Register to receive <a href="http://www.pgeverydaysolutions.com/pgeds/en_US/data_root/html/newsletter/newsletter.html" target="_blank">P&amp;G  Everyday Solutions</a> a monthly e-mail publication from PG.com dedicated to simple solutions, great offers, and promotions from the
+            <a href="http://www.pg.com/en_US/brands/all_brands.shtml" target="_blank">P&amp;G  Family of Brands</a>. From time to time you may also receive information about product samples, research opportunities, or site upgrades</p>          </td>
+        </tr>
+      </table>
+    <div style="width:650px; padding-top:10px;"><p class="style9">Please allow 6-8 weeks delivery. Available to U.S. residents only. Limit one sample per household. From time to time you may also receive an invitation to share with us feedback about your Prilosec OTC&reg; experience.</p>
+    <p class="style9">If you continue to suffer frequent heartburn after 2 weeks of therapy, you should consult with your Doctor.</p>
+    <br />
+    <p class="style9"><strong>Privacy Policy</strong><br>
+    Trust is a cornerstone of our corporate mission and the success of our business depends on it. P&amp;G is committed to maintaining your trust by protecting personal information we collect about you, our consumers.<br>
+    Click here for the full details of our <a href="http://www.pg.com/privacy/english/privacy_notice.html" target="_blank">Privacy Statement</a>.</p>
+   </div><table width="650" border="0" align="center">
+  <tr>
+    <td align="right" style="padding-top:8px;">
+      <img src="images/bt-submit-orng.png" width="145" height="49" style="cursor:pointer;" onClick="submitForm();"></td>
+    <td style="padding-top:8px;">
+     <span style="pointer:cursor; margin-left:15px;"><a href="#" onclick="noMsg=1;document.fm.js_status.value='n';document.fm.optin.value = 'n';make_exit_win=0;document.fm.submit();">No Thanks</a></span>
+      <!--<img src="http://i.pcp001.com/c/7079/prilo_skip.jpg" width="145" height="49" style="cursor:pointer;" onClick="skipOffer();">-->
+
+      </td>
+  </tr>
+</table>
+</td>
+</tr>
+ 
+</table>
+<script type="text/javascript">
+	var tf = document.createElement('script');
+	tf.type = 'text/javascript';
+	tf.async = true;
+	tf.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'api.trustedform.com/trustedform.js?field=f38571';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(tf, s);
+</script>
+
+<script language = "javascript">
+	function skipOffer(){
+	document.fm.q7079[0].checked = false;
+	document.fm.q7079[1].checked = true;
+	document.fm.js_status.value = 'y';
+	make_exit_win=0;
+	document.fm.submit();
+	}
+
+	function submitForm(){
+	noMsg=1;
+	if (changed[7079]) {
+	processClick('0', 'e');
+	}else{
+	processClick('0', 'e');
+	}
+	}
+
+
+	function hideButtonSubmit()
+	{
+	var t = setTimeout("hideSubmitButton()",300);
+	}
+	function hideSubmitButton()
+	{
+	if(document.getElementById('submit_col1'))
+	{
+	document.getElementById('submit_col1').style.display='none';
+	}
+	if(document.getElementById('submit_col2'))
+	{
+	document.getElementById('submit_col2').style.display='none';
+	}
+	if(document.getElementById('ho_submitbutton'))
+	{
+	document.getElementById('ho_submitbutton').style.display='none';
+	}
+	if(document.getElementById('ho_skipbutton'))
+	{
+	document.getElementById('ho_skipbutton').style.display='none';
+	}
+	}
+	hideButtonSubmit();
+</script>
+	<input type="hidden" name="f38575" value=""></TD></TR>
+	<tr id="submit_col1">
+		<td align="center">
+			<INPUT TYPE=button VALUE='Click here to Submit' onClick="noMsg=1; if (changed[7079]) { processClick('0', 'e'); }else{ processClick('0', 'e'); }">
+		</td>
+	</tr>
+</table >
+	
+</form>
+<div id="processing"></div>
+
+<!-- END -->
+
+<script type="text/javascript" language="javascript">
+if('7079' == '5942')
+{
+document.getElementById('yesbuttonradio').innerHTML = 'Oui';
+document.getElementById('nobuttonradio').innerHTML = 'Non';
+}
+</script>
+
+
+
+
+
+		<BR><BR>
+		</FONT>
+	</TR>
+	</TABLE>
+	</TD>
+</TR>
+</TABLE>
+
+<TABLE WIDTH=740 BORDER=0>
+<TR>
+	<TD>
+	<FONT FACE="verdana,sans-serif" SIZE=1 COLOR=#666666>
+	<!-- DISCLAIMER START -->
+<div id="disclaimer_container">
+  <p>
+    <!--BeginField:Disclaimer-->
+    <!--EndField:Disclaimer-->
+  </p>
+  <p align="center">
+    <!--BeginField:Links-->
+    <!--EndField:Links-->
+  </p>
+  <p align="center">
+    <!--BeginField:Copyright-->
+    <!--EndField:Copyright-->
+  </p>
+</div>
+<!-- DISCLAIMER END -->
+</FONT>
+	</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+
+
+<SCRIPT>
+if(document.getElementById('processing')) { document.getElementById('processing').style.display = 'none'; }
+if(document.getElementById('submit')) { document.getElementById('submit').style.display = 'none'; }
+</SCRIPT> 
+<!--<script type="text/javascript" src="http://i.pcp002.com/media/briteverify.js"></script>-->
+
+</div>

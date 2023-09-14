@@ -1,0 +1,16 @@
+<div id="mainDiv" class="step-three">
+  <div id="step-3-header"></div>
+  <br class="clear" />
+  <div style="margin:0 auto;width:90%">
+    <%= form_for([@full_page_coreg, @coreg_optin], :html => {:name => 'fm'} ) do %>
+      <div id="full_page_coreg">
+		<%= render "coregs/#{@full_page_coreg.name.downcase}"%>
+      </div>
+	<% end %>
+  </div>
+</div>
+<br class="clear" />
+<script>
+  $(document).ready(function() {
+  });
+</script>

@@ -1,0 +1,46 @@
+<div id="mainDiv" class="step-three">
+  <div id="message">
+    <%= image_tag 'thmb-Delia.gif', :size => "45x44", :alt => "Delia", :align => "left", :style => "float:left;margin:0 10px 20px 0;text-align: left;" %>
+    <h2>Welcome <%= @member.first_name %></h2><p>OK... now let's get started on savings! Here are some great offers before we get to even more coupons and freebies.</p>
+  </div>
+  <div id="step-3-header"></div>
+  <br class="clear" />
+  <div style="margin:0 auto;width:90%">
+
+    <form action="<%=@action%>" method="post" name="step-three">
+      <%= hidden_field(:member, :first_name)%>
+      <%= hidden_field(:member, :last_name)%>
+      <%= hidden_field(:member, :email)%>
+      <%= hidden_field(:member, :gender)%>
+      <%= hidden_field(:member, :postal_code)%>
+      <%= hidden_field_tag('member_address_attributes_address1', @member.address.try(:address1) )%>
+      <%= hidden_field_tag('member_address_attributes_address2', @member.address.try(:address2) )%>
+      <%= hidden_field_tag('member_address_attributes_city', @member.address.try(:city) )%>
+      <%= hidden_field_tag('member_address_attributes_state', @member.address.try(:state) )%>
+      <%= hidden_field_tag('member_address_attributes_postal', @member.address.try(:postal) )%>
+      <div style="display:none;">
+        <%= date_select(:member, :dob, :style=> 'display:none')%>
+
+        <%= hidden_field_tag('member_child_attributes_dob_1i', @member.child.try(:dob).try(:year) ) %>
+        <%= hidden_field_tag('member_child_attributes_dob_2i', @member.child.try(:dob).try(:month) ) %>
+        <%= hidden_field_tag('member_child_attributes_dob_3i', @member.child.try(:dob).try(:day) ) %>
+  
+      </div>
+
+
+      <div id="coregs"></div>
+      <script src="http://api.trustedform.com/trustedform.js" type="text/javascript"></script>
+      <script src="/javascripts/jquery.validate.min.js" type="text/javascript"></script>
+      <script src="/api/optins/coregs.js?key=<%=@js_key%>" type="text/javascript"></script>
+
+     <br class="clear" />
+     
+<div style="text-align:center;width:300px;margin:20px auto;">
+  <%= image_submit_tag 'bt-submit.gif', :name => 'submitButton',  :style => 'width:153px;height:48px' %>&nbsp;&nbsp;<%= link_to 'No Thanks',@action  %></div>
+  </form>
+</div>
+</div>
+<br class="clear" />
+
+<%= render 'pixels/long_conversion_pixel' %>
+<%= render 'pixels/google_conversion_pixel' %>

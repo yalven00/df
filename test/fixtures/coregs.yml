@@ -1,0 +1,603 @@
+Totsy:
+  id: 1
+  name: Totsy
+  taken_default: ''
+  success_regex: 'bool(true)'
+  description: "<p style=\"color:#CC0000; font-size:14px;\"><strong>Special Offer</strong></p>
+      <p><strong>90% off products</strong> for expecting  and
+      new moms. FREE membership and <strong>free shipping</strong> on
+      first order!<br /> <a href=\"javascript:void(0)\" onClick=\"window.open('http://www.totsy.com/pages/privacy',
+      'totsyprivacy','scrollbars=yes, resizable=yes,width=850;height=550')\" target=\"totsyprivacy\">Privacy
+      Policy</a></p>"
+  image: coreg-totsy_logo.jpg
+  screen_key: 'dfm_home'
+  prompt: 'Please provide the following information for registration:'
+  revenue: 0.75
+  endpoint: http://www.totsy.com/affiliate/pmdealscr
+  email_field: email
+Pampers:
+  id: 2
+  name: Pampers
+  success_regex: '<result>success</result>'
+  taken_default: ''
+  description: "<strong>Buy Pampers. Earn Rewards.</strong>&nbsp;<br />Start earning rewards just for buying Pampers diapers and wipes. Join now to get 100 free points!<br /><a href=\"\" onclick=\"window.open('http://www.sharegiftstogrow.com/es_us/ush.aspx?pid=gjE4r&src=prfesp', 'mywindow', 'location=1,status=1,scrollbars=1,width=1000,height=600');return false;\">¿Prefieres en español?</a><br />
+      <span id='pgtg_learn_more_link' style='color:#0000ff;'>
+      <a id='pamper_terms' href='javascript:void(0)' style='text-decoration:none'>Offer Terms and Conditions</a>
+      <script type='text/javascript'>
+      $('#pamper_terms').qtip({
+      hide: { delay: 5000 },
+      content: {
+        text : '<div class=\"qtip\" style=\"font-size:11px;background-color:#9CF;\">By clicking &rdquo;Submit&rdquo;, you will be enrolled into the Pampers Gifts to Grow Rewards program and permit Pampers.com to send you electronic communications, including the Parent Pages newsletters. You&apos;re also signed up to receive news, tips and helpful information delivered right to your mailbox and email.<br /><br /> Depending on youre-mail subscriptions, Pampers Village members can expect to receive 1-3 prenatal e-mails a week and 1-3 postnatal e-mails a month. Please add Pampers.com to your e-mail program&apos;s safe sender list so you don&apos;t miss out on any important baby information or exclusive offers.<br/><br /><a href=\"http://www.pg.com/privacy/english/privacy_notice.shtml\" target=\"_blank\">Pampers.com Privacy Policy</a> and the Gifts to Grow Rewards program <a href=\"http://www.pampers.com/en_US/common/gtg_terms.jsp\" target=\"_blank\">Terms &amp; Conditions</a> for more program details.<br /><br /> A Welcome email with temporary password will be sent from Pampers (for new registrants) which will help get you started earning rewards from Gifts to Grow and getting the most out of the Pampers Community.<br /><br /> Gifts to Grow bonus points are only available for new registrants and not valid with any additional registration offers or promotions. New registration bonus points are non-transferable and will be credited to the email account used to register here. This offer is subject to modification or limitation at any time, with or without notice, in P&amp;G&apos;s sole discretion.<br /><br /> Trust is a cornerstone of our corporate mission, and the success of our business depends on it. P&amp;G is committed to maintaining your trust by protecting personal information we collect about you, our consumers.<br /><a href=\"http://www.pg.com/privacy/english/privacy_notice.shtml\" target=\"_blank\">Click here</a> for the full details of our Privacy Statement.<br/><br /><br />By clicking the submit button, I agree to the terms stated in the <a href=\"http://www.pg.com/en_US/terms_conditions/index.shtml#use\" target=\"_blank\">P&amp;G Terms and conditions</a> and <a href=\"http://www.pampers.com/en_US/footer/community_guideline.html\" target=\"_blank\">Pampers.com CommunityGuidelines</a><br /><br /></div>',
+      },
+      });
+      </script>
+      </span>&nbsp;<a href='http://www.pg.com/privacy/english/privacy_notice.html' target='_blank'>P&amp;G Privacy Policy</a>
+       "
+  image: coreg-pampers_logo.jpg
+  screen_key: 'dfm_step2'
+  prompt: "<br /><a href=\"\" onclick=\"window.open('http://www.sharegiftstogrow.com/es_us/ush.aspx?pid=gjE4r&src=prfesp', 'mywindow', 'location=1,status=1,scrollbars=1,width=1000,height=600');return false;\">¿Preferirías recibir tus comunicaciones en español?</a><br /><input type='checkbox' value='' id='OPT_PAMP' name='OPT_PAMP'><strong>By checking this box, I am permitting Pampers to send me all electronic communications, including Parent Pages newsletters, digital coupons, Gifts to Grow information, news and special offers to my email address.</strong><br />"
+  revenue: 0.55
+  email_field: Email
+  endpoint: "https://app.leadconduit.com/v2/PostLeadAction?xxCampaignId=<%=Rails.env.production? ? '053avmuvt' : '053avmuvt' %>&xxAccountId=04fmnvz77"
+Gerber:
+  id: 3
+  name: Gerber
+  success_regex: 'Success'
+  taken_default: ''
+  description: "<strong>Get a FREE Child Safety ID Kit!</strong><br /> Help give your child a financial advantage for life with the Gerber Life Grow-Up Plan<sup>®</sup>, and receive a Child Safety ID Kit.<br/>
+      <span id='pgtg_learn_more_link' style='color:#0000ff;'>
+      <a id='gerber_terms' href='javascript:void(0)' style='text-decoration:none'>Learn More</a>
+      <script type='text/javascript'>
+      $('#gerber_terms').qtip({
+      hide: { delay: 750 },
+      content: {
+        text : '<div class=\"qtip\" style=\"font-size:11px;background-color:#9CF;\">
+          The Child Safety ID Kit helps you keep your childs most important information, photos, and fingerprints in one safe place in case of an emergency.
+          The Grow-Up® Plan is permanent cash value whole life insurance available to most healthy children 14 days old through 14 years old. During age 18, your child becomes the policy owner and the amount of insurance automatically DOUBLES! When your child turns age 21, he or she becomes the policyowner. Applying is risk free and hassle free. Once approved, you will have a 30-day free look. Your Child Safety ID Kit is yours to keep no matter what you decide.
+          </div>',
+      },
+      });
+      </script>
+      </span>&nbsp;<a href='http://www.gerberlife.com/gl/view/en/legal_site/priv.jsp' target='_blank'>Privacy Policy</a> "
+  image: gerberlogo.gif
+  screen_key: 'dfm_stepN'
+  prompt: '' #'Please provide the following information for registration:'
+  revenue: 0.60
+  email_field: email
+  endpoint: 'http://link.ixs1.net/s/link/acq?rc=cp&rti=z7906&b=y&acq_medium=Coreg&acq_name=Deals%20for%20Mommy%20-%20Grow%20Up&acq_source=DealsForMommy-GrowUp'
+  #endpoint2: 'http://link.ixs1.net/s/link/acq?rc=cp&rti=z7906&b=y&acq_medium=Coreg&acq_name=Deals%20for%20Mommy%20-%20Grow%20Up&acq_source=DealsForMommy-GrowUp'
+  #endpoint2_delay: 3.days
+GBCollege:
+  id: 5
+  name: GBCollege
+  success_regex: '<resultMessage>Failure'
+  taken_default: ''
+  description: "<strong>Double my monthly prize with Gerber Life Start Smart College Plan!</strong> Yes, I want to learn more about saving for my child’s college education.<br/>
+      <span id='pgtg_learn_more_link' style='color:#0000ff;'>
+      <a id='gerbercollegeplan_terms' href='javascript:void(0)' style='text-decoration:none'>Learn More</a>
+      <script type='text/javascript'>
+      $('#gerbercollegeplan_terms').qtip({
+      hide: { delay: 750 },
+      content: {
+        text : '<div class=\"qtip\" style=\"font-size:11px;background-color:#9CF;\">
+          By selecting “Yes” to receive more information from Gerber Start Smart College Plan and entering the April 2010 CuteKid contest, your prize will double in value if your child is chosen as the April monthly CuteKid contest winner.
+        </div>',
+      },
+      });
+      </script>
+      </span>&nbsp;<a href='http://www.gerberlife.com/gl/view/en/legal_site/priv.jsp' target='_blank'>Privacy Policy</a> "
+  image: gerber_college_plan.jpg
+  screen_key: 'dfm_stepN'
+  prompt: '' #'Please provide the following information for registration:'
+  revenue: 0.75
+  email_field: email
+  endpoint: 'http://link.ixsto.net/s/link/acq?rc=cp&rti=18575&b=y'
+Disney:
+  id: 4
+  name: Disney
+  revenue: 0.50
+  taken_default: ''
+  success_regex: '<result>success</result>'
+  description: "<strong>Treat your family to the Magic of Disney</strong><br /> Sign up to receive information and special offers. Give your family memories that will last forever."
+  image: disney_logo_2011.jpg
+  screen_key: 'dfm_step2'
+  prompt: "<input type='checkbox' value='1' id='Disney072011_optIn' name='Disney072011_optIn' checked='checked'>I'd like to receive occasional updates, special offers, and other information from the Walt Disney family of companies about their products and services. You may receive the above communications by email, postal mail and other means" #'Please provide the following information for registration:'
+  email_field: email
+  endpoint: "https://app.leadconduit.com/v2/PostLeadAction?xxCampaignId=<%=Rails.env.production? ? '05294ocuc' : '05294ocqb' %>&xxAccountId=04fmnvz77"
+InboxDollar:
+  id: 6
+  name: InboxDollar
+  success_regex: '<row><success>SUCCESS</success>'
+  taken_default: ''
+  description: "<strong>InboxDollars is committed to helping you make money online!</strong> As a member, you get paid to take surveys, read e-mail, play free online games, shop online, redeem grocery coupons, complete special offers and much more. <br/>"
+  image: inboxdollars.jpg
+  screen_key: 'dfm_stepN'
+  prompt: '' #'Please provide the following information for registration:'
+  revenue: .30
+  email_field: email
+  endpoint: 'http://www.inboxdollars.com/coreg/?affiliate_auth=13zNvB027768375&sub_affiliate=dealsformommy'
+Pepsi:
+  id: 7
+  name: Pepsi
+  success_regex: '<row><success>SUCCESS</success>'
+  taken_default: ''
+  description: "Free access to exclusive Pepsi news, music, sports, videos, rewards and more! <br/>"
+  image: pepsi_logo.jpg
+  email_field: f38182
+  screen_key: 'dfm_stepN'
+  prompt: '
+<table id="Table_" width="482" height="299" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tbody><tr>
+    <td colspan="3"><img src="http://i.pcp001.com/c/6960/pepsi_form_01.jpg" width="482" height="211" alt="pepsi"></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><img src="http://i.pcp001.com/c/6960/pepsi_form_02.jpg" width="346" height="88" alt="pepsi"></td>
+    <td height="52" width="94">
+</td>
+    <td rowspan="2"><img src="http://i.pcp001.com/c/6960/pepsi_form_04.jpg" width="42" height="88" alt="pepsi"></td>
+  </tr>
+  <tr>
+    <td><img src="http://i.pcp001.com/c/6960/pepsi_form_05.jpg" width="94" height="36" alt="pepsi"></td>
+  </tr>
+</tbody></table>
+<table width="482" border="0" align="center">
+      <tbody><tr>
+        <td><fb:like href="www.facebook.com/pepsi" send="false" show_faces="false" layout="standard" font="" width="275px" class=" fb_edge_widget_with_comment fb_iframe_widget"><span><iframe id="f3c06a0fc8" name="f3455de96" scrolling="no" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-image: initial; overflow-x: hidden; overflow-y: hidden; height: 35px; width: 275px; " title="Like this content on Facebook." class="fb_ltr" src="http://www.facebook.com/plugins/like.php?api_key=218260661538278&amp;channel_url=https%3A%2F%2Fs-static.ak.fbcdn.net%2Fconnect%2Fxd_proxy.php%3Fversion%3D3%23cb%3Df11e016fe4%26origin%3Dfile%253A%252F%252Flocalhost%252Ff3d1825198%26relation%3Dparent.parent%26transport%3Dpostmessage&amp;extended_social_context=false&amp;href=www.facebook.com%2Fpepsi&amp;layout=standard&amp;locale=en_US&amp;node_type=link&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=275"></iframe></span></fb:like>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe id="f9010bffc" name="f315b00248" scrolling="no" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-image: initial; overflow-x: hidden; overflow-y: hidden; height: 240px; width: 575px; " class="FB_UI_Hidden" src="http://www.facebook.com/dialog/oauth?api_key=218260661538278&amp;app_id=218260661538278&amp;channel_url=https%3A%2F%2Fs-static.ak.fbcdn.net%2Fconnect%2Fxd_proxy.php%3Fversion%3D3%23cb%3Dff82fb21c%26origin%3Dfile%253A%252F%252Flocalhost%252Ff3d1825198%26relation%3Dparent.parent%26transport%3Dpostmessage&amp;client_id=218260661538278&amp;display=none&amp;locale=en_US&amp;origin=1&amp;redirect_uri=https%3A%2F%2Fs-static.ak.fbcdn.net%2Fconnect%2Fxd_proxy.php%3Fversion%3D3%23cb%3Df2b1b65d9c%26origin%3Dfile%253A%252F%252Flocalhost%252Ff3d1825198%26relation%3Dparent%26transport%3Dpostmessage%26frame%3Df9010bffc&amp;response_type=token%2Csigned_request%2Ccode&amp;sdk=joey"></iframe></div></div></div>
+</td>
+    <td><span class="style2">*</span> indicates a required field</td>
+  </tr>
+  </tbody></table>
+'
+  revenue: 0.20
+  endpoint: 'http://www.qitrck.com/leadsubmit.php?p=319998&t=18198&mode=single&f38245=319994'
+Kellogg:
+  id: 8
+  name: Kellogg
+  success_regex: '<row><success>SUCCESS</success>'
+  taken_default: ''
+  description: "<strong>Sign up today to get exclusive benefits from Kellogg's</strong><br />It's easy and FREE to sign up to receive the latest news, special offers and exclusive savings from Kellogg's."
+  image: kelloggs_Logo.jpg
+  screen_key: 'dfm_stepN'
+  email_field: email
+  prompt: '
+<div align="center"><img src="http://i.pcp001.com/c/5636/514_500x300.jpg"></div>
+<span style="color: #D90F14;font-size: 18px;font-weight: bold;">Sign up today</span>
+<span class="style11"></span>
+<br/><br/>
+<span style="color: #D90F14;font-size: 18px;font-weight: bold;">Tell us about yourself</span>
+<span class="style11">The information you provide will help us connect you with special offers and programs that are most relevant to you.</span>
+'
+  revenue: 0.60
+  endpoint: 'http://www.qitrck.com/leadsubmit.php?p=319996&t=15695&f39848=319994&mode=single'
+Caribbean_Cruise:
+  id: 9
+  name: Caribbean_Cruise
+  revenue: 1.00
+  request_method: get
+  success_regex: 'Successful'
+  taken_default: ''
+  description: "<strong>Pamper yourself with a FREE Cruise for 2</strong><br />Getaway with a FREE Bahamas Cruise for 2<br /> Take a much needed: FREE Getaway Cruise on us.<br /> Relax, rejuvenate and reconnect with your spouse.
+  <br /><span id='caribian_cruise_offer_details' style='color:#0000ff;'>
+    <a id='caribian_cruise_offer_details' href='javascript:void(0)' style='text-decoration:none;'>Offer Details</a><br />
+    <script type='text/javascript'>
+    $('#caribian_cruise_offer_details').qtip({
+  hide: { delay: 750 },
+  content: {
+    text : '<div class=\"qtip\" style=\"font-size:11px;background-color:#9CF;\">*Traveler responsible for port taxes of $59 per person, gratuities, incidentals, transportation to and from award destination. Caribbean Cruise Line reserves the right to charge an additional fuel supplement of up to $12.00 per person per day on all passengers, to be collected at time of embarkation without prior notice, in the event that the price of light sweet crude oil according to the NYMEX (New York Mercantile Exchange Index) is greater than $40.00 per barrel of oil. Limit one cruise per household and family. BY ENTERING THIS PROMOTION YOU EXPRESSLY REQUEST A RETURN TELEPHONE CALL FROM CARIBBEAN CRUISE LINE (CRC) AND AGREE THAT CRC MAY CONTACT YOU BY TELEPHONE, EMAIL OR MAIL FOR THE PURPOSE OF PROMOTING VARIOUS TRAVEL OFFERS. YOU EXPRESSLY WAIVE ALL FEDERAL AND STATE NO-CALL REGISTRY PROTECTIONS FOR THE PURPOSE OF FUTURE MARKETING BY CRC. Complete terms and conditions of offer available from CRC. Caribbean Cruise Line is not a participant in the California Travel Consumer Restitution Fund. Offer not Valid in VT, ND, HI, AK & FL.  Canadian residents are eligible.</div>',
+      },
+      });
+      </script>
+  "
+  image: dfm-carribean_co_reg_border-80x80.jpg
+  screen_key: 'dfm_stepN'
+  prompt: ""
+  email_field: Email
+  endpoint: 'http://www.sgetaway.com/admin/peanutprogram/post/index.asp'
+Jc_Penney:
+  id: 10
+  name: Jc_Penney
+  revenue: 0.19
+  request_method: get
+  success_regex: '1 = Pass'
+  taken_default: ''
+  description: '<strong>jcpenney</strong><br />Sign up for jcpenney emails and be the first to know about new brands, special offers and exciting events'
+  image: 80x80_JCpenney.jpg
+  screen_key: 'dfm_stepN'
+  email_field: email
+  endpoint: 'http://www.eversave.com/service/consumers/JCPenney-PHProcess2109.jsp?siteid=dfm&sourceid=109064&optinid=2109'
+  acceptance: "(Time.now-25.year).strftime('%Y%m%d') > self.value('member_dob')"
+Prilosec:
+  id: 11
+  name: Prilosec_compact
+  revenue: 0.40
+  success_regex: '<row><success>SUCCESS</success>'
+  taken_default: ''
+  description: 'Prilosec OTC&reg; provides 24 hours of zero heartburn with one pill a day.*'
+  prompt: "With just one Prilosec OTC&reg; pill a day&#044; you can block frequent heartburn symptoms before they begin for a full 24 hours with zero heartburn.
+    <br /><span id='prilosec_learn_more_link' style='color:#0000ff;'>
+    <a id='prilosec_terms' href='javascript:void(0)' style='text-decoration:none;'>Offers and Terms</a><br />
+    <script type='text/javascript'>
+    $('#prilosec_terms').qtip({
+  hide: { delay: 750 },
+  content: {
+    text : '<div class=\"qtip\" style=\"font-size:11px;background-color:#9CF;\">By clicking \"Yes\" you will receive periodic e-mail updates with healthy recipes&#044; fun family activities&#044; tips for fighting frequent heartburn&#044; and more!  As well as <a href=\"http://www.pgeverydaysolutions.com/pgeds/en_US/data_root/html/newsletter/newsletter.html\">P&G Everyday Solutions</a> a monthly e-mail publication from PG.com dedicated to simple solutions&#044; great offers&#044; and promotions from the <a href=\"http://www.pg.com/en_US/brands/all_brands.shtml\">P&G Family of Brands</a>. From time to time you may also receive information about product samples&#044; research opportunities&#044; or site upgrades.  </div>',
+      },
+      });
+      </script>
+      </span><br /><p>Please allow 6-8 weeks delivery. Available to U.S. residents only. Limit one sample per household. From time to time you may also receive an invitation to share with us feedback about your Prilosec OTC® experience. If you continue to suffer frequent heartburn after 2 weeks of therapy&#044; you should consult with your Doctor.</p><br /><strong>Privacy Policy</strong><br />Trust is a cornerstone of our corporate mission and the success of our business depends on it. P&G is committed to maintaining your trust by protecting personal information we collect about you, our consumers.<br /><a href='http://www.pg.com/privacy/english/privacy_notice.shtml' target='_blank'>Click here</a> for the full details of our Privacy Statement."
+  image: 80x80icon-coreg-prilosec.jpg
+  screen_key: 'dfm_stepN'
+  email_field: email
+  endpoint: 'http://www.qitrck.com/leadsubmit.php?p=319995&t=17742&mode=single'
+  acceptance: "['A', 'B', 'C'].include?(self.value('f38556')) || ['A', 'B', 'C'].include?(self.value('f38557'))"
+Prilosec_fp:
+  id: 12
+  name: prilosec
+  coreg_type: full_page
+  revenue: 0.45
+  success_regex: '__SUCCESS__'
+  taken_default: ''
+  email_field: email
+  description: 'Sign up today for a free sample from Prilosec'
+  image: 80x80icon-coreg-prilosec.jpg
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://www.qitrck.com/leadsubmit.php?p=319995&t=17742&mode=single'
+  acceptance: "['A', 'B', 'C'].include?(self.value('f38556')) || ['A', 'B', 'C'].include?(self.value('f38557'))"
+Enfamil:
+  id: 13
+  name: Enfamil
+  revenue: 0.45
+  taken_default: ''
+  endpoint: 'ben@heragency.com,jenny@heragency.com'
+  description: "<strong>Get up to $250 in FREE gifts from Enfamil Family Beginnings&reg;</strong><br />Let Enfamil&reg; help you nourish milestones. Join Enfamil Family Beginnings. You'll get trusted advice for every stage of your baby's development, plus discounts on Enfamil products, free samples and goodies, such as an Enfamil Pack 'n Cool&trade;.<span style='font-size:9px;'>This offer is intended for U.S. residents only.</span>"
+  image: EFB_2013-80x80.jpg
+  screen_key: 'dfm_stepN'
+  email_field: email_address
+  flatfile_pattern: '"FC306.DealsForMommy.#{Time.now.strftime("%Y%m%d")}.ver1.txt"'
+  acceptance: "(Time.now-1.year).strftime('%Y%m%d') < self.value('child_birth_date')"
+  run_days: 4
+Kellogs_fp:
+  id: 14
+  name: kellogs
+  coreg_type: full_page
+  revenue: 0.45
+  success_regex: '__SUCCESS__'
+  taken_default: ''
+  email_field: email
+  description: "Sign up today to get exclusive benefits from Kellog\'s It\'s easy and FREE to sign up to receive the latest news, special offers and exclusive savings from Kellogg\'s."
+  image: kelloggs_Logo.jpg
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://www.qitrck.com/leadsubmit.php?p=319996&t=15695&mode=single'
+Maryland:
+  id: 15
+  name: Maryland
+  revenue: 0.70
+  success_regex: '<result>success</result>'
+  taken_default: ''
+  email_field: email
+  description: "<strong>Sign up for a free eGuide & plan your Maryland trip</strong><br />In Maryland, the possibilities for entertainment, exploration and discovery may well be limitless. From mountains to sea, you'll find a land of history, culture, excitement, relaxation and fun."
+  image: maryland_80x80.png
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://app.leadconduit.com/v2/PostLeadAction?xxAccountId=04fmnvz77&xxCampaignId=052yapo86'
+  #acceptance: "['MD', 'PA', 'VA', 'WV', 'OH', 'DE', 'NJ', 'NY', 'CT', 'MA'].include?(self.value('state'))"
+  time_delay: 3.days
+#Maryland_Eway:
+#  id: 15
+#  name: Maryland
+#  revenue: 0.70
+#  success_regex: 'Thank You for your signup'
+#  taken_default: ''
+#  email_field: email
+#  description: "<strong>Sign up for a free eGuide & plan your Maryland trip</strong><br />In Maryland, the possibilities for entertainment, exploration and discovery may well be limitless. From mountains to sea, you'll find a land of history, culture, excitement, relaxation and fun."
+#  image: maryland_80x80.png
+#  screen_key: 'dfm_stepN'
+#  endpoint: 'http://link.ixs1.net/s/link/su?rc=cp&rti=y9129&b=y'
+#  acceptance: "['MD', 'PA', 'VA', 'WV', 'OH', 'DE', 'NJ', 'NY', 'CT', 'MA'].include?(self.value('state'))"
+#  time_delay: 5.minutes
+Fit_Pregnancy:
+  id: 16
+  name: Fit Pregnancy
+  revenue: 0.58
+  taken_default: ''
+  endpoint: 'ben@heragency.com,jenny@heragency.com'
+  description: "<strong>Freebies and more from Fit Pregnancy</strong><br />You'll receive a newsletter customized to your week of pregnancy and get exclusive access to our sweepstakes and giveaways!"
+  image: fit-pregnancy-80x80.jpg
+  screen_key: 'dfm_stepN'
+  email_field: EMAIL
+  flatfile_pattern: '"FitPregnancy_DealsforMommy_#{Time.now.strftime("%Y%m%d")}.csv"'
+  acceptance: "(Time.now).strftime('%Y%m%d').to_i < self.value('DUE_DATE2').to_i && self.value('parent_age').to_i >= 18"
+  run_days: 0 1 2 3 4 5 6
+npd_group:
+  id: 17
+  name: NPD Group
+  revenue: .40
+  success_regex: 'Success'
+  taken_default: ''
+  email_field: e
+  description: "<strong>Take Surveys and Get Rewarded</strong><br />Join NPD Online Research and share your opinions with decision-makers worldwide!
+Win cash and other great prizes with every survey you take. Please share my email address with NPD.  Check your email for an invitation from NPD Online Research (survey@npdmr.com) inviting you to join the NPD Survey Panel."
+  image: 80x80icon-coreg-npd.jpg
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://www.npdor.com/coreg/coreg.asp?vid=1832&sid=123456'
+  acceptance: "self.value('c').to_i < 3 && self.value('a').to_i >= 18"
+Buffalo_Eway:
+  id: 18
+  name: Buffalo_eway
+  revenue: 0.70
+  success_regex: 'Thank You for your signup'
+  taken_default: ''
+  email_field: email
+  description: "<strong>Discover an American Classic. Sign up to get your Free Buffalo Niagara eNewsletters today.</strong><br />Great art, classic architecture, compelling history and a wonder of the world at Niagara Falls. What other secrets does Buffalo hold? Sign up for eNewsletters today."
+  image: buffalo_80x80.gif
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://link.ixs1.net/s/link/su?rc=cp&rti=b9179&b=y'
+  #acceptance: "['NY', 'NJ', 'PA', 'CT', 'OH', 'IL', 'MD', 'VA', 'DC', 'FL'].include?(self.value('state'))"
+Buffalo_Leadconduit:
+  id: 19
+  name: Buffalo_lc
+  revenue: 0.70
+  success_regex: 'success'
+  taken_default: ''
+  email_field: email
+  description: "<strong>Sign up to get your Free Buffalo Niagara eNewsletters today.</strong><br />Discover an American Classic Great art, classic architecture, compelling history and a wonder of the world at Niagara Falls. What other secrets does Buffalo hold? Sign up for eNewsletters today."
+  image: buffalo_80x80.gif
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://app.leadconduit.com/v2/PostLeadAction?xxAccountId=04fmnvz77&xxCampaignId=0530xohud&pi_campaign=ebrainssummer12&source=ParentMedia&site_id=dealsformommy'
+  #acceptance: "['NY', 'NJ', 'PA', 'CT', 'OH', 'IL', 'MD', 'VA', 'DC', 'FL'].include?(self.value('state'))"
+  time_delay: 3.days
+Eversave-7thGeneration:
+  id: 20
+  name: Eversave - 7thGeneration
+  revenue: 0.24
+  success_regex: '1 = Pass'
+  taken_default: ''
+  email_field: email
+  description: "<strong>Seventh Generation</strong><br />Sign up for 7Gen News and get recipes, tips for living green, and special offers from Seventh Generation."
+  image: 80x80_SeventhGeneration_050812.jpg
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://www.eversave.com/service/consumers/Seventh_Generation-PHProcess2018.jsp?optinid=2018&sourceid=114645&siteid=dealsformommy'
+Parent_society:
+  id: 22
+  name: Parent Society
+  taken_default: ''
+  success_regex: 'Thank You for your signup'
+  description: "<p style=\"color:#CC0000; font-size:14px;\"><strong>Fresh, Fun, Free</strong></p><p>Sign-up for free gifts,</p><p>e-newsletters & read tips & humorous stories from other moms.</p>"
+  prompt: ' '  
+  image: psLogo.jpg
+  screen_key: 'dfm_home'
+  revenue: 0.00
+  endpoint: 'http://link.ixs1.net/s/link/su?rc=cp&rti=v9360&b=y&singlechar2=t'
+  email_field: email
+Conagra:
+  id: 23
+  name: Conagra
+  email_field: email
+  success_regex: '<result>success</result>'
+  taken_default: ''
+  description: "<strong>ReadySetEat solves the weeknight dinner dilemma. </strong>Sign up for quick, easy dinner recipes and local savings from ReadySetEat. View Newsletter example:<a id=\"conegra\" href=\"javascript:void(0)\" style=\"text-decoration:none\">click here</a>
+      <style>
+      .qtip-wrapper{width:518px !important;}
+      </style>
+      <script type='text/javascript'>
+      $('#conegra').qtip({
+      hide: { delay: 5000 },
+      content: {
+        text : '<img src=\"http://registration.conagrafoods.com/images/newsletter/rse_large.jpg\"/>',
+      },
+      });
+      </script>
+       <br /><a href='http://www.conagrafoods.com/utilities/legal.jsp' target='_blank'>Legal Policy</a> and <a href='http://www.conagrafoods.com/utilities/privacy.jsp' target='_blank'>Privacy Policy</a>
+      "
+  prompt: ' '
+  image: RSE-logo-90x90.jpg
+  screen_key: 'stepN'
+  revenue: 0.65
+  endpoint: 'https://app.leadconduit.com/v2/PostLeadAction?xxCampaignId=053avmuvd&xxAccountId=04fmnvz77&opt_rse=Y'
+  acceptance: "self.value('country').to_i == 1"
+Sc_Johnson:
+  id: 24
+  request_method: get
+  name: SC Johnson
+  taken_default: ''
+  success_regex: 'OK'
+  description: "<strong>Right@Home&reg;</strong><br />Become a member of Right@Home&reg; and get great offers, time-saving tips and recipes. This offer is sponsored by SC Johnson, a family company. <a href='http://www.scjbrands.com/privacy/'>Privacy Policy</a>"
+  prompt: ' '
+  image: 80x80icon-coreg-glade.jpg
+  screen_key: 'stepN'
+  revenue: 0.55
+  endpoint: 'http://ebm.cheetahmail.com/r/regf2?EBM_WELCOME=1&a=2&aid=386906276&n=1&SOURCE=ACQ+COREG+PARENTMEDIA+CONTENT+DEALSFORMOMMY+FY1213+GLADE&ZVERSION=E'
+  email_field: email
+HGTV:
+  id: 25
+  name: HGTV
+  revenue: 0.50
+  success_regex: 'Success'
+  taken_default: ''
+  email_field: email
+  description: "<strong>Do Your Decorating Skills Earn a Fail?</strong><br />Sign up for HGTV's free Inspiration newsletter and get advice from our pros delivered to your inbox every week.<br />Our privacy policy is available here: <a href='http://www.scrippsnetworksinteractive.com/privacy-policy/'>Privacy Policy</a>"
+  image: hgtv_logo.jpg
+  screen_key: 'dfm_stepN'
+  endpoint: 'http://link.e.hgtv.ewaymail10.com/s/link/acq?rc=cp&rti=d9498&b=y&acq_medium=Coreg&acq_name=Parent_Media-28110-KNAD&acq_source=dealsformommy'
+Living_Social:
+  id: 26
+  name: Living_Social
+  revenue: 1.50
+  email_field: email
+  success_regex: ' '
+  prompt: ' '
+  description: "<strong>Discover handpicked deals for your family!</strong><br />Get 50-70% off restaurants, shops, experiences and start unforgettable family memories."
+  image: Living_Social_80x80.png
+  screen_key: 'dfm_home'
+  endpoint: 'subscribe.livingsocial.com/api/subscriptions?ref=XUA0000PARE00WEB5CE0000ENUS0000000000000007122012&verticals[]=Daily&verticals[]=families'
+Sc_Johnson_pldege:
+  id: 27
+  request_method: xml
+  revenue: 0.55
+  name: SC Johnson Pledge
+  taken_default: ''
+  success_regex: 'Success'
+  description: "<strong>Join Right@Home&reg;</strong><br />Get money-saving offers & more in the free home-care e-newsletter from the makers of Pledge&reg;. This offer is sponsored by SC Johnson, a family company. <a href='http://www.scjbrands.com/privacy/'>Privacy Policy</a>"
+  prompt: ' '
+  email_field: Email
+  image: pledge-co-reg_80x80.jpg
+  screen_key: 'stepN'
+  endpoint: "https://scj.cdm.fico.com/data/dataservices/insert"
+iBelieve:
+  id: 28
+  request_method: get
+  revenue: 0.34
+  name: iBelieve
+  taken_default: ''
+  success_regex: 'Thank you'
+  description: "<strong>iBelieve.com - Live on Purpose.</strong><br />iBelieve.com is a NEW website for women covering all facets of Christian living. Sign up to receive weekly articles and offers and Live on Purpose!"
+  prompt: ' '
+  email_field: email
+  image: iBelieve-Logo-90x90.jpg
+  screen_key: 'stepN'
+  endpoint: "http://www.salememail.com/stormpostsubscribe/default.aspx?lists=iBelieve_Weekly_Update_2&thankYou=http://www.salememail.com/stormpostsubscribe/thankyou.htm&source=DFM"
+Ebay_Deals:
+  id: 29
+  revenue: 0.50
+  name: Ebay_Deals
+  taken_default: ''
+  success_regex: 'success'
+  description: "<strong>eBay Deals: One-day deals. Plus Free Shipping. </strong><br />A limited quantity of incredibly discounted items - every day. Snap them up ... they don’t last long. Sign up for daily alerts."
+  prompt: ' '
+  email_field: email
+  image: ebay_deals_90x90.jpg
+  screen_key: 'stepN'
+  endpoint: "https://app.leadconduit.com/v2/PostLeadAction?coreg_source2=Dealsformommy_Feb13&xxAccountId=04fmnvz77&xxCampaignId=0530xohr4"
+  acceptance: "(Time.now-18.year).strftime('%Y%m%d') > self.value('member_dob')"
+PCH_eWay:
+  id: 30
+  revenue: 0.35
+  name: PCH_eWay
+  taken_default: ''
+  success_regex: 'Success'
+  description: "<strong>Sign up with Publishers Clearing House</strong><br />YOU could win $1,000,000.00 Every Year for Life on April 30th! Sign up for PCH email now! <a href='http://privacy.pch.com/' target='_blank'>Privacy Policy</a>"
+  prompt: ' '
+  email_field: email
+  image: PCH_90X90.jpg
+  screen_key: 'stepN'
+  endpoint: "http://link.e.pchsweeps.com/s/link/acq?rc=cp&rti=x9218&b=y&acq_ctrlid=8258&acq_source=DealsForMommy"
+  acceptance: "(Time.now-18.year).strftime('%Y%m%d') > self.value('member_dob')"
+Sc_Johnson_ziplock:
+  id: 31
+  request_method: xml
+  revenue: 0.55
+  name: SC Johnson Ziplock
+  taken_default: ''
+  success_regex: 'Success'
+  description: "<strong>Right@Home&reg;</strong><br />Become a member of Right@Home® and get great offers, time-saving tips and recipes. This offer is sponsored by SC Johnson, a family company.<a href=\"\" onclick=\"window.open('http://www.scjbrands.com/privacy/', 'mywindow', 'location=1,status=1,scrollbars=1,width=600,height=600');return false;\">Privacy Policy</a>"
+  prompt: ' '
+  email_field: Email
+  image: 90x90icon-coreg-ziploc.jpg
+  screen_key: 'stepN'
+  endpoint: "https://scj.cdm.fico.com/data/dataservices/insert"
+Virtual_Piggy:
+  id: 32
+  revenue: 0.55
+  name: virtual piggy
+  taken_default: ''
+  success_regex: ''
+  description: "<strong>Sign up for Free today!</strong><br />Virtual Piggy is the safest way for kids to save, spend and give online, while keeping parents in complete control. Best of all, Virtual Piggy is 100% free for families to use: there are never any hidden fees or charges. <a href=\"\" onclick=\"window.open('http://www.virtualpiggy.com/virtual-piggy-user-agreement', 'mywindow', 'location=1,status=1,scrollbars=1,width=600,height=600');return false;\">Terms and Conditions </a> "
+  prompt: ' <div><label>Password:</label> <input type="password" id="vp_password"></div><div class="clear"></div><div id="vp_text" class="vp_txt"> Six characters minimum, must be a combination of numbers and letters.</div><br /><br /><div style="font-size:10px;">Member will be creating a password for Virtual Piggy.  Once you click "Join Now" below you will receive an email from Virtual Piggy to activate your account.</div>'
+  email_field: UserIdentifier
+  image: VirtualPiggyLogo2.png
+  screen_key: 'stepN'
+  endpoint: "https://live.virtualpiggy.com/v1/parents"
+  headers: { Authentication: Basic }
+Similac:
+  id: 33
+  revenue: 0.65
+  request_method: sftp
+  name: Similac
+  description: "<strong>Enroll into StrongMoms today to get your free Shutterfly Pregnancy Photo Journal, plus more!</strong><br />Sign up to receive guidance and support for pregnancy and beyond, plus up to $329* in savings. Join today for your 1st gift!  *Offers may vary."
+  prompt: ' '
+  email_field: Email
+  image: similac_strong_moms.jpg
+  screen_key: 'stepN'
+  flatfile_pattern: '"Similac_ParentSociety_Partner_#{Time.now.strftime("%m%d%Y")}.txt"'
+  endpoint: "adevitosimiliac@adevito.parentsociety.com"
+  headers: { host: secftp.targetbase.com, username: sshurak , password: ry1pbmt , dir: abbottnutrition/abbott/parentsociety/totb/ , header_row: true, delimiter: '|' }
+  run_days: 2
+American_Baby:
+  id: 34
+  revenue: 0.65
+  request_method: get
+  name: American Baby
+  taken_default: ''
+  success_regex: 'success'
+  description: "<strong>YES! send me a free subscription to American Baby Magazine! </strong><br />Sign me up for America’s most respected “helping hand” for new and expected parents for over 70 years- ABSOLUTELY FREE! (Subject to Publisher's Qualifications - Expecting Moms ONLY)"
+  prompt: ' '
+  email_field: Email
+  image: american_baby_logo_1_.jpg
+  screen_key: 'stepN'
+  endpoint: "http://www.regreact.com/external.aspx"
+  headers: { Authentication: Basic }
+  acceptance: "(self.value('babydob') < (Time.now+9.months).strftime('%Y%m%d'))&&(self.value('babydob') > (Time.now+2.months).strftime('%Y%m%d'))"
+Palm_Beach:
+  id: 35
+  revenue: 0.50
+  name: Palm Beach
+  taken_default: ''
+  success_regex: 'Success'
+  description: "<strong>Receive exclusive deals on Affordable Fashion Jewelry + FREE $10 Gift Card for signing up.</strong><br />Sign up today for your FREE $10 Gift Card & exclusive access to email deals, Buy One Get One specials & Deal of the Day sales from PalmBeach Jewelry. <a href=\"http://www.palmbeachjewelry.com/index.cfm?method=customerService_PrivacyStatement\" target=\"_blank\">Privacy Policy</a>"
+  prompt: ' '
+  email_field: email
+  image: Logo80x80.gif
+  screen_key: 'stepN'
+  endpoint: "http://link.e.palmbeachjewelrydeals.com/s/link/acq"
+Daily_Moments:
+  id: 36
+  revenue: 0.25
+  name: Daily Moments
+  taken_default: ''
+  success_regex: 'success'
+  description: "<strong>MyDailyMoment.com – Recipe of the Day</strong><br />Not sure what’s for dinner tonight? Sign up to receive the Recipe of the Day email newsletter from MyDailyMoment.com and get a tasty recipe sent right to your inbox. As part of this free service, you’ll also receive occasional special offers."
+  prompt: ' '
+  email_field: Email
+  image: moments_90x90.gif
+  screen_key: 'stepN'
+  endpoint: "https://app.leadconduit.com/v2/PostLeadAction?xxAccountId=04fmnvz77&xxCampaignId=000q7cfmh"
+Arcamax_Horoscope:
+  id: 37
+  revenue: 0.10
+  request_method: get
+  name: Arcamax Horoscope
+  taken_default: ''
+  success_regex: 'SUBPEND'
+  description: "<strong>FREE Horoscopes by email!</strong><br />Find out what the stars have in store for you! Get astrology news and fun sent to your inbox daily.<br /><b>*Confirm the request in your email to start receiving.</b>"
+  prompt: ' '
+  email_field: email
+  image: horoscopes-90x90static.gif
+  screen_key: 'stepN'
+  endpoint: "http://www.arcamax.com/cgi-bin/autosub?listid.1=113&listid.2=52&source=3397"
+Arcamax_Health:
+  id: 38
+  revenue: 0.10
+  request_method: get
+  name: Arcamax Health
+  taken_default: ''
+  success_regex: 'SUBPEND'
+  description: "<strong>FREE Health & Fitness Newsletter by email!</strong><br />Stay in shape with exercise tips, nutrition information and healthy living advice everybody can use.<br /> <b>*Confirm the request in your email to start receiving.</b>"
+  prompt: ' '
+  email_field: email
+  image: health-90x90static-alt2.gif
+  screen_key: 'stepN'
+  endpoint: "http://www.arcamax.com/cgi-bin/autosub?listid.1=27&listid.2=52&source=3398"
+Gerber_Nutrition:
+  id: 39
+  revenue: 0.45
+  name: Gerber Nutrition
+  taken_default: ''
+  success_regex: 'success'
+  description: "<strong>Expecting? Join Us to receive up to $114 in FREE coupons &amp; Offers</strong>Join the START HEALTHY, STAY HEALTHY&trade; Resource Center to receive up to $114 in FREE coupons & offers!"
+  prompt: "<input type='checkbox' value='1' id='GNID2' name='GNID2' checked='checked'> Yes, I would like to participate in your partnership program, which includes receiving information and special offers directly from carefully selected third party companies. Please read our <a href=\"http://www.gerber.com/AllStages/public/privacy.aspx\" target=\"_blank\">Privacy Policy</a> for details about this program. Note: if you do not opt out, your personal information will be shared with these companies and in accordance with our <a href=\"http://www.gerber.com/AllStages/public/privacy.aspx\" target=\"_blank\">Privacy Policy</a>."
+  email_field: email
+  image:  gerber_logo-90x90.jpg
+  screen_key: 'stepN'
+  endpoint: 'ben@heragency.com,jenny@heragency.com,Bizdev@parentmediainc.com'
+  run_days: 0
+  flatfile_pattern: '"gerbernut_dealsformommy_#{Time.now.strftime("%Y%m%d")}.txt"'

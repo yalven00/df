@@ -1,0 +1,34 @@
+<%if !coreg.expired?%>
+<% if coreg.opt_out? %>
+	<div class="coregBlock clear coregEmphasis">
+	<%else%>
+	<div class="coregBlock clear">
+<%end%>
+  <div class="coreg_header clear">
+    <%= image_tag(coreg.image.url(:thumb), :class => 'coreg_icon') %>
+    <ul class="coreg_taken">
+		<li class="coreg_taken_section">
+        <label>Yes</label>
+        <%= radio_button_tag "coreg_optin[#{coreg.id}][taken]", "true", coreg.opt_out?, :class => 'coreg_taken_yes' %>
+      </li>
+      <li class='coreg_taken_section'>
+        <label>No</label>
+        <%= radio_button_tag "coreg_optin[#{coreg.id}][taken]", false, (coreg.taken_default=='false'), :class => 'coreg_taken_no' %>
+      </li>
+    </ul>
+    <div class='coreg_description'>
+      <p><%= raw coreg.description %></p>
+    </div>
+  </div>
+  <% if coreg.opt_out? %>
+    <div class="coreg_body <%= coreg.name.gsub!(' ','_')%>">
+  <%else%>
+    <div style='display:none' class="coreg_body <%= coreg.name.gsub!(' ','_')%>">
+  <%end%>
+  <% if !coreg.prompt.nil? %>
+    <p><%= raw coreg.prompt %></p>
+  <% end %>
+  <%= render :partial => "coreg_optin_field_params", :collection => coreg.coreg_params.top_level, :as => :coreg_param %>
+  </div>
+</div>
+<%end%>

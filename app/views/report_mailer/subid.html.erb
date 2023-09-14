@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+    <h2>Summary</h2>
+    <table class="stat" style="font-family : Verdana,Helvetica,Arial,sans-serif; background: #efe none; color: #630; font-size: 100%; border-collapse:collapse; border: 1px solid black;">
+      <tr>
+        <th style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'>Affiliate Id</th>
+        <th style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'>SubId</th>
+        <th style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'>Members</th>
+        <th style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'>Offers</th>
+        <th style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'>Revenues Per Member</th>
+      </tr>
+      <tr>
+        <% @member_groups.each do |affiliate, value| %>
+          <tr>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'><%=affiliate || 'N/A' %></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'></td>
+          </tr>
+          <% value.each do |sub_id, sums|%>
+          <tr>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'><%=sub_id || 'N/A'%></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'><%=sums[0]%></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'><%=sums[2]%></td>
+            <td style='border-color:#600;border-width: 1px 1px 0 0;border-style: solid;'><%=number_to_currency sums[3]%></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tr>
+     </table>
+
+    <h2>Details</h2>
+
+ </body>
+</html>

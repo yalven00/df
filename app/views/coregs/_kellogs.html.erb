@@ -1,0 +1,1242 @@
+
+    <STYLE TYPE="text/css">
+	.friendly
+	{
+		display: none;
+	}
+
+	.original
+	{
+		display: block;
+	}
+#custom_form { text-align: center; width: 700px; }
+#coreg_tagline { width: 700px; }
+#submit_col1 { width: 250px; }
+#submit_col2 { background-color: #6699FF }
+#submit_col3 { width: 200px; }
+    </STYLE>
+<STYLE TYPE="text/css"> body, td { font-family:arial, sans-serif;font-size:small } </STYLE>
+<!--[if IE]>
+<STYLE TYPE="text/css"> body, td { font-family:arial, sans-serif;font-size:x-small } </STYLE>
+<![endif]-->
+
+
+
+<script language="javascript">
+var noMsg=0;
+var make_exit_win = 1;
+var cleanExit = 0;
+function exit_win()
+{
+	if (make_exit_win == 1)
+	{
+		exit_url = '';
+		if (exit_url != '')
+		{
+			exit_win_ref = window.open(exit_url, '_blank', 'top=0,left=0,screenX=0,screenY=0,scrollbars,width=' + (screen.width - 5) + ',height=' + (screen.height - 5));
+			exit_win_ref.focus();
+		}
+	}
+}
+window.onunload=exit_win;
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var verified=true;
+-->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function load_image(img_src, img){ img.src = img_src; }
+
+function processPUnder()
+{
+}
+function nw(addr, w, h)
+{
+	if (w > window.screen.availWidth - 100)
+	{
+		w = window.screen.availWidth - 100;
+	}
+
+	if (h > window.screen.availHeight - 100)
+	{
+		h = window.screen.availHeight - 100;
+	}
+
+	var x = (window.screen.availWidth - w) / 2;
+	var y = (window.screen.availHeight - h) / 2;
+	var s = "resizable=yes,scrollbars=2,toolbar=no,menubar=no,location=no,status=yes,width=" + w + ", height=" + h + "screenX=" + x + "screenY=" + y;
+	window.open(addr, '_blank', s).focus();
+}
+
+function ci(fieldname, fieldlabel, acceptonly)
+{
+	var s = new String();
+	v_char = new RegExp ("[^A-Za-z .'-]", "i");
+	v_num = new RegExp ("[^0-9]","i");
+	v_numchar = new RegExp ("[^0-9A-Za-z &/#;,.'-]", "i");
+	s = document.fm[fieldname].value;
+	result = s.search(eval(acceptonly));
+
+	if (result != -1)
+	{
+		if (fieldlabel.length > 0)
+		{
+			msg = "The following field:\n\n\"" + fieldlabel + "\"\n\n";
+		}
+		else
+		{
+			msg = "This field ";
+		}
+
+		if (acceptonly == "v_char")
+		{
+			msg += "can only contain characters";
+		}
+		else if (acceptonly == "v_num")
+		{
+			msg += "can only contain numbers";
+		}
+		else if (acceptonly == "v_numchar")
+		{
+			msg += "can only contain numbers and characters";
+		}
+
+		document.fm[fieldname].value = s.substring(0, s.length - 1);
+		alert(msg);
+		return false;
+	}
+
+	return true;
+}
+
+function check_fm(index)
+{
+	var d = document;
+	var e = "Your input contained the following error(s)\n_________________________________________________________\n\n";
+
+	switch (index)
+	{
+		case '0':
+	var me = "You didn't answer a required question:";
+	var ms = "Your response to a required field was INCOMPLETE for the following offer:";
+	var mf = "Please fill in/correct your response for that field. Not interested in that offer? Click \"No\" to the left of the offer tagline or click the \"Skip\" button found at the bottom of the page.";
+
+	if (d.fm.q5636[0].checked == true || d.fm.q5636.value == 'y')
+	{
+		var i_5636 = "\n\n          Sign up to get exclusive benefits from Kellogg's        \n\nThe input field is: ";
+
+		d.getElementById('error_30814').style.display = 'none';
+
+		if (d.fm.f30814.value == "" || d.fm.f30814.value.length < 2)
+		{
+			if (d.fm.f30814.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "Email Address\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f30814.focus();
+			alert(e);
+			d.getElementById('error_30814').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30815').style.display = 'none';
+
+		if (d.fm.f30815.value == "" || d.fm.f30815.value.length < 2)
+		{
+			if (d.fm.f30815.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "Confirm Email\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f30815.focus();
+			alert(e);
+			d.getElementById('error_30815').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30816').style.display = 'none';
+
+		if (d.fm.f30816.value == "" || d.fm.f30816.value.length < 6)
+		{
+			if (d.fm.f30816.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "Password\n\nYour input for this field must be at least 6 characters long\n\n" + mf;
+			d.fm.f30816.focus();
+			alert(e);
+			d.getElementById('error_30816').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30817').style.display = 'none';
+
+		if (d.fm.f30817.value == "" || d.fm.f30817.value.length < 6)
+		{
+			if (d.fm.f30817.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "Confirm Password\n\nYour input for this field must be at least 6 characters long\n\n" + mf;
+			d.fm.f30817.focus();
+			alert(e);
+			d.getElementById('error_30817').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30818').style.display = 'none';
+
+		if (d.fm.f30818.value == "" || d.fm.f30818.value.length < 2)
+		{
+			if (d.fm.f30818.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "First Name\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f30818.focus();
+			alert(e);
+			d.getElementById('error_30818').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30819').style.display = 'none';
+
+		if (d.fm.f30819.value == "" || d.fm.f30819.value.length < 2)
+		{
+			if (d.fm.f30819.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "Last Name\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f30819.focus();
+			alert(e);
+			d.getElementById('error_30819').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30820').style.display = 'none';
+
+		if (d.fm.f30820.value == "" || d.fm.f30820.value.length < 2)
+		{
+			if (d.fm.f30820.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "Address1\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f30820.focus();
+			alert(e);
+			d.getElementById('error_30820').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30822').style.display = 'none';
+
+		if (d.fm.f30822.value == "" || d.fm.f30822.value.length < 2)
+		{
+			if (d.fm.f30822.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "City\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f30822.focus();
+			alert(e);
+			d.getElementById('error_30822').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30823').style.display = 'none';
+
+		if (d.fm.f30823.selectedIndex < 1)
+		{
+			e += me;
+			e += i_5636 + "State\n\n" + mf;
+			d.fm.f30823.focus();
+			alert(e);
+			d.getElementById('error_30823').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30824').style.display = 'none';
+
+		if (d.fm.f30824.value == "" || d.fm.f30824.value.length < 5)
+		{
+			if (d.fm.f30824.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "ZIP Code\n\nYour input for this field must be at least 5 characters long\n\n" + mf;
+			d.fm.f30824.focus();
+			alert(e);
+			d.getElementById('error_30824').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30826').style.display = 'none';
+
+		if (d.fm.f30826.selectedIndex < 1)
+		{
+			e += me;
+			e += i_5636 + "Birthday Month\n\n" + mf;
+			d.fm.f30826.focus();
+			alert(e);
+			d.getElementById('error_30826').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30827').style.display = 'none';
+
+		if (d.fm.f30827.selectedIndex < 1)
+		{
+			e += me;
+			e += i_5636 + "Birthday Day\n\n" + mf;
+			d.fm.f30827.focus();
+			alert(e);
+			d.getElementById('error_30827').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30828').style.display = 'none';
+
+		if (d.fm.f30828.selectedIndex < 1)
+		{
+			e += me;
+			e += i_5636 + "Birthday Year\n\n" + mf;
+			d.fm.f30828.focus();
+			alert(e);
+			d.getElementById('error_30828').style.display = 'block';
+			return false;
+		}
+
+		for (i = 0, n = d.fm.f30829.length; i < n; i++)
+		{
+			if (d.fm.f30829[i].checked)
+			{
+				var radio_f30829_checked = d.fm.f30829[i].value;
+				break;
+			}
+		}
+
+		d.getElementById('error_30829').style.display = 'none';
+
+		if (!radio_f30829_checked)
+		{
+			e += me;
+			e += i_5636 + "Gender\n\n" + mf;
+			alert(e);
+			d.getElementById('error_30829').style.display = 'block';
+			return false;
+		}
+
+		for (i = 0, n = d.fm.f30830.length; i < n; i++)
+		{
+			if (d.fm.f30830[i].checked)
+			{
+				var radio_f30830_checked = d.fm.f30830[i].value;
+				break;
+			}
+		}
+
+		d.getElementById('error_30830').style.display = 'none';
+
+		if (!radio_f30830_checked)
+		{
+			e += me;
+			e += i_5636 + "How many adults, including yourself, are living in your household?\n\n" + mf;
+			alert(e);
+			d.getElementById('error_30830').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_30848').style.display = 'none';
+
+		if (!d.fm.f30848.checked)
+		{
+			e += me;
+			e += i_5636 + "I acknowledge that I have read and understand the privacy policy and agree to it's terms.\n\n" + mf;
+			alert(e);
+			d.getElementById('error_30848').style.display = 'block';
+			return false;
+		}
+
+		for (i = 0, n = d.fm.f30849.length; i < n; i++)
+		{
+			if (d.fm.f30849[i].checked)
+			{
+				var radio_f30849_checked = d.fm.f30849[i].value;
+				break;
+			}
+		}
+
+		d.getElementById('error_30849').style.display = 'none';
+
+		if (!radio_f30849_checked)
+		{
+			e += me;
+			e += i_5636 + "How many children (under 18) are living in your household?\n\n" + mf;
+			alert(e);
+			d.getElementById('error_30849').style.display = 'block';
+			return false;
+		}
+
+		for (i = 0, n = d.fm.f30850.length; i < n; i++)
+		{
+			if (d.fm.f30850[i].checked)
+			{
+				var radio_f30850_checked = d.fm.f30850[i].value;
+				break;
+			}
+		}
+
+		d.getElementById('error_30850').style.display = 'none';
+
+		if (!radio_f30850_checked)
+		{
+			e += me;
+			e += i_5636 + "How many boxes and/or bags of ready to eat cereal has your household eaten in the past two weeks?\n\n" + mf;
+			alert(e);
+			d.getElementById('error_30850').style.display = 'block';
+			return false;
+		}
+
+		for (i = 0, n = d.fm.f30851.length; i < n; i++)
+		{
+			if (d.fm.f30851[i].checked)
+			{
+				var radio_f30851_checked = d.fm.f30851[i].value;
+				break;
+			}
+		}
+
+		d.getElementById('error_30851').style.display = 'none';
+
+		if (!radio_f30851_checked)
+		{
+			e += me;
+			e += i_5636 + "How often do you eat cold cereal?\n\n" + mf;
+			alert(e);
+			d.getElementById('error_30851').style.display = 'block';
+			return false;
+		}
+
+		d.getElementById('error_40502').style.display = 'none';
+
+		if (d.fm.f40502.value == "" || d.fm.f40502.value.length < 2)
+		{
+			if (d.fm.f40502.value == "")
+			{
+				e += me;
+			}
+			else
+			{
+				e += ms;
+			}
+
+			e += i_5636 + "Where do you shop for GROCERIES most often (ex. Kroger, Target, Costco)?\n\nYour input for this field must be at least 2 characters long\n\n" + mf;
+			d.fm.f40502.focus();
+			alert(e);
+			d.getElementById('error_40502').style.display = 'block';
+			return false;
+		}
+
+
+
+var fnameCheck = document.fm.f30818.value;
+var lnameCheck = document.fm.f30819.value;
+
+if (fnameCheck.toLowerCase() == lnameCheck.toLowerCase()) {
+document.fm.f40408.value ="N";
+}
+
+var msg = "";
+var msg_flag = false;
+
+var email1 = d.fm.f30814.value;
+var email2 = d.fm.f30815.value;
+
+if (email1 != email2){
+alert("*\"Email Address\" and \"Confirm Email Address\" are not the same\nPlease re-enter\n");
+return false;
+}
+
+// check email format
+var str = d.fm.f30814.value;
+var pattern=/^[0-9a-zA-Z\-\_\.]+\@[_.\_\-a-zA-Z0-9]+\.([a-zA-Z])+$/;
+
+if(!pattern.test(str))
+{
+alert("*The E-mail address you have entered is invalid.\n");
+return false;
+}
+
+// check password
+var pw1 = d.fm.f30816.value;
+var pw2 = d.fm.f30817.value;
+
+if (pw1 != pw2){
+alert("*\"Password\" and \"Confirm Password\" are not the same\nPlease try again\n");
+return false;
+}
+
+numcheck=/[^0-9]/g;
+patt=/\//g;
+if (pw1.match(numcheck) == null){
+alert("*\The password must contain either all letters or a mix of letters or numbers\nPlease try again\n");
+return false;
+}
+if (patt.test(pw1)){
+alert("*\The password must contain either all letters or a mix of letters or numbers\nPlease try again\n");
+return false;
+}
+var counter = 0;
+var chartomatch = pw1.toLowerCase().charAt(1);
+var charArray = pw1.toLowerCase().split('');
+for (i = 0; i < charArray.length; i++){
+if (charArray[i] == chartomatch)
+{
+counter++;
+}
+}
+if (counter == pw1.length){
+alert("*\Passwords need to be a mix of letters or mix of letters and numbers\nPlease try again.\n");
+return false;
+}
+
+var spaces =/[\s]/g;
+if (spaces.test(pw1)){
+alert("*\The password may not contain blank spaces\nPlease try again.\n");
+return false;
+}
+var chooseProducts = new Array();
+
+chooseProducts[0] = d.fm.f30831;
+chooseProducts[1] = d.fm.f30832;
+chooseProducts[2] = d.fm.f30833;
+chooseProducts[3] = d.fm.f30834;
+chooseProducts[4] = d.fm.f30835;
+chooseProducts[5] = d.fm.f30836;
+chooseProducts[6] = d.fm.f30837;
+chooseProducts[7] = d.fm.f39613;
+
+var countChooseProducts = 0;
+
+for (i = 0; i < chooseProducts.length; i++) {
+if (chooseProducts[i].checked == true){
+countChooseProducts++;
+}
+}
+if (countChooseProducts < 1){
+alert("*For \"Which products do you frequently purchase?\"\n*Please check all that apply\n");
+return false;
+}
+// invoke the briteverify
+// *** pass the field value for the email ***
+bv_answer = briteVerify(d.fm.f30814.value);
+if(bv_answer != true)
+{
+if(bv_answer === false)
+{
+// skip
+noMsg=1;
+
+// *** this has the coreg_id for the q####
+document.fm.q5636[1].checked=true;
+document.fm.js_status.value = 'y';
+make_exit_win=0;
+document.fm.submit();
+}
+else
+{
+alert("*The E-mail address you have entered is invalid.\n");
+return false;
+}
+}
+return true
+	}
+
+			break;
+		case 'all':
+			e += "Please select your answer choice for each offer.\n\nYou did not answer the question for 1 or more of the offers.";
+			e += "\n_________________________________________________________\n\nPlease answer all of the questions to continue.\n\nThank You!";
+
+		var tagElem = d.fm.q5636;
+		if (tagElem != undefined)
+		{
+		if (!d.fm.q5636[0].checked && !d.fm.q5636[1].checked)
+		{
+			alert(e);
+			cleanExit = 0;
+			return false;
+		}
+		}
+
+			break;
+		}
+
+				if(!document.fm.q5636)
+
+				{
+
+					return true;
+
+				}
+
+				if(document.fm.q5636[1].checked == true)
+
+				{
+
+					return true;
+
+				}
+
+				else
+
+				{
+		return verified;
+	}
+}
+   v43 = 1;   block = 1;   x96 = 1;   n23 = 1;   l22 = 0;   o77 = 0;   d44 = 'block';   h54 = 'yknot88';   h75 = 'ok';   answered = new Array(0);   u963 = new Array(0);   coreg = new Array(0);   creative = new Array(0);   hidden = new Array(0);   i686 = new Array(0);   changed = new Array(0);    for (x = 0; x < 0; x++)   {    answered[x] = 0;    hidden[x] = 0;     switch (x)    {        default:      u963[x] = 0;      break;    }   }       function hide(index)   {    document.getElementById('r' + index).style.display = 'none';     if (!u963[index])    {     o77--;    }     if (d = document.getElementById('d' + index))    {     d.style.display = 'none';    }     hidden[index] = 1;    eval('document.fm.cim_' + coreg[index] + '.value="y"');    document.fm.js_status.value = 'y';    document.fm.submitType.value = 'hidden';    document.fm.coreg_submitted.value = coreg[index];    document.fm.coreg_creative_submitted.value = creative[index];    document.fm.submit();    document.fm.submitType.value = 'default';    v43--;   }    function handleDisplay(index)   {    blockDone = ba784();        if (h54 == 'yknot88')    {     if ((h75 == 'ok') || (v43 > x96))     {      hide(index);     }    }    else if (blockDone && (h75 == 'ok' || v43 > x96))    {     for (x = 0; x < (n23 - block); x++)     {      if (!hidden[ol012()])      {       hide(ol012());      }     }    }    if ((d44 == 'yknot88') && (n23 < l22))    {     s722();    }    else if (blockDone)    {     for (x = 0; (x < block) && (n23 < l22); x++)     {      s722();     }    }   }    function ho76(index)   {    for (x = 0; x < index; x++)    {     if (!hidden[x] && u963[x] && !answered[x])     {      answered[x] = 1;      handleDisplay(x);     }    }   }    function optOut(counter)   {    if(document.getElementById('oo_submit' + counter))    {     document.getElementById('oo_submit' + counter).style.display = 'none';    }    if(document.getElementById('oo_msg' + counter))    {     document.getElementById('oo_msg' + counter).style.display = 'none';    }     switch (counter)    {     default:      index = 0;      break;    }     if (index)    {     ho76(index);    }   }    function s722()   {    document.getElementById('r' + n23).style.display = 'block';    if (document.getElementById('r' + n23).getAttribute('coo') == 'yes')    {     document.getElementById('d' + n23).style.display = 'block';    }    load_image('http://qitrck.com/cg_tp?reportRef=3_4_18_5171_14_21&tp=cim&coreg_id=' + coreg[n23] + '&coreg_creative_id=' + creative[n23] + '&user_pin_id=1&user_ref_id=&page_id=10313863&optimizer_flag=&redirectPath=5171&rand=1321555315', document.images['img_cim_' + coreg[n23]]);    eval('document.fm.cim_' + coreg[n23] + '.value="y"');     switch (n23)    {     default:      counter = 0;      break;    }     if (counter)    {     switch (n23)     {     case '0':        document.getElementById('oo_submit' + counter).style.display = 'block';;      default:       break;     }      document.getElementById('oo_msg' + counter).style.display = 'block';;    }     if (!u963[n23])    {     o77++;    }     i686.push(n23);    n23++;    v43++;   }    function s986(index)   {    document.getElementById('d' + index).style.display = 'block';    if(document.images['img_pim_' + coreg[index]].src == '')    {     load_image('http://qitrck.com/cg_tp?reportRef=3_4_18_5171_14_21&tp=pim&coreg_id=' + coreg[index] + '&coreg_creative_id=' + creative[index] + '&user_pin_id=1&page_id=10313863&user_ref_id=&rand=1321555315', document.images['img_pim_' + coreg[index]]);    }    if(eval('document.fm.pim_' + coreg[index]))    {     eval('document.fm.pim_' + coreg[index] + '.value="y"');    }     switch (index)    {     default:      break;    }    }    function a9321()   {    count = 0;     for (x = 0; x < l22; x++)    {     count += answered[x];    }     return count;   }    function ba784()   {    done = 1;     for (x = 0; (x < n23) && done; x++)    {     if (!answered[x])     {      done = 0;     }    }     return done;   }    function ol012()   {    x = 0;     while ((x < l22) && (!answered[x] || hidden[x]))    {     x++;    }     return x;   }    for (x = 0; x < v43; x++)   {    if (!u963[x])    {     o77++;    }   }    function processClick(key, answer)   {    postback = true;    processPUnder();if (u963[key])    {     postback = false;     return;    }     ho76(key);     switch (key)    {     case '0':       if (answer == 'y')      {       s986(key);          postback = false;       return false;      }       break;     default:      break;    }     if (answer == 'e' && !check_fm(key))    {     postback = false;     return false;    }       answered[key] = 1;     switch (parseInt(key) + 1)    {     default:      counter = 0;      break;    }     if (counter)    {     optOut(counter);    }     if (a9321() == l22)    {     cleanExit = 1;     make_exit_win = 0;     document.fm.js_status.value = 'y';     document.fm.submitType.value = 'standard';      if (check_fm('all'))     {      document.getElementById('processing').style.display = 'block';      document.fm.submit();     }       }    else    {     handleDisplay(key);    }     while (u963[n23] && (n23 < l22))    {     s722();    }    postback = false;   }    // -->
+</SCRIPT>
+
+
+<TABLE width="740" border="0" align="center" cellpadding="6" cellspacing="1">
+<TR>
+	<TD>
+	<TABLE BORDER=0 CELLPADDING=6 CELLSPACING=0 WIDTH=735>
+	<TR>
+		<TD ALIGN=center>
+		<FONT FACE="verdana,sans-serif" SIZE=-1>
+<DIV ALIGN="left">    </DIV>
+
+
+<INPUT TYPE=hidden NAME='optin' VALUE='y'>
+<INPUT TYPE=hidden NAME='cmd' VALUE='exe_cg'>
+<INPUT TYPE=hidden NAME='js_status' VALUE='n'>
+<INPUT TYPE=hidden NAME='submitType' VALUE='default'>
+<INPUT TYPE=hidden NAME='user_pin_id' VALUE='1'>
+<INPUT TYPE=hidden NAME='pin_key' VALUE='551102'>
+<INPUT TYPE=hidden NAME='cg_list' VALUE='5636'>
+<INPUT TYPE=hidden NAME='cg_opt' VALUE=''>
+<INPUT TYPE=hidden NAME='cg_shown' VALUE=''>
+<INPUT TYPE=hidden NAME='page_id' VALUE='10313863'>
+<INPUT TYPE=hidden NAME='page_tmp_id' VALUE='11951'>
+<INPUT TYPE=hidden NAME='cat' VALUE='sr'>
+<INPUT TYPE=hidden NAME='page_num' VALUE='1'>
+<INPUT TYPE=hidden NAME='path' VALUE=''>
+<INPUT TYPE=hidden NAME='sv' VALUE=''>
+<INPUT TYPE=hidden NAME='preview' VALUE='5636'>
+<INPUT TYPE=hidden NAME='previewkey' VALUE='iqLXVISO'>
+<INPUT TYPE=hidden NAME='previewlive' VALUE='1'>
+<INPUT TYPE=hidden NAME='prev_js_status' VALUE='y'>
+<INPUT TYPE=hidden NAME='prev_page_type' VALUE='dynamic_js_yes'>
+<INPUT TYPE=hidden NAME='coreg_submitted' VALUE='5636'>
+<INPUT TYPE=hidden NAME='coreg_creative_submitted' VALUE='7624'>
+<INPUT TYPE=hidden NAME='cim_5636' VALUE='n'>
+<!-- hidden fields -->
+<INPUT TYPE=hidden NAME='f39848' VALUE='319994'>
+<INPUT TYPE=hidden NAME='f32012' VALUE='<%=current_member.ip_address%>'>
+<INPUT TYPE=hidden NAME='f38574' VALUE='<%=current_member.dob.day%>'>
+<INPUT TYPE=hidden NAME='f38576' VALUE='dealsformommy.com'>
+<INPUT TYPE=hidden NAME='f30829' VALUE='<%=current_member.gender%>'>     <!-- gender -->
+
+	<div ID="r0" style="background:#FFFFCC;text-align:left">
+		<table class="fullpage" width="640" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+<td width="76">
+</td>
+			<td width="120">
+				<INPUT TYPE=radio NAME='q5636' VALUE='y' onClick="noMsg=1; processClick('0', 'y');document.getElementById('d0').style.display = 'block';"><span class="yesbutton" id="yesbuttonradio">Yes</span>
+				<INPUT TYPE=radio NAME='q5636' VALUE='n'onClick="noMsg=1;document.fm.js_status.value = 'n';make_exit_win=0;document.fm.submit();" ><span class="nobutton" id="nobuttonradio">No</span>
+			</td>
+			<td width="444"><table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<img src="http://i.pcp001.com/c/5636/120x60_Kelloggs_Logo.jpg">
+</td>
+<td><div style="padding-left:5px;">Sign up to get exclusive benefits from Kellogg's</div>
+</td>
+
+</tr>
+</table></td>
+		</tr>
+		</table>
+	</div>
+
+	<table ID="d0"  STYLE='display:none;'>
+
+
+<TR><TD><!-- Load BriteVerify Code -->
+<script type="text/javascript" src="http://i.pcp002.com/media/briteverify.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://i.pcp001.com/c/5636/getStoreValue5636_4.js"></script>
+<script>
+$(document).ready(function() {
+var store = ["76","2 Go Mart","7-Eleven","99 Cents","99 Ranch Market","A Plus","A&P Supermarkets","ABCO","Acme Markets","Affiliated Foods","Ahold","Ai Hoa Supermarket","AJ'S Fine Foods","Albertsons","Aldi","Alex Lee Inc","Almac's","ALPs Stores","Amoco","Ampride","Andronico's","Apple Market","Arco","Arlan's Market","Asian Food Center","Associated Food Stores","Atlantic Super Store","Avanza Supermarket","Baker's","Balducci's","Bargain Wholesale","Bashasí","Bayless Markets","Beacon","Bel Air Markets","Bell's","Big Bear","Big D","Big M","Big Saver Foods","Big Y Foods","Big-Top Market","Bi-Lo Foods","BJ's Wholesale Club","Bloom","Bobak's","Bohack","Bottom Dollar Food","Boy's Markets","Bozzutoís","BP","Bravo","Breaux Mart Supermarkets","Bristol Farms","Brookshire's Food Stores","Broulims","Brown & Cole","Bruno's","Buehler's","Bulkley Valley Wholesale","Busch's","Butera","Byerly's","C&S Wholesale","CAM Asian Market","Campus Store","Cannata's Family Market","Caraluzzi's","Cardenas Supermarkets","Carnival","Carrs","Carter's Foods","Casey's General Store","Cash & Carry","Cash Saver","Central Grocers","Central Market","Cermak Produce","Cerretani's","Chatham","Chevron","Chief Supermarket","Circle K","Citgo","City Market","Coastal","Coborn's","Compare Foods Supermarket","Conoco","Consumers Market","Cooper's Foods","Copps Food Center","Corner Store","Cost Cutter","Costco","Country Mart","County Market","Cowboys Food Mart","Crest Foods","C-Town","Cub Foods","Cumberland Farms","D&W Food Centers","D'Agostino Supermarkets","Dahl's Foods","Dairy Mary","Dan's","David's","Deal$","DeCicco's","Dehoff's Key Markets","Delchamps","Delhaize America","DeMoulas' Market Basket","Diamond Shamrock","Dierbergs","Diho Supermarket","Dillons","Dillon's","Discount Beverage Outlet","Discount Food Mart","Dollar Tree","Dominick's","Dorothy Lane Market","Double E Foods","Eagle Food Centers","Earth Fare","East Coast","Econofoods","El Pueblo","El Super","Elm Farm Stores","Etna","Extra Foods","Exxon","E-Z Mart","Fairway Market","Family Dollar","Family Fare Supermarkets","Fareway","Farm Fresh Food & Pharmacy","Farmer Jack","Fast Food & Fuel","Favorit Market","Felpausch Food Centers","Fiesta Mart","Finast","Five Below","Fleming","Flying J","Food 4 Less","Food Barn","Food Basics","Food Bazaar Supermarkets","Food City","Food Club","Food Depot","Food Fair","Food Giant","Food Lane","Food Lion","Food Pavilion","Food Source","Food World","FoodFair","FoodLand","FoodMaxx","Foods Co","Foodtown","Fred Meyer","Fresh and Easy","Fresh Market","Freshco","FreshDirect","Fry's Marketplace","Furr's Grocery","Galaxy Food Centers","Gelson's Super Market","General Wholesale","Genuardi's","Gerbes","Gerland's Food Fair","Get Go","Giant Eagle","Giant Food","Giant-Carlisle","Giant-Landover","Gilmart","Glen's","Golden Gallon","Gonz·lez Northgate","Gourmet Garage","Grand Union","Great American Food Stores","Great Scott!","Great Valu","Great Wall Supermarket","Gristedes","Grocer's Pride","Grocers Supply Co","Grocery Outlet","Gulf","H.E. Butt Grocery Co","Haggen Food & Pharmacy","Hamady Supermarkets","Handy Andy","Hannaford","Harding's Friendly Markets","Harmons Grocery","Harp's Market","Harris Super Market","Harris Teeter","Harveys Supermarkets","Heartland","H-E-B","Heinen's Fine Foods","Hess","Hilander","Hiller's Market","Hills Supermarkets","H-Mart","Holiday Foods","Holiday Market","Holiday Station Store","Hollywood Super Market","HomeBase","Homeland","Hong Kong Supermarket","Hornbacher's","Houchens","House2 Home","Huckleberry's Natural Market","Hugo's","Hy-Vee Food Stores","Iandoli's","IGA","Ingles","Ingles Markets","Inserra Supermarkets","Island Pacific Supermarket","Jacksons Food Store","Jay C Food Stores","Jewel-Osco","Jitney-Jungle","Joe V's Smart Shop","JONS International Marketplace","K.V. Mart","Kam Man Food","Kangaroo","Karns Quality Foods","Kent's Market","Kessel Food Markets","Key Food","Key Market","King Cole","King Kullen","King Soopers","Kings","Kmart","Kohl's","Kowalski's","Kroger","Kuhn's Quality Foods","Kum & Go","K-VA-T Food Stores","Kwik","Landis Supermarkets","Laneco","Lauer's Supermarket and Bakery","Lee's Marketplace","Li'l Champ Food Store","L'il Cricket","Lion Food","Loaf N Jug Food Store","Loblaw Cos","Logli","Lowes Foods","Lowe's Markets","Lucky","Lunds","Macey's","Mac's Market","Mad Butcher","Magruder's","Main article: List of retailers' cooperatives","MAPCO","Marathon","Marc's","Mariana's","Mariano's Fresh Market","Market Basket","Market of Choice","Mars","Marsh","Martin's","Marukai","Matherne's Supermarkets","Maxi","Mayfair Markets","McCaffrey's","Meijer","Met Foods","Metro","Metropolitan Market ñ Seattle, Washington","Mi Pueblo Food Center","Mi Tienda","Milgrams","Mini Mart","Minyard's","Mitsuwa","Mobil","Moo & Oink","Mollie Stone's","Nash Finch","National Supermarkets","New Cambodian Supermarket","New Deal Supermarket","New Seasons Market ñ Portland, Oregon","Nob Hill Foods","Nofrills","NSA Supermarkets","Nugget Markets","OlÈ Foods Stores","Omni Foods","On the Way Food Store","Optima","Overwaitea Foods","Owen's","P&C Foods","Packer Foods","Pantry","Pantry Pride","Pathmark","Pavilions","Pay Less Food","PCC Natural Markets","Peapod","Penn Traffic","Pete's Market","Peterson's","Petosa's Family Grocery","Petro Express","Phil-am Filipino Store","Philips 66","Pick 'N Save","Piggly Wiggly","Pilot Food Mart","PinoyGrocery","Plaid Pantry","Plum Market","Preston-Safeway|Safeway","Price Chopper","Price Mart","PriceRite","PriceSmart Foods","Pros Ranch Markets","Provigo","Publix","Purity Supreme","QFC","Quality Foods","Quality Markets","Quik","Racetrac","Raceway","Rainbow Foods","Raine's Market","Raleyís Supermarkets","Raley's","Ralphs","Rancho","Randalls","Reams","Reasors","Red Apple","Red Food","Red Owl","Redner's Warehouse Markets","Remke Markets","Rich Oil","Ridley's Family Markets","Riesbeck's Food Markets","Rio Ranch Markets","Riverside Markets","RobËrt's Fresh Market","Roche Bros.","Rosauers Supermarkets","Roth's","Roundy's","Rouse's Supermarket","Royal","Sack and Save","SaferWay","Safeway","Saker Shop Rite","Sam's Club","Sav-A-Center","Save Mart","Save-A-Lot","SaveEasy","Save-On-Foods","Schnucks","Scolari's Food and Drug","Scot's Lo-Cost","Scott's Food & Pharmacy","Seafood City","Sedano's","Seller's Brothers","Sentry Foods","Sharp Shopper","Shaw's Supermarkets","Sheetz","Shell","Shop n Bag","Shop 'n Save","Shop Rite","Shoppers Food","ShopRite","Shurfine Markets","ShurSave","Smart & Final","S-Mart Foods","SmartCo Foods","Smith's","Smitty's","Sno-Isle Natural Foods","Sobeys","SourceClub","Southen Family Markets","Spartan Stores","Spectrum","Speedway","Sprint Food Store","Star Market","Stater Bros Markets","Stater Brothers","Stew Leonard's","Stewart's Shops","Stop & Shop Supermarkets","Strack and Van Til","Straub's Markets","Stripes","Sudbury Farms","Sullivan's Foods","Sunflower Farmers Markets","SunFresh","Sunoco","Sunset Foods","Super 1 Foods Stores","Super 88 Market","Super Bi-Lo","Super Fresh","Super Market Mexico","Super Saver Foods","SuperAmerica","SuperFresh","Superior Grocers","Superior Super Warehouse","Supermercado El Rancho","Supermercados Gigante","SuperOne Foods","Supersaver Foods","Supersol","SuperValu","Supremo Supermarket","Swanson Stores","Sweetbay Supermarket","Target","Tenochtitlan Market","Terry's/El Mariachi Supermarkets","Tesoro","Texaco","The Country Store","The Food Emporium","The Fresh Market","Thompson's Food Basket","ThriftWay","Thriftway Supermarkets","Tidyman's","Times Supermarkets","Tom Thumb","Top Crest","Tops","Total","Town & Country Food Store","Trader Joes","Treasure Island","Turco's","Turkey Hill","Twin City Supermarket","Ukrop's","Ultra Foods","Ultramar","Unfi","United","Urban Fare","URM Stores","Uwajimaya","Valero","Vallarta Supermarkets","Valu King","Valutime","VG's Grocery","Victory Supermarkets","Village","Viva Markets","Vons","Wade's","Wakefern Food Corp","Waldbaum's","Walmart","Waremart","Wawa","Wegmans","Weingarten's","Weis Markets","Wesselman's","Westborn Market","Western Beef Supermarkets","Western Family Foods","White Front","White Hen","Whole Foods Market","Wholesale club","Wilco","Wild Oats Markets","Wilson Farms","WinCo Foods","Winegar's Market","Winn-Dixie","Wise Way","Woodman's","Wrigley","Xpect Discounts","Yoke's Fresh Market","Zehrs"];
+
+
+$( "#stores" ).autocomplete({
+source: store,
+minLength: 2
+});
+});
+</script>
+<link type="text/css" href="http://i.pcp001.com/c/6646/jquery-ui-1.8.12.custom2.css" rel="stylesheet" />
+<style>
+.ui-autocomplete {
+max-height: 100px;
+overflow-y: auto;
+/* prevent horizontal scrollbar */
+overflow-x: hidden;
+/* add padding to account for vertical scrollbar */
+padding-right: 20px;
+}
+/* IE 6 doesn't support max-height
+* we use height instead, but this forces the menu to always be this tall
+*/
+* html .ui-autocomplete {
+height: 100px;
+}
+</style>
+<style type="text/css">
+<!--
+.style1 {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: bold;
+}
+.style2 {
+font-family: Arial, Helvetica, sans-serif;
+color: #D90F14;
+font-size: 18px;
+font-weight: bold;
+}
+.style3 {font-family: Arial, Helvetica, sans-serif}
+.style5 {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 10px;
+}
+.style9 {color: #D90F14; font-size: 12px; font-family: Arial, Helvetica, sans-serif;}
+.style11 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+.style12 {font-size: 12px}
+.style13 {color: #FF0000}
+-->
+</style>
+
+<!--Start of Custom Error Tags-->
+<div>
+<table width="700">
+<TR ID='error_30814' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Email Address)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30815' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Confirm Email)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30816' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Password)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30817' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Confirm Password)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30818' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (First Name)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30819' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Last Name)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30820' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Address1)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30821' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Address2)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30822' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (City)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30823' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (State)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30824' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (ZIP Code)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30825' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Mobile Phone)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30826' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Birthday Month)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30827' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Birthday Day)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30828' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Birthday Year)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30829' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Gender)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30830' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (How many adults, inclu...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30831' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30832' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30833' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30834' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30835' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30836' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30837' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+
+<TR ID='error_30848' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (I acknowledge that I h...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30849' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (How many children (und...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30850' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (How many boxes and/or ...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_30851' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (How often do you eat c...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_39613' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (What types of products...)</B></FONT>
+</TD></TR>
+
+<TR ID='error_40408' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (scrub (leave empty))</B></FONT>
+</TD></TR>
+
+<TR ID='error_40502' style='display:none;'><TD COLSPAN=2 WIDTH=600>
+<FONT FACE='verdana, sans-serif' COLOR=#FF0000 SIZE=2><B>Please correct this value (Where do you shop for ...)</B></FONT>
+</TD></TR>
+
+<tr>
+<td width="100%">&nbsp;</td>
+</tr>
+</table>
+</div>
+<!--End of Custom Error Tags-->
+
+<div align="center"><img src="http://i.pcp001.com/c/5636/514_500x300.jpg"></div>
+
+<table class="fullpage" width="750" border="0" align="center">
+
+<tr>
+<td colspan="2"><span class="style2">Sign up today</span></td>
+<td rowspan="44"><p><img src="http://i.pcp001.com/c/5636/kellogs_side.jpg" width="271" height="500">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td colspan="2"><span class="style11">It's easy and FREE to sign up to receive the latest news, special offers and exclusive savings from Kellogg's.</span></td>
+</tr>
+<tr>
+<td colspan="2" class="style1">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2"><span class="style1"><span class="style13">*</span> </span><span class="style11">Denotes a required field</span></td>
+</tr>
+<tr>
+<td class="style1">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Email Address</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30814' MAXLENGTH='80' SIZE='30' VALUE='<%=current_member.email%>'  onFocus="" onChange="changed[5636] = 1;">
+  <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Confirm Email Address</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30815' MAXLENGTH='80' SIZE='30' VALUE=''  onFocus="" onChange="changed[5636] = 1;"  > <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Password</span></td>
+<td><input name= "f30816" maxlength="20" size="30" type="password">
+<span class="style13">*</span><br />
+<span class="style11">(Minimum of 6 characters)</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Confirm Password</span></td>
+<td><input name= "f30817" maxlength="20" size="30" type="password"> <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3"></span></td>
+<td class="style1">
+<INPUT TYPE=checkbox NAME='f30848'  onFocus=""  onChange="changed[5636] = 1;" VALUE='y' > I acknowledge that I have read and<br />
+understand the <a href="http://www.kelloggcompany.com/privacy.aspx" target="_blank">privacy policy</a> and agree to its terms. <span class="style13">*</span></td>
+</tr>
+<tr>
+<td colspan="2"><span class="style2">Contact information</span></td>
+</tr>
+<tr>
+<td colspan="2" class="style11">Please enter your contact information.<br />
+<a href="javascript:void window.open('http://i.pcp001.com/c/5636/learnmore.html','terms','titlebar=no,menubar=no,statusbar=no,toolbar=no,resizable=no,scrollbars=no,width=400,height=80')">Learn more</a> about why we ask for this information. </td>
+</tr>
+
+<tr>
+<td class="style1">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">First Name</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30818' MAXLENGTH='30' SIZE='30' VALUE='<%=current_member.first_name%>'  onFocus="" onChange="changed[5636] = 1;" onKeyUp = "return ci('f30818', 'First Name', 'v_char');" > <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Last Name</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30819' MAXLENGTH='30' SIZE='30' VALUE='<%=current_member.last_name%>'  onFocus="" onChange="changed[5636] = 1;" onKeyUp = "return ci('f30819', 'Last Name', 'v_char');" > <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Address 1</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30820' MAXLENGTH='40' SIZE='30' VALUE='<%=current_member.address.address1%>'  onFocus="" onChange="changed[5636] = 1;"  > <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style3"><span class="style1">Address 2</span><br />
+<span class="style12">(optional)</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30821' MAXLENGTH='40' SIZE='30' VALUE='<%=current_member.address.address2%>'  onFocus="" onChange="changed[5636] = 1;"  ></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">City</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30822' MAXLENGTH='30' SIZE='30' VALUE='<%=current_member.address.city%>'  onFocus="" onChange="changed[5636] = 1;" onKeyUp = "return ci('f30822', 'City', 'v_char');" > <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">State</span></td>
+<td>
+<%= select_tag "f30823", options_from_collection_for_select(State.all, "code", "name", current_member.address.state), :onchange => ";changed[5636] = 1;" %>
+</td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">ZIP Code</span></td>
+<td>
+<INPUT TYPE=text NAME= 'f30824' MAXLENGTH='10' SIZE='5' VALUE='<%=current_member.address.postal%>'  onFocus="" onChange="changed[5636] = 1;"  > <span class="style13">*</span></td>
+</tr>
+<tr>
+<td class="style3"><span class="style1">Mobile Phone</span><br />
+<span class="style12">(optional)</span></td>
+<td><br />
+<INPUT TYPE=text NAME= 'f30825' MAXLENGTH='10' SIZE='10' VALUE=''  onFocus="" onChange="changed[5636] = 1;" onKeyUp = "return ci('f30825', 'Mobile Phone', 'v_num');" ><br />
+<span class="style5">We may occasionally send text messages to alert you of
+product news and special offers. Standard text message<br />
+rates apply.</span></td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Birth Date</span></td>
+<td>
+ <%= select_tag :f30826, options_for_select(%w(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec).to_enum(:each_with_index).collect {|x,i| [x, i+1]}, current_member.dob.month), :onchange => ";changed[5636] = 1;" %>
+ <%= select_tag :f30827, options_for_select((01..31).to_a, current_member.dob.day), :onchange=>";changed[5636] =1;" %>
+ <%= select_tag :f30828, options_for_select((1900..Time.now.year).to_a, current_member.dob.year), :onchange => ";changed[5636] = 1;" %>
+<span class="style13">*</span>
+</td>
+</tr>
+<tr>
+<td class="style1"><span class="style3">Gender</span></td>
+
+<td>
+ <%if current_member.gender == "M"%>
+<INPUT TYPE=radio NAME='f30829' onFocus=""  onChange="changed[5636] = 1;" VALUE='M' CHECKED >Male
+<INPUT TYPE=radio NAME='f30829' onFocus=""  onChange="changed[5636] = 1;" VALUE='F' >Female <span class="style13">*</span></td>
+<%else%>
+<INPUT TYPE=radio NAME='f30829' onFocus=""  onChange="changed[5636] = 1;" VALUE='M' >Male
+<INPUT TYPE=radio NAME='f30829' onFocus=""  onChange="changed[5636] = 1;" VALUE='F' CHECKED >Female <span class="style13">*</span></td>
+<%end%>
+  </td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="style2">Tell us about yourself</td>
+</tr>
+<tr>
+<td colspan="2" class="style11">The information you provide will help us connect you with special<br />offers and programs that are most relevant to you.</td>
+</tr>
+
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="style1">How many adults including yourself, are currently living in your household?<br />
+<span class="style9">(Choose one.) <span class="style13">*</span></span></td>
+</tr>
+<tr>
+<td class="style11">
+<INPUT TYPE=radio NAME='f30830' onFocus=""  onChange="changed[5636] = 1;" VALUE='50' >1<br />
+<INPUT TYPE=radio NAME='f30830' onFocus=""  onChange="changed[5636] = 1;" VALUE='51' >2<br />
+<INPUT TYPE=radio NAME='f30830' onFocus=""  onChange="changed[5636] = 1;" VALUE='52' >3<br />
+<INPUT TYPE=radio NAME='f30830' onFocus=""  onChange="changed[5636] = 1;" VALUE='53' >4+</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td colspan="2" class="style1">How many children (under 18) are living in your household?<br />
+<span class="style9">(Choose one.) <span class="style13">*</span></span></td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=radio NAME='f30849' onFocus=""  onChange="changed[5636] = 1;" VALUE='54' >0<br />
+<INPUT TYPE=radio NAME='f30849' onFocus=""  onChange="changed[5636] = 1;" VALUE='55' >1<br />
+<INPUT TYPE=radio NAME='f30849' onFocus=""  onChange="changed[5636] = 1;" VALUE='56' >2+</td>
+</tr>
+<tr>
+<td colspan="2" class="style1">What types of products do you frequently purchase?<br />
+<span class="style9">(Choose all that apply.) <span class="style13">*</span></span></td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=checkbox NAME='f30831'  onFocus=""  onChange="changed[5636] = 1;" VALUE='57' >Cereal</td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=checkbox NAME='f30832'  onFocus=""  onChange="changed[5636] = 1;" VALUE='58' >Cookies</td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=checkbox NAME='f30833'  onFocus=""  onChange="changed[5636] = 1;" VALUE='59' >Crackers</td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=checkbox NAME='f30834'  onFocus=""  onChange="changed[5636] = 1;" VALUE='60' >Frozen Waffles</td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=checkbox NAME='f30837'  onFocus=""  onChange="changed[5636] = 1;" VALUE='63' >Fruit Snacks</td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=checkbox NAME='f30835'  onFocus=""  onChange="changed[5636] = 1;" VALUE='103' >Meat Substitutes (ex. Veggie Burgers)</td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=checkbox NAME='f30836'  onFocus=""  onChange="changed[5636] = 1;" VALUE='62' >Natural/Organic Foods</td>
+</tr>
+<tr>
+<td colspan="2" class="style11"><p>
+<INPUT TYPE=checkbox NAME='f39613'  onFocus=""  onChange="changed[5636] = 1;" VALUE='104' >Toaster Pastries</p> </td>
+</tr>
+<tr>
+<td colspan="2" class="style1">How many boxes and/or bags of &quot;ready to eat&quot; cereal has your household eaten in the past two weeks?<br />
+<span class="style9">(Choose one.) <span class="style13">*</span></span></td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=radio NAME='f30850' onFocus=""  onChange="changed[5636] = 1;" VALUE='70' >&lt; 1<br />
+<INPUT TYPE=radio NAME='f30850' onFocus=""  onChange="changed[5636] = 1;" VALUE='71' >1-2<br />
+<INPUT TYPE=radio NAME='f30850' onFocus=""  onChange="changed[5636] = 1;" VALUE='72' >3+</td>
+</tr>
+<tr>
+<td colspan="2" class="style11"><span class="style1">How often do you eat cold cereal?<br />
+<span class="style9">(Choose one.) <span class="style13">*</span></span></span></td>
+</tr>
+<tr>
+<td colspan="2" class="style11">
+<INPUT TYPE=radio NAME='f30851' onFocus=""  onChange="changed[5636] = 1;" VALUE='64' >Everyday<br />
+<INPUT TYPE=radio NAME='f30851' onFocus=""  onChange="changed[5636] = 1;" VALUE='65' >At least once a week<br />
+<INPUT TYPE=radio NAME='f30851' onFocus=""  onChange="changed[5636] = 1;" VALUE='66' >Once every 2-3 weeks<br />
+<INPUT TYPE=radio NAME='f30851' onFocus=""  onChange="changed[5636] = 1;" VALUE='67' >Never</td>
+</tr>
+<tr>
+  <td colspan="2" class="style11"><span class="style1">Where do you shop for GROCERIES most often (ex. Kroger, Target, Costco)?<span class="style13">*</span></span></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td colspan="2" class="style11"><input name="f40502" id="stores" onblur="getStoreValue()" maxlength="50" size="20"></td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+
+<input type="hidden" name="f40408" value="" id="hiddenStore"></TD></TR>
+
+
+
+
+	<tr id="submit_col1">
+      <td align="center">
+        <!--<img src="images/bt-submit-orng.png" width="145" height="49" style="cursor:pointer;" onClick="noMsg=1; if (changed[5636]) { processClick('0', 'e'); }else{ processClick('0', 'e'); }">-->
+
+          <%= image_tag "bt-submit-orng.png", :width=>145, :height=>49, :style=>"cursor:pointer;", :onclick=>"noMsg=1; if (changed[5636]) { processClick('0', 'e'); }else{ processClick('0', 'e'); }" %>
+
+          <span style="pointer:cursor;">
+            <a href="#" onClick="noMsg=1;document.fm.js_status.value = 'n';make_exit_win=0;document.fm.submit();">No Thanks</a>
+          </span>
+        <!--<INPUT TYPE=button VALUE='Click here to Submit' onClick="noMsg=1; if (changed[5636]) { processClick('0', 'e'); }else{ processClick('0', 'e'); }">-->
+
+	</td></tr>
+
+
+	</table >
+<!--01. kellogs submit button-->
+<!--<INPUT TYPE=button VALUE='Click here to Submit' onClick="noMsg=1; if (changed[5636]) { processClick('0', 'e'); }else{ processClick('0', 'e'); }">-->
+<!--01. kellogs submit button-->
+
+</form>
+<div id="processing"></div>
+
+<!-- END -->
+
+<script type="text/javascript" language="javascript">
+if('5636' == '5942')
+{
+document.getElementById('yesbuttonradio').innerHTML = 'Oui';
+document.getElementById('nobuttonradio').innerHTML = 'Non';
+}
+</script>
+
+
+
+
+
+		<BR><BR>
+		</FONT>
+	</TR>
+	</TABLE>
+    </div>
+	</TD>
+</TR>
+</TABLE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<TABLE WIDTH=740 BORDER=0>
+<TR>
+	<TD>
+	<FONT FACE="verdana,sans-serif" SIZE=1 COLOR=#666666>
+	<!-- DISCLAIMER START -->
+<div id="disclaimer_container">
+  <p>
+    <!--BeginField:Disclaimer-->
+    <!--EndField:Disclaimer-->
+  </p>
+  <p align="center">
+    <!--BeginField:Links-->
+    <!--EndField:Links-->
+  </p>
+  <p align="center">
+    <!--BeginField:Copyright-->
+    <!--EndField:Copyright-->
+  </p>
+</div>
+<!-- DISCLAIMER END -->
+</FONT>
+	</TD>
+</TR>
+</TABLE>
+
+
+
+
+<SCRIPT>
+if(document.getElementById('processing')) { document.getElementById('processing').style.display = 'none'; }
+if(document.getElementById('submit')) { document.getElementById('submit').style.display = 'none'; }
+</SCRIPT>

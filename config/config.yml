@@ -1,0 +1,14 @@
+# config/config.yml
+
+development:
+  groupon_api_key: test
+  cj_link: 'http://www.anrdoezrs.net/click-5256398-10804307?url='
+test:
+  groupon_api_key: test
+  cj_link: 'http://www.anrdoezrs.net/click-5256398-10804307?url='
+production:
+  groupon_api_key: test
+  cj_link: 'http://www.anrdoezrs.net/click-5256398-10804307?url='
+staging:
+  groupon_api_key: test
+  cj_link: 'http://www.anrdoezrs.net/click-5256398-10804307?url='

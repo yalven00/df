@@ -1,0 +1,2794 @@
+totsy_email:
+  coreg_id: 1
+  name: email 
+  label: Email
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 3
+totsy_password:
+  coreg_id: 1
+  name: password
+  label: Password
+  field_type: password_field
+  required: true
+  min_length: 6
+  display: true
+  sequence: 2
+totsy_confirmed_email:
+  coreg_id: 1
+  name: confirmed_email
+  label: Confirm Email
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: true
+  sequence: 1
+totsy_zip:
+  coreg_id: 1
+  name: zip
+  label: Zip
+  field_type: text_field
+  required: true
+  match: "$('#member_postal_code').val()"
+  display: false
+  sequence: 4
+#pampers_pamp_opt:
+#  coreg_id: 2
+#  name: 'PAMP_OPT'
+#  label: 'By checking this box, I am permitting Pampers to send me all electronic communications, including Parent Pages newsletters, digital coupons, Gifts to Grow information, news and special offers to my email address.'
+#  field_type: checkbox_group
+#  select_options: 'Y:PAMP_OPT'
+#  display: true
+#  required: false
+#  sequence: 4
+pampers_child_bdate:
+  coreg_id: 2
+  name: BabyBirthDate
+  label: Baby Birth Date  
+  field_type: date_select
+  required: true
+  display: false
+  sequence: 2
+  match: "d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())+$('#member_child_attributes_dob_1i').val()"
+pampers_child_gender:
+  coreg_id: 2
+  name: BabyGender
+  label: Baby Gender
+  required: true
+  value: '"U"'
+  display: false
+  sequence: 3
+# pampers_shopping_diaper:
+#   coreg_id: 2
+#   name: sdiaper
+#   label: Where do you shop most often for diapers?
+#   field_type: select
+#   required: true
+#   select_options: "Babies/Toys R Us:1,BJ's:2,Costco:3,Diapers.com:4,Kroger:5,Sam's:6,Target:7,Wal-Mart:8,Walgreens:9,Other (Please Specify):0"
+#   select_prompt: "Select a Store"
+#   display: true
+#   sequence: 4
+# pampers_other:
+#   coreg_id: 2
+#   name: other
+#   label: Others  
+#   field_type: text_field
+#   required: false
+#   display: true
+#   sequence: 5
+#   dependent: pampers_shopping_diaper
+#   dependent_value: 0
+pampers_BabyBirthDate:
+  coreg_id: 2
+  name: BabyBirthDate
+  match: "d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())+$('#member_child_attributes_dob_1i').val()"
+  display: false
+  sequence: 5
+pampers_locale:
+  coreg_id: 2
+  name: Locale
+  value: '"en_US"'
+  display: false
+  sequence: 5
+pampers_pamp_opt:
+  coreg_id: 2
+  name: OPT_PAMP
+#  match: "$('#PAMP_OPT').val()"
+  match: "$('input[name=OPT_PAMP]:checked').val() == '' ? 'Y':''"
+  display: false
+  sequence: 5
+pampers_first_name:
+  coreg_id: 2
+  name: FirstName
+  display: false
+  sequence: 6
+  match: "$('#member_first_name').val()"
+pampers_last_name:
+  coreg_id: 2
+  name: LastName
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_last_name').val()"
+pampers_street1:
+  coreg_id: 2
+  name: Address1
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_address1').val()"
+pampers_street2:
+  coreg_id: 2
+  name: Address2
+  required: false
+  display: false
+  match: "$('#member_address_attributes_address2').val()"
+  sequence: 7
+pampers_city:
+  coreg_id: 2
+  name: City
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_city').val()"
+pampers_state:
+  coreg_id: 2
+  name: State
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_state').val()"
+pampers_zip:
+  coreg_id: 2
+  name: ZipCode
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_postal').val()"
+pampers_country:
+  coreg_id: 2
+  name: Country
+  required: true
+  display: false
+  sequence: 7
+  value: '"US"'
+pampers_consumer_birth_date:
+  coreg_id: 2
+  name: ConsumerBirthDate
+  required: true
+  display: false
+  sequence: 7
+  match: "d($('#member_dob_2i').val())+$('#member_dob_1i').val()"
+pampers_reg_data:
+  coreg_id: 2
+  name: RegDate
+  display: false
+  sequence: 7
+  value: Time.now.strftime("%Y-%m-%d %H:%M:%S")
+pampers_PGOpt:
+  coreg_id: 2
+  name: PGOpt
+  display: false
+  sequence: 7
+  value: '"N"'
+pampers_SimilacOptin:
+  coreg_id: 2
+  name: SimilacOptin
+  display: false
+  sequence: 7
+  value: '"N"'
+pampers_promo:
+  coreg_id: 2
+  name: promo
+  display: false
+  sequence: 7
+  value: '"GTG100"'
+pampers_UserName:
+  coreg_id: 2
+  name: UserName
+  display: false
+  sequence: 7
+  value: '"ParentMediaGroup"'
+pampers_Password:
+  coreg_id: 2
+  name: Password
+  display: false
+  sequence: 7
+  value: '"Par73iFMe\$Gr9T"'
+pampers_GTGOpt:
+  coreg_id: 2
+  name: GTGOpt
+  display: false
+  sequence: 7
+  value: '"Y"'
+pampers_PampersOpt:
+  coreg_id: 2
+  name: PampersOpt
+  display: false
+  sequence: 7
+  value: '"Y"'
+pampers_Email:
+  coreg_id: 2
+  name: Email
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+pampers_SimilacOptin:
+  coreg_id: 2
+  name: SimilacOptin
+  display: false
+  sequence: 7
+  value: '"N"'
+pampers_NewsletterOptin:
+  coreg_id: 2
+  name: NewsletterOptin
+  display: false
+  sequence: 7
+  value: '"Y"'
+pampers_terms:
+  coreg_id: 2
+  name: terms
+  display: false
+  sequence: 7
+  value: '"Y"'
+pampers_source:
+  coreg_id: 2
+  name: source
+  display: false
+  sequence: 7
+  value: '"dealsformommy.com"'
+gerber_email:
+  coreg_id: 3
+  name: email
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+gerber_acq_optindate:
+  coreg_id: 3
+  name: acq_optindate
+  display: false
+  sequence: 7
+  value: Time.now.strftime("%Y/%m/%d %H:%M:%S")
+gerber_acq_ipaddress:
+  coreg_id: 3
+  name: acq_ipaddress
+  display: false
+  sequence: 7
+  value: Request.find_by_hashcode(serial).ip_address
+gerber_first_name:
+  coreg_id: 3
+  name: firstName
+  display: false
+  sequence: 6
+  match: "$('#member_first_name').val()"
+gerber_last_name:
+  coreg_id: 3
+  name: lastName
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_last_name').val()"
+gerber_street1:
+  coreg_id: 3
+  name: address1
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_address1').val()"
+gerber_city:
+  coreg_id: 3
+  name: city
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_city').val()"
+gerber_state:
+  coreg_id: 3
+  name: state
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_state').val()"
+gerber_zip:
+  coreg_id: 3
+  name: zip
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_postal').val()"
+gerber_phone:
+  coreg_id: 3
+  name: phone
+  required: false
+  display: false
+  sequence: 7
+  value: '""'
+gerber_date6:
+  coreg_id: 3
+  name: date6
+  required: true
+  display: false
+  sequence: 7
+  match: "d($('#member_child_attributes_dob_2i').val())+'/'+d($('#member_child_attributes_dob_3i').val())+'/'+$('#member_child_attributes_dob_1i').val()"
+gerber_date4:
+  coreg_id: 3
+  name: date4
+  required: true
+  display: false
+  sequence: 7
+  match: "d($('#member_dob_2i').val())+'/'+d($('#member_dob_3i').val())+'/'+$('#member_dob_1i').val()"
+gerber_address2:
+  coreg_id: 3
+  name: text3
+  required: false
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_address2').val()"
+gerber_text6:
+  coreg_id: 3
+  name: text6
+  display: false
+  sequence: 7
+  value: "403795"
+#gerber_email:
+#  coreg_id: 3
+#  name: email
+#  display: false
+#  sequence: 7
+#  match: "$('#member_email').val()"
+#gerber_acq_optindate:
+#  coreg_id: 3
+#  name: acq_optindate
+#  display: false
+#  sequence: 7
+#  value: Time.now.strftime("%Y/%m/%d %H:%M:%S")
+#gerber_acq_ipaddress:
+#  coreg_id: 3
+#  name: acq_ipaddress
+#  display: false
+#  sequence: 7
+#  value: '""'
+#gerber_first_name:
+#  coreg_id: 3
+#  name: firstName
+#  display: false
+#  sequence: 6
+#  match: "$('#member_first_name').val()"
+#gerber_last_name:
+#  coreg_id: 3
+#  name: lastName
+#  required: true
+#  display: false
+#  sequence: 7
+#  match: "$('#member_last_name').val()"
+#gerber_street1:
+#  coreg_id: 3
+#  name: address1
+#  required: true
+#  display: false
+#  sequence: 7
+#  match: "$('#member_address_attributes_address1').val()"
+#gerber_city:
+#  coreg_id: 3
+#  name: city
+#  required: true
+#  display: false
+#  sequence: 7
+#  match: "$('#member_address_attributes_city').val()"
+#gerber_state:
+#  coreg_id: 3
+#  name: state
+#  required: true
+#  display: false
+#  sequence: 7
+#  match: "$('#member_address_attributes_state').val()"
+#gerber_zip:
+#  coreg_id: 3
+#  name: zip
+#  required: true
+#  display: false
+#  sequence: 7
+#  match: "$('#member_address_attributes_postal').val()"
+#gerber_phone:
+#  coreg_id: 3
+#  name: phone
+#  required: false
+#  display: false
+#  sequence: 7
+#  value: '""'
+#gerber_date6:
+#  coreg_id: 3
+#  name: date6
+#  required: true
+#  display: false
+#  sequence: 7
+#  match: "d($('#member_child_attributes_dob_2i').val())+'/'+d($('#member_child_attributes_dob_3i').val())+'/'+$('#member_child_attributes_dob_1i').val()"
+#gerber_date4:
+#  coreg_id: 3
+#  name: date4
+#  required: true
+#  display: false
+#  sequence: 7
+#  match: "d($('#member_dob_2i').val())+'/'+d($('#member_dob_3i').val())+'/'+$('#member_dob_1i').val()"
+#gerber_address2:
+#  coreg_id: 3
+#  name: text3
+#  required: false
+#  display: false
+#  sequence: 7
+#  match: "$('#member_address_attributes_address2').val()"
+#gerber_jobTitle:
+#  coreg_id: 3
+#  name: jobTitle
+#  display: false
+#  sequence: 7
+#  value: "403795"
+#gerber_cdobm:
+#  coreg_id: 3
+#  name: child_dob_month
+#  required: true
+#  display: false
+#  sequence: 7
+#  match:  "$('#member_child_attributes_dob_2i').val()"
+#gerber_cdobd:
+#  coreg_id: 3
+#  name: child_dob_day
+#  required: true
+#  display: false
+#  sequence: 7
+#  match:  "$('#member_child_attributes_dob_3i').val()"
+#gerber_cdoby:
+#  coreg_id: 3
+#  name: child_dob_year
+#  required: true
+#  display: false
+#  sequence: 7
+#  match:  "$('#member_child_attributes_dob_1i').val()"
+#gerber_GERBER_RETURN_URL:
+#  coreg_id: 3
+#  name: text6
+#  display: false
+#  sequence: 7
+#  value: '"www.gerberlife.com/gl/apm.do?cpn=apm-cutekid-csk&return_url=http://dealsformommy.com/api/optins/coreg_optins/#{serial}&banner_image_name=http://www.dealsformommy.com/release-92a3fd9/images/dfm-logo-header1.png&banner_image_clickable=yes&keycode=003607&value(OptedIn)=true&value(ZipCodePlus4)=&value(ApplicantPhoneNumber_1)=&value(ApplicantPhoneNumber_2)=&value(ApplicantPhoneNumber_3)=&value(Child1Name_FIRST)=&value(Child1Name_LAST)=&value(Child1Sex)=F&value(ApplicantName_FIRST)=#{v(:firstName)}&value(ApplicantName_LAST)=#{v(:lastName)}&value(email_address)={v(:email)}&value(AddressLine1)=#{v(:address1)}&value(City)=#{v(:city)}&value(State)=#{v(:state)}&value(ZipCode)=#{v(:zip)}&value(Child1BirthDate_MONTH)=#{v(:child_dob_month)}&value(Child1BirthDate_DAY)=#{v(:child_dob_day)}&value(Child1BirthDate_YEAR)=#{v(:child_dob_year)}"'
+disney_first_name:
+  coreg_id: 4
+  name: first_name
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_first_name').val()"
+disney_last_name:
+  coreg_id: 4
+  name: last_name
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_last_name').val()"
+disney_Email:
+  coreg_id: 4
+  name: email
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+disney_street1:
+  coreg_id: 4
+  name: address1
+  required: true
+  display: false
+  match: "$('#member_address_attributes_address1').val()"
+  sequence: 7
+disney_street2:
+  coreg_id: 4
+  name: address2
+  required: false
+  display: false
+  match: "$('#member_address_attributes_address2').val()"
+  sequence: 7
+disney_city:
+  coreg_id: 4
+  name: city
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_city').val()"
+disney_state:
+  coreg_id: 4
+  name: state
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_state').val()"
+disney_postal_code:
+  coreg_id: 4
+  name: postal_code
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_postal').val()"
+disney_consumer_birth_date:
+  coreg_id: 4
+  name: dob
+  required: true
+  display: false
+  sequence: 7
+  match: "d($('#member_dob_2i').val())+'/'+d($('#member_dob_3i').val())+'/'+$('#member_dob_1i').val()"
+disney_source:
+  coreg_id: 4
+  name: source
+  display: false
+  sequence: 7
+  value: '"dealsformommy.com"'
+gerbercollegeplan_acq_medium:
+  coreg_id: 5
+  name: acq_medium
+  display: false
+  sequence: 7
+  value: '"Coreg"'
+gerbercollegeplan_acq_name:
+  coreg_id: 5
+  name: acq_name
+  display: false
+  sequence: 7
+  value: '"Deals for Mommy College Plan"'
+gerbercollegeplan_acq_source:
+  coreg_id: 5
+  name: acq_source
+  display: false
+  sequence: 7
+  value: '"DealsforMommy-CollegePlan"'
+gerbercollegeplan_email:
+  coreg_id: 5
+  name: email
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+gerbercollegeplan_acq_optindate:
+  coreg_id: 5
+  name: acq_optindate
+  display: false
+  sequence: 7
+  value: Time.now.strftime("%Y/%m/%d %H:%M:%S")
+gerbercollegeplan_acq_ipaddress:
+  coreg_id: 5
+  name: acq_ipaddress
+  display: false
+  sequence: 7
+  value: ""
+gerbercollegeplan_text6:
+  coreg_id: 5
+  name: text6
+  display: false
+  sequence: 7
+  value: "402098"
+gerbercollegeplan_first_name:
+  coreg_id: 5
+  name: firstName
+  display: false
+  sequence: 6
+  match: "$('#member_first_name').val()"
+gerbercollegeplan_last_name:
+  coreg_id: 5
+  name: lastName
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_last_name').val()"
+gerbercollegeplan_street1:
+  coreg_id: 5
+  name: address1
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_address1').val()"
+gerbercollegeplan_street2:
+  coreg_id: 5
+  name: text3
+  required: false
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_address2').val()"
+gerbercollegeplan_city:
+  coreg_id: 5
+  name: City
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_city').val()"
+gerbercollegeplan_state:
+  coreg_id: 5
+  name: State
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_state').val()"
+gerbercollegeplan_zip:
+  coreg_id: 5
+  name: ZipCode
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_postal').val()"
+gerbercollegeplan_phone:
+  coreg_id: 5
+  name: phone
+  required: true
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_postal').val()"
+gerbercollegeplan_date1:
+  coreg_id: 5
+  name: date1
+  required: true
+  display: false
+  sequence: 7
+  match: "d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())+$('#member_child_attributes_dob_1i').val()"
+gerbercollegeplan_birthDate:
+  coreg_id: 5
+  name: birthDate
+  required: true
+  display: false
+  sequence: 7
+  match: "d($('#member_dob_2i').val())+d($('#member_dob_3i').val())+$('#member_dob_1i').val()"
+inboxdollars_email:
+  coreg_id: 6
+  name: email 
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 3
+inboxdollars_first_name:
+  coreg_id: 6
+  name: first_name 
+  match: "$('#member_first_name').val()"
+  display: false
+  sequence: 3
+inboxdollars_last_name:
+  coreg_id: 6
+  name: last_name 
+  match: "$('#member_last_name').val()"
+  display: false
+  sequence: 3
+pepsi_Email:
+  coreg_id: 7
+  name: f38182
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+pepsi_zip:
+  coreg_id: 7
+  name: f38183
+  display: false
+  sequence: 7
+  match: "$('#member_zip').val()"
+pepsi_month:
+  coreg_id: 7
+  name: f38184
+  display: false
+  sequence: 7
+  match: "$('#member_dob_1i').val()"
+pepsi_day:
+  coreg_id: 7
+  name: f38185
+  display: false
+  sequence: 7
+  match: "$('#member_dob_2i').val()"
+pepsi_year:
+  coreg_id: 7
+  name: f38186
+  display: false
+  sequence: 7
+  match: "$('#member_dob_3i').val()"
+pepsi_child_gender:
+  coreg_id: 7
+  name: f38187
+  match: "$('#member_gender').val()"
+  display: false
+  sequence: 7
+pepsi_interests:
+  coreg_id: 7
+  name: f38187-1a
+  label: 'Are you interested in?' 
+  field_type: checkbox_group
+  select_options: 'Auto Racing:1003:f38188,Baseball:1004:f38189,Football:1005:f38190,Hockey:1006:f38191,Soccer:1001:f38192,MMA (Mixed Martial Arts):1007:f38193,Action/Extreme Sports:1008:f38194,Fishing:1000:f38195,Video Games:1009:f38196,Coupons:1002:f38197'
+  display: true
+  sequence: 4
+pepsi_newsletter:
+  coreg_id: 7
+  name: f38187-2a
+  label: 'What other Pepsi e-newsletters would you like to sign up for?' 
+  field_type: checkbox_group
+  select_options: "<strong>Mountain Dew</strong> With DEWsletter you'll bein the know about all things Dew!:1005:f38198,<strong>SoBe</strong> SoBe's Lizard Tales e-newsletter is full of news offers and announcements about SoBe. Stay hip to the lizardverse.:1076:f38199,<strong>AMP Energy</strong> Get energized with AmP news and rewards.:1061:f38200,<strong>Quench</strong> Get exclusive offers coupons tips recipes and more from select PepsiCo Brands like Diet Pepsi and Propel.:1003:f38201,<strong>The Pepsi Refresh Project</strong> Pepsi's giving away millions to fund ideas that will refresh the world! Get emails to stay on top of news and updates:1079:f38202"
+  display: true
+  sequence: 5
+kellogg_password:
+  coreg_id: 8
+  name: f30816
+  label: Password
+  field_type: password_field
+  required: true
+  min_length: 6
+  display: true
+  sequence: 1
+kellogg_confirm_password:
+  coreg_id: 8
+  name: f30817
+  label: Confirm Password
+  field_type: password_field
+  match: "$('#coreg_optin_8_coreg_param_f30816').val()"
+  required: true
+  min_length: 6
+  display: true
+  sequence: 2
+kellogg_number_adults:
+  coreg_id: 8
+  name: f38187-1
+  label: 'How many adults including yourself, are currently living in your household?' 
+  field_type: radio_group
+  select_options: '1:50:f30830,2:51:f30830,3:52:f30830,4+:53:f30830'
+  display: true
+  sequence: 3
+kellogg_number_children:
+  coreg_id: 8
+  name: f38187-2
+  label: 'How many children (under 18) are living in your household?' 
+  field_type: radio_group
+  select_options: '0:54:f30849,1:55:f30849,3+:56:f30849'
+  display: true
+  sequence: 4
+kellogg_frequent_purchase:
+  coreg_id: 8
+  name: f38187-3
+  label: 'What types of products do you frequently purchase?'
+  field_type: checkbox_group
+  select_options: 'Cereal:57:f30831,Cookies:58:f30831,Crackers:59:f30831,Frozen Waffles:60:f30831,Fruit Snacks:63:f30831,Meat Substitutes (ex. Veggie Burgers):103:f30831,Natural/Organic Foods:62:f30831,Toaster Pastries:104:f30831'
+  display: true
+  sequence: 5
+kellogg_cereal_purchase:
+  coreg_id: 8
+  name: f38187-4
+  label: 'How many boxes and/or bags of "ready to eat" cereal has your household eaten in the past two weeks?'
+  field_type: radio_group
+  select_options: '<1:70:f30850,1-2:71:f30850,3+:72:f30850'
+  display: true
+  sequence: 6
+kellogg_frequent_cold_cereal:
+  coreg_id: 8
+  name: f38187-5
+  label: 'How often do you eat cold cereal?'
+  field_type: radio_group
+  select_options: 'Everyday:64:f30851,At least once a week:65:f30851,Once every 2-3 weeks:66:f30851,Never:67:f30851'
+  display: true
+  sequence: 7
+kellogg_shopping:
+  coreg_id: 8
+  name: f40502 
+  label: 'Where do you shop for GROCERIES most often (ex. Kroger, Target, Costco)?'
+  field_type: text_field
+  required: true
+  display: true
+  sequence: 8
+kellogg_Email:
+  coreg_id: 8
+  name: email
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+kellogg_Email2:
+  coreg_id: 8
+  name: f30814
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+kellogg_Email3:
+  coreg_id: 8
+  name: f30815
+  display: false
+  sequence: 7
+  match: "$('#member_email').val()"
+kellogg_first_name:
+  coreg_id: 8
+  name: f30818
+  display: false
+  sequence: 7
+  match: "$('#member_first_name').val()"
+kellogg_last_name:
+  coreg_id: 8
+  name: f30819
+  display: false
+  sequence: 7
+  match: "$('#member_last_name').val()"
+kellogg_address1:
+  coreg_id: 8
+  name: f30820
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_address1').val()"
+kellogg_address2:
+  coreg_id: 8
+  name: f30821
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_address2').val()"
+kellogg_city:
+  coreg_id: 8
+  name: f30822
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_city').val()"
+kellogg_state:
+  coreg_id: 8
+  name: f30823
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_state').val()"
+kellogg_zip:
+  coreg_id: 8
+  name: f30824
+  required: false
+  match: "$('#member_address_attributes_postal').val()"
+  display: false
+  sequence: 4
+kellogg_mobile:
+  coreg_id: 8
+  name: f30825
+  required: false
+  display: false
+  sequence: 4
+  value: '"GTG100"'
+kellogg_birth_month:
+  coreg_id: 8
+  name: f30826
+  required: false
+  display: false
+  sequence: 4
+  match: "$('#member_dob_2i').val()"
+kellogg_birth_day:
+  coreg_id: 8
+  name: f30827
+  required: false
+  display: false
+  sequence: 4
+  match: "$('#member_dob_3i').val()"
+kellogg_birth_year:
+  coreg_id: 8
+  name: f30828
+  required: false
+  display: false
+  sequence: 4
+  match: "$('#member_dob_1i').val()"
+caribbean_cruise_Phone:
+  coreg_id: 9
+  name: Phone
+  required: true
+  display: true
+  sequence: 1
+  field_type: text_field
+  label: 'Phone Number<br /><span style="font-size:9px"><strong>(format: 2125551234)</strong></span>'
+caribbean_cruise_FName:
+  coreg_id: 9
+  name: FName
+  display: false
+  sequence: 2
+  match: "$('#member_first_name').val()"
+caribbean_cruise_LName:
+  coreg_id: 9
+  name: LName
+  display: false
+  sequence: 2
+  match: "$('#member_last_name').val()"
+caribbean_cruise_FullName:
+  coreg_id: 9
+  name: FullName
+  display: false
+  sequence: 2
+  match: "($('#member_first_name').val())+' '+($('#member_last_name').val())"    
+caribbean_cruise_street1:
+  coreg_id: 9
+  name: Street
+  display: false
+  sequence: 2
+  match: "$('#member_address_attributes_address1').val()"
+caribbean_cruise_street2:
+  coreg_id: 9
+  name: Street2
+  display: false
+  match: "$('#member_address_attributes_address2').val()"
+  sequence: 2
+caribbean_cruise_street3:
+  coreg_id: 9
+  name: Street3
+  display: false
+  value: "'none'"
+  sequence: 2
+caribbean_cruise_city:
+  coreg_id: 9
+  name: City
+  display: false
+  sequence: 2
+  match: "$('#member_address_attributes_city').val()"
+caribbean_cruise_State:
+  coreg_id: 9
+  name: State
+  display: false
+  sequence: 2
+  match: "$('#member_address_attributes_state').val()"
+caribbean_cruise_zip:
+  coreg_id: 9
+  name: Zipcode
+  display: false
+  sequence: 2
+  match: "$('#member_address_attributes_postal').val()"
+caribbean_cruise_Email:
+  coreg_id: 9
+  name: Email
+  display: false
+  sequence: 2
+  match: "$('#member_email').val()"
+caribbean_cruise_Code:
+  coreg_id: 9
+  name: Code
+  display: false
+  sequence: 2
+  value: "'DF1'"
+caribbean_cruise_IPAddress:
+  coreg_id: 9
+  name: IPAddress
+  display: false
+  sequence: 2
+  value: "'123.456.789.963'"
+caribbean_cruise_OptInDate:
+  coreg_id: 9
+  name: OptInDate
+  display: false
+  sequence: 2
+  value: Time.now.strftime("%m/%d/%Y")
+caribbean_cruise_EndPage:
+  coreg_id: 9
+  name: EndPage
+  display: false
+  sequence: 2
+  value: ""
+caribbean_cruise_Referrer:
+  coreg_id: 9
+  name: Referrer
+  display: false
+  sequence: 2
+  value: ""
+Jc_Penny_firstname:
+  coreg_id: 10
+  name:  fname
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+Jc_Penny_lastname:
+  coreg_id: 10
+  name:  lname
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+Jc_Penny_ip_address:
+  coreg_id: 10
+  name:  ipaddress
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Jc_Penny_gender:
+  coreg_id: 10
+  name:  gender
+  display: false
+  sequence: 1
+  match: "$('#member_gender').val()"
+Jc_Penny_address:
+  coreg_id: 10
+  name:  addr1
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address1').val()"
+Jc_Penny_address2:
+  coreg_id: 10
+  name:  addr2
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address2').val()"
+Jc_Penny_city:
+  coreg_id: 10
+  name:  city
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_city').val()"
+Jc_Penny_state:
+  coreg_id: 10
+  name:  state
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+Jc_Penny_zip:
+  coreg_id: 10
+  name:  zip
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+Jc_Penny_email:
+  coreg_id: 10
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+Jc_Penny_dob_day:
+  coreg_id: 10
+  name: dobday
+  display: false
+  sequence: 1
+  match: "$('#member_dob_3i').val()"
+Jc_Penny_dob_month:
+  coreg_id: 10
+  name: dobmonth
+  display: false
+  sequence: 1
+  match: "$('#member_dob_2i').val()"
+Jc_Penny_dob_year:
+  coreg_id: 10
+  name: dobyear
+  display: false
+  sequence: 1
+  match: "$('#member_dob_1i').val().substring(2)"
+Jc_Penny_member_dob:
+  coreg_id: 10
+  name: member_dob
+  display: false
+  sequence: 1
+  match: "$('#member_dob_1i').val()+d($('#member_dob_3i').val())+d($('#member_dob_2i').val())"
+Prilosec_fName:
+  coreg_id: 11
+  name: f38545
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"       
+Prilosec_lName:
+  coreg_id: 11
+  name: f38545
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"       
+Prilosec_email:
+  coreg_id: 11
+  name: f38547
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+Prilosec_email_confirm:
+  coreg_id: 11
+  name: f38548
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()" 
+Prilosec_birth_month:
+  coreg_id: 11
+  name: f38549
+  required: false
+  display: false
+  sequence: 1
+  match: "$('#member_dob_2i').val()"
+Prilosec_birth_year:
+  coreg_id: 11
+  name: f38550
+  required: false
+  display: false
+  sequence: 1
+  match: "$('#member_dob_1i').val()"
+Prilosec_SOD_Trusted_Form_Field:
+  coreg_id: 11
+  name: f38571
+  required: false
+  display: false
+  sequence: 1
+  value: ""
+Prilosec_SOD_PID:
+  coreg_id: 11
+  name: f38572
+  required: false
+  display: false
+  sequence: 1
+  value: "319995"
+Prilosec_SOD_IP_Address:
+  coreg_id: 11
+  name: f38573
+  required: false
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Prilosec_SOD_birthday:
+  coreg_id: 11
+  name: f38574
+  required: false
+  display: false
+  sequence: 1
+  match:  "$('#member_child_attributes_dob_2i').val()"
+Prilosec_hidden_scrup:
+  coreg_id: 11
+  name: f38575
+  required: false
+  display: false
+  sequence: 1
+  value: ""
+Prilosec_SOD_Gender:
+  coreg_id: 11
+  name: f3864
+  required: false
+  display: false
+  sequence: 1
+  match: "$('#member_gender').val()"
+Prilosec_SOD_URL:
+  coreg_id: 11
+  name: f3857
+  required: false
+  display: false
+  sequence: 1
+  value: ""
+Prilosec_address:
+  coreg_id: 11
+  name:  f38551
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address1').val()"
+Prilosec_address2:
+  coreg_id: 11
+  name:  f38552
+  display: false
+  sequence: 1  
+  match: "$('#member_address_attributes_address2').val()"
+Prilosec_city:
+  coreg_id: 11
+  name:  f38553
+  display: false
+  sequence: 1 
+  match: "$('#member_address_attributes_city').val()"
+Prilosec_state:
+  coreg_id: 11
+  name:  f38554
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+Prilosec_zip:
+  coreg_id: 11
+  name:  f38556
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+Prilosec_heartburn:
+  coreg_id: 11
+  name: f38556
+  label: How frequently do you suffer from heartburn?<br />
+  field_type: select
+  required: true
+  select_options: "7 days per week:A,4 - 6 days per week:B,2 - 3 days per week:C,One day per week or less:D,Never:E"
+  select_prompt: "--Choose One--"
+  display: true
+  required: false
+  sequence: 2
+Prilosec_medication:
+  coreg_id: 11
+  name: f38557
+  label: How frequently do you take medication for heartburn?<br />
+  field_type: select
+  required: true
+  select_options: "7 days per week:A,4 - 6 days per week:B,2 - 3 days per week:C,One day per week or less:D,Never:E"
+  select_prompt: "--Choose One--"
+  display: true
+  required: false
+  sequence: 3
+Prilosec_otc_medication:
+  coreg_id: 11
+  name: 'f38558-1'
+  label: 'What OTC medications do you take?' 
+  field_type: checkbox_group
+  select_options: 'Tums:Y:f38558,Rolaids:Y:f38559,Zantac 75:Y:f38560,Pepcid AC:Y:f38561,Tagamet HB 200:Y:f38562,Pepto-Bismol:Y:f38563,Zegerid:Y:f38564,Store-Brand Omeprazole:Y:f38565,Prilosec OTC:Y:f38566,Prevacid 24HR:Y:f38567,Other acid reducer or antacid:Y:f38568'
+  display: true
+  required: false
+  sequence: 4
+Prilosec_email_updates:
+  coreg_id: 11
+  label: "Other newsletters" 
+  field_type: checkbox_group
+  select_options: 'Please send me periodic e-mail updates with health recipes&#044; fun family activities&#044; tips for fighting frequent heartburn and more!:Y:f38569,Register to receive P&G Everday Solutions:Y:f38570'
+  display: true
+  required: false
+  sequence: 5
+Enfamil_name_first:
+  coreg_id: 13
+  name: name_first
+  display: false
+  match: "$('#member_first_name').val()"
+  flatfile_width: 20
+  sequence: 1
+Enfamil_name_middle:
+  coreg_id: 13
+  name:  name_middle
+  display: false
+  value: '""'
+  flatfile_width: 20
+  sequence: 2
+Enfamil_name_last:
+  coreg_id: 13
+  name: name_last
+  display: false
+  match: "$('#member_last_name').val()"
+  flatfile_width: 40
+  sequence: 3
+Enfamil_parent_addr1:
+  coreg_id: 13
+  name: parent_addr1
+  display: false
+  match: "$('#member_address_attributes_address1').val()"
+  flatfile_width: 40
+  sequence: 4
+Enfamil_parent_addr2:
+  coreg_id: 13
+  name: parent_addr2
+  display: false
+  match: "$('#member_address_attributes_address2').val()"
+  flatfile_width: 40
+  sequence: 5
+Enfamil_parent_city:
+  coreg_id: 13
+  name: parent_city
+  display: false
+  match: "$('#member_address_attributes_city').val()"
+  flatfile_width: 30
+  sequence: 6
+Enfamil_parent_state:
+  coreg_id: 13
+  name: parent_state
+  display: false
+  match: "$('#member_address_attributes_state').val()"
+  flatfile_width: 2
+  sequence: 7
+Enfamil_parent_postal_code:
+  coreg_id: 13
+  name: postal_code
+  display: false
+  match: "$('#member_address_attributes_postal').val()"
+  flatfile_width: 9
+  sequence: 8
+Enfamil_parent_child_birth_date:
+  coreg_id: 13
+  name: child_birth_date
+  display: false
+  sequence: 9
+  match: "$('#member_child_attributes_dob_1i').val()+d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())"
+  flatfile_width: 8
+Enfamil_parent_file_cd:
+  coreg_id: 13
+  name: file_cd
+  display: false
+  sequence: 10
+  value: 306 
+  flatfile_width: 3
+Enfamil_parent_src_id:
+  coreg_id: 13
+  name: src_id
+  display: false
+  sequence: 11
+  value: '"HA005"' 
+  flatfile_width: 13
+Enfamil_parent_email_address:
+  coreg_id: 13
+  name: email_address
+  display: false
+  sequence: 12
+  match: "$('#member_email').val()"
+  flatfile_width: 92
+  sequence: 12
+Enfamil_wic_status:
+  coreg_id: 13
+  name: wic_status 
+  field_type: select
+  required: true
+  select_options: 'Yes:1,No:2'
+  select_prompt: 'Select One'
+  label:  "Do you expect to receive infant formula through the government-sponsored Women, Infants, and Children (WIC) program? <br />"
+  display: true
+  sequence: 13
+  flatfile_width: 4
+Enfamil_mkt_consent_fl:
+  coreg_id: 13
+  name: mkt_consent_fl
+  display: false
+  sequence: 14
+  value: '"Y"'
+  flatfile_width: 101
+  required: true
+Enfamil_relationship_to_child:
+  coreg_id: 13
+  name: relationship_to_child	
+  field_type: select
+  select_options: 'Mother:0001,Father:0002,parent:0003,Grandparent:0004'
+  select_prompt: 'Select Relation'
+  label:  'What is your relationship to the child? <br />'
+  display: true
+  sequence: 15
+  flatfile_width: 55
+  required: true
+#Maryland_Eway_firstName:
+#  coreg_id: 15
+#  name: firstName
+#  label: firstName
+#  field_type: text_field
+#  required: true
+#  match: "$('#member_first_name').val()"
+#  display: false
+#  sequence: 1
+#Maryland_Eway_lastName:
+#  coreg_id: 15
+#  name: lastName
+#  label: lastName
+#  field_type: text_field
+#  required: true
+#  match: "$('#member_last_name').val()"
+#  display: false
+#  sequence: 1
+#Maryland_Eway_email:
+#  coreg_id: 15
+#  name: email
+#  label: email
+#  field_type: text_field
+#  required: true
+#  match: "$('#member_email').val()"
+#  display: false
+#  sequence: 1
+#Maryland_Eway_zip:
+#  coreg_id: 15
+#  name: zip
+#  label: zip
+#  field_type: text_field
+#  required: true
+#  match: "$('#member_address_attributes_postal').val()"
+#  display: false
+#  sequence: 1
+#Maryland_state:
+#  coreg_id: 15
+#  name: state
+#  label: state
+#  required: false
+#  display: false
+#  sequence: 1
+#  match: "$('#member_address_attributes_state').val()"
+Maryland_first_name:
+  coreg_id: 15
+  name: first_name
+  label: first_name
+  field_type: text_field
+  required: true
+  match: "$('#member_first_name').val()"
+  display: false
+  sequence: 1
+Maryland_last_name:
+  coreg_id: 15
+  name: last_name
+  label: last_name
+  field_type: text_field
+  required: true
+  match: "$('#member_last_name').val()"
+  display: false
+  sequence: 1
+Maryland_email:
+  coreg_id: 15
+  name: email
+  label: email
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 1
+Maryland_state:
+  coreg_id: 15
+  name: state
+  label: state
+  required: true
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+Maryland_zip:
+  coreg_id: 15
+  name: zip_code
+  label: zip_code
+  field_type: text_field
+  required: true
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+Maryland_ip_address:
+  coreg_id: 15
+  name:  ip_address
+  label: ip_address
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Maryland_lead_date:
+  coreg_id: 15
+  name: lead_date
+  label: lead_date
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Time.now.strftime("%m/%d/%Y")
+Maryland_lead_time:
+  coreg_id: 15
+  name: lead_time
+  label: lead_time
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Time.now.strftime("%R")
+Maryland_site_id:
+  coreg_id: 15
+  name: site_id
+  label: site_id
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: "'DealsForMommy'"
+Maryland_source:
+  coreg_id: 15
+  name: source
+  label: source
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: "'ParentMediaGroup'"
+Fit_Pregnancy_EMAIL:
+  coreg_id: 16
+  name: EMAIL
+  label: EMAIL
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 1
+Fit_Pregnancy_FNAME:
+  coreg_id: 16
+  name: FNAME
+  label: FNAME
+  field_type: text_field
+  required: true
+  match: "$('#member_first_name').val()"
+  display: false
+  sequence: 2
+Fit_Pregnancy_LNAME:
+  coreg_id: 16
+  name: LNAME
+  label: LNAME
+  field_type: text_field
+  required: true
+  match: "$('#member_last_name').val()"
+  display: false
+  sequence: 3
+Fit_PregnancyZIP:
+  coreg_id: 16
+  name: ZIP
+  label: ZIP
+  field_type: text_field
+  required: true
+  display: false
+  sequence: 4
+  match: "$('#member_address_attributes_postal').val()"
+Fit_Pregnancy_DUE_DATE:
+  coreg_id: 16
+  name: DUE_DATE
+  label: DUE_DATE
+  field_type: text_field
+  required: true
+  display: false
+  sequence: 5
+  match: "d($('#member_child_attributes_dob_2i').val())+'/'+d($('#member_child_attributes_dob_3i').val())+'/'+$('#member_child_attributes_dob_1i').val()"
+Fit_Pregnancy_DUE_DATE2:
+  coreg_id: 16
+  name: DUE_DATE2
+  label: DUE_DATE2
+  field_type: text_field
+  required: false
+  display: false
+  sequence: 5
+  flatfile_width: 0
+  match: "$('#member_child_attributes_dob_1i').val()+d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())"
+Fit_Pregnancy_parent_age:
+  coreg_id: 16
+  name: parent_age
+  label: parent_age
+  field_type: text_field
+  required: false
+  display: false
+  sequence: 5
+  flatfile_width: 0
+  match: "(new Date).getFullYear() - $('#member_dob_1i').val()"
+Fit_Pregnancy_SOURCE:
+  coreg_id: 16
+  name: SOURCE
+  label: SOURCE
+  field_type: text_field
+  display: false
+  sequence: 6
+  value: "'DealsforMommy'"
+NPD_Group_email:
+  coreg_id: 17
+  name: e
+  label: email
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 1
+NPD_Group_ip_address:
+  coreg_id: 17
+  name:  ip
+  label: ip_address
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+NPD_Group_time:
+  coreg_id: 17
+  name: time
+  label: lead_date
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Time.now.strftime("%m/%d/%Y %T")
+NPD_Group_gender:
+  coreg_id: 17
+  name:  g
+  label: gender
+  display: false
+  sequence: 1
+  match: "$('#member_gender, input[name=member[gender]]:checked').val() == 'F' ? 2:1"
+NPD_Group_age:
+  coreg_id: 17
+  name: a
+  label: age
+  field_type: text_field
+  required: true
+  display: false
+  sequence: 1
+  match: "(new Date).getFullYear() - $('#member_dob_1i').val()"
+NPD_Group_country:
+  coreg_id: 17
+  name: c
+  label: country
+  required: true
+  display: false
+  sequence: 1
+  match: "$('#country_id').val()"
+NPD_Group_first_name:
+  coreg_id: 17
+  name: fn
+  label: first_name
+  field_type: text_field
+  required: true
+  match: "$('#member_first_name').val()"
+  display: false
+  sequence: 1
+NPD_Group_last_name:
+  coreg_id: 17
+  name: ln
+  label: last_name
+  field_type: text_field
+  required: true
+  match: "$('#member_last_name').val()"
+  display: false
+  sequence: 1
+Buffalo_Eway_firstName:
+  coreg_id: 18
+  name: firstName
+  label: firstName
+  field_type: text_field
+  required: true
+  match: "$('#member_first_name').val()"
+  display: false
+  sequence: 1
+Buffalo_Eway_lastName:
+  coreg_id: 18
+  name: lastName
+  label: lastName
+  field_type: text_field
+  required: true
+  match: "$('#member_last_name').val()"
+  display: false
+  sequence: 1
+Buffalo_Eway_email:
+  coreg_id: 18
+  name: email
+  label: email
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 1
+Buffalo_Eway_zip:
+  coreg_id: 18
+  name: zip
+  label: zip
+  field_type: text_field
+  required: true
+  match: "$('#member_address_attributes_postal').val()"
+  display: false
+  sequence: 1
+Buffalo_Eway_state:
+  coreg_id: 18
+  name: state
+  label: state
+  required: true
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+Buffalo_first_name:
+  coreg_id: 19
+  name: first_name
+  label: first_name
+  field_type: text_field
+  required: true
+  match: "$('#member_first_name').val()"
+  display: false
+  sequence: 1
+Buffalo_last_name:
+  coreg_id: 19
+  name: last_name
+  label: last_name
+  field_type: text_field
+  required: true
+  match: "$('#member_last_name').val()"
+  display: false
+  sequence: 1
+Buffalo_email:
+  coreg_id: 19
+  name: email
+  label: email
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 1
+Buffalo_state:
+  coreg_id: 19
+  name: state
+  label: state
+  required: true
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+Buffalo_zip:
+  coreg_id: 19
+  name: zip_code
+  label: zip_code
+  field_type: text_field
+  required: true
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+Buffalo_ip_address:
+  coreg_id: 19
+  name:  ip_address
+  label: ip_address
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Buffalo_lead_date:
+  coreg_id: 19
+  name: lead_date
+  label: lead_date
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Time.now.strftime("%m/%d/%Y")
+Buffalo_lead_time:
+  coreg_id: 19
+  name: lead_time
+  label: lead_time
+  field_type: text_field
+  display: false
+  sequence: 1
+  value: Time.now.strftime("%R")
+Eversave-7thGeneration_email:
+  coreg_id: 20
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+Eversave-7thGeneration_ip_address:
+  coreg_id: 20
+  name:  ipaddress
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Eversave-7thGeneration_firstname:
+  coreg_id: 20
+  name:  fname
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+Eversave-7thGeneration_lastname:
+  coreg_id: 20
+  name:  lname
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+Eversave-7thGeneration_zip:
+  coreg_id: 20
+  name:  zip
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+Eversave-7thGeneration_dob_day:
+  coreg_id: 20
+  name: dobday
+  display: false
+  sequence: 1
+  match: "$('#member_dob_3i').val()"
+Eversave-7thGeneration_dob_month:
+  coreg_id: 20
+  name: dobmonth
+  display: false
+  sequence: 1
+  match: "$('#member_dob_2i').val()"
+Eversave-7thGeneration_dob_year:
+  coreg_id: 20
+  name: dobyear
+  display: false
+  sequence: 1
+  match: "$('#member_dob_1i').val().substring(2)"
+Eversave-7thGeneration_gender:
+  coreg_id: 20
+  name:  gender
+  display: false
+  sequence: 1
+  match: "$('#member_gender').val()"
+Eversave-7thGeneration_address:
+  coreg_id: 20
+  name:  addr1
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address1').val()"
+Eversave-7thGeneration_address2:
+  coreg_id: 20
+  name:  addr2
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address2').val()"
+Eversave-7thGeneration_city:
+  coreg_id: 20
+  name:  city
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_city').val()"
+Eversave-7thGeneration_state:
+  coreg_id: 20
+  name:  state
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+parent_society_email:
+  coreg_id: 22
+  name: email 
+  match: "$('#member_email').val()"
+  field_type: text_field
+  display: false
+  sequence: 1
+parent_society_zip:
+  coreg_id: 22
+  name: zip
+  match: "$('#member_postal_code').val()"
+  field_type: text_field
+  display: false
+  sequence: 2
+parent_society_first_name:
+  coreg_id: 22
+  name: first_name
+  match: "$('#member_first_name').val()"
+  field_type: text_field
+  display: false
+  sequence: 3
+parent_society_last_name:
+  coreg_id: 22
+  name: last_name
+  match: "$('#member_last_name').val()"
+  field_type: text_field
+  display: false
+  sequence: 4
+conagra_email:
+  coreg_id: 23
+  name: email
+  match: "$('#member_email').val()"
+  field_type: text_field
+  display: false
+  sequence: 1
+conagra_first_name:
+  coreg_id: 23
+  name: first_name
+  match: "$('#member_first_name').val()"
+  field_type: text_field
+  display: false
+  sequence: 1
+conagra_last_name:
+  coreg_id: 23
+  name: last_name
+  match: "$('#member_last_name').val()"
+  field_type: text_field
+  display: false
+  sequence: 1
+conagra_postal_code:
+  coreg_id: 23
+  name: postal_code
+  match: "$('#member_address_attributes_postal').val()"
+  field_type: text_field
+  display: false
+  sequence: 1
+conagra_dob:
+  coreg_id: 23
+  name: dob
+  value: ''
+  field_type: text_field
+  match: "$('#member_dob_1i').val()+d($('#member_dob_2i').val())+d($('#member_dob_3i').val())"
+  display: false
+  sequence: 1
+conagra_ip_address:
+  coreg_id: 23
+  name: ip_addr
+  value: Request.find_by_hashcode(serial).ip_address
+  field_type: text_field
+  display: false
+  sequence: 1
+conagra_source:
+  coreg_id: 23
+  name: source
+  value: "'Dealsformommy'"
+  field_type: text_field
+  display: false
+  sequence: 1
+conagra_country:
+  coreg_id: 23
+  name: country
+  match: "$('#country_id').val()"
+  field_type: text_field
+  display: false
+  sequence: 1
+SC_Johnson_email:
+  coreg_id: 24
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+SC_Johnson_firstname:
+  coreg_id: 24
+  name:  FNAME
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+SC_Johnson_lastname:
+  coreg_id: 24
+  name:  LNAME
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+SC_Johnson_zip:
+  coreg_id: 24
+  name:  ZIP
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+SC_Johnson_address1:
+  coreg_id: 24
+  name:  ADDRESS_1
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address1').val()"
+SC_Johnson_address2:
+  coreg_id: 24
+  name:  ADDRESS_2
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address2').val()"
+SC_Johnson_city:
+  coreg_id: 24
+  name:  CITY
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_city').val()"
+SC_Johnson_state:
+  coreg_id: 24
+  name:  STATE
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+HGTV_firstName:
+  coreg_id: 25
+  name:  firstName
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+HGTV_lastName:
+  coreg_id: 25
+  name:  lastName
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+HGTV_email:
+  coreg_id: 25
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+HGTV_acq_optindate:
+  coreg_id: 25
+  name:  acq_optindate
+  display: false
+  sequence: 1
+  value: Time.now.strftime("%m/%d/%Y %H:%M:%S")
+HGTV_acq_ipaddress:
+  coreg_id: 25
+  name: acq_ipaddress
+  display: false
+  sequence: 7
+  value: '"24.151.67.192"'
+living_social_email:
+  coreg_id: 26
+  name: email 
+  label: email
+  field_type: text_field
+  required: true
+  match: "$('#member_email').val()"
+  display: false
+  sequence: 3
+living_social_zip:
+  coreg_id: 26
+  name: zip_code
+  label: zip
+  field_type: text_field
+  required: true
+  match: "$('#member_postal_code').val()"
+  display: false
+living_social_city_id:
+  coreg_id: 26
+  name: city_id
+  label: City ID
+  field_type: text_field
+  value: LivingSocialCity.city_id(v('zip_code'))
+  display: false
+SC_Johnson_Pledge_email:
+  coreg_id: 27
+  name:  Email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+scj_pldege_first_name:
+  coreg_id: 27
+  name: First_Name
+  label: First Name
+  match: "$('#member_first_name').val()"
+  field_type: text_field
+  display: false
+SC_Johnson_Pledge_lastname:
+  coreg_id: 27
+  name:  Last_Name
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+SC_Johnson_Pledge_postal_code:
+  coreg_id: 27
+  name:  Postal_Code
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+SC_Johnson_Pledge_address1:
+  coreg_id: 27
+  name:  Address1
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address1').val()"
+SC_Johnson_Pledge_address2:
+  coreg_id: 27
+  name:  Address2
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address2').val()"
+SC_Johnson_Pledge_city:
+  coreg_id: 27
+  name:  City
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_city').val()"
+SC_Johnson_Pledge_State_Territory:
+  coreg_id: 27
+  name:  State_Territory
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+SC_Johnson_Opt_In:
+  coreg_id: 27
+  name:  Opt_In
+  display: false
+  sequence: 1
+  value: "'Y'"
+SC_Johnson_Source_Channel:
+  coreg_id: 27
+  name:  Source_Channel
+  display: false
+  sequence: 1
+  value: "'Indirect'"
+SC_Johnson_Source_Program:
+  coreg_id: 27
+  name:  Source_Program
+  display: false
+  sequence: 1
+  value: "'Right@Home'"
+SC_Johnson_Source_Geo:
+  coreg_id: 27
+  name:  Source_Geo
+  display: false
+  sequence: 1
+  value: "'United States'"
+SC_Johnson_Source_Vehicle:
+  coreg_id: 27
+  name:  Source_Vehicle
+  display: false
+  sequence: 1
+  value: "'ParentMedia'"
+SC_Johnson_Source_Brand:
+  coreg_id: 27
+  name:  Source_Brand
+  display: false
+  sequence: 1
+  value: "'Pledge'"
+SC_Johnson_Source_Description:
+  coreg_id: 27
+  name:  Source_Description
+  display: false
+  sequence: 1
+  #value: "'DealsForMommy'"
+  value: "'DealsForMommy FY1213'"
+SC_Johnson_Source_Type:
+  coreg_id: 27
+  name:  Source_Type
+  display: false
+  sequence: 1
+  value: "'Coregistration'"
+SC_Johnson_Language_Pref:
+  coreg_id: 27
+  name:  Language_Pref
+  display: false
+  sequence: 1
+  value: "'English'"
+SC_Johnson_Create_Date:
+  coreg_id: 27
+  name:  Create_Date
+  display: false
+  sequence: 1
+  value: Time.now.strftime('%Y-%m-%d %k:%M:%S')
+iBelieve_email:
+  coreg_id: 28
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+iBelieve_firstname:
+  coreg_id: 28
+  name:  firstname
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+iBelieve_lastname:
+  coreg_id: 28
+  name:  lastname
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+iBelieve_ip_address:
+  coreg_id: 28
+  name:  ip
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+ebay_deals_email:
+  coreg_id: 29
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+ebay_deals_first_name:
+  coreg_id: 29
+  name:  first_name
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+ebay_deals_last_name:
+  coreg_id: 29
+  name:  last_name
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+ebay_deals_postalCode:
+  coreg_id: 29
+  name:  postalCode
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+ebay_deals_date_of_birth:
+  coreg_id: 29
+  name: date_of_birth
+  field_type: text_field
+  match: "d($('#member_dob_2i').val())+'/'+d($('#member_dob_3i').val())+'/'+$('#member_dob_1i').val()"
+  display: false
+  sequence: 1
+ebay_deals_timestamp:
+  coreg_id: 29
+  name: timestamp
+  value: Time.now.strftime('%Y-%m-%d %k:%M:%S')
+  field_type: text_field
+  display: false
+  sequence: 1
+ebay_deals_coreg_source1:
+  coreg_id: 29
+  name:  coreg_source1
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+ebay_deals_member_dob:
+  coreg_id: 29
+  name:  member_dob
+  display: false
+  sequence: 1  
+  match: "$('#member_dob_1i').val()+d($('#member_dob_3i').val())+d($('#member_dob_2i').val())"
+pch_email:
+  coreg_id: 30
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+pch_first_name:
+  coreg_id: 30
+  name:  firstName
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+pch_last_name:
+  coreg_id: 30
+  name:  lastName
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+pch_acq_optindate:
+  coreg_id: 30
+  name: acq_optindate
+  value: Time.now.strftime('%Y-%m-%d %k:%M:%S')
+  field_type: text_field
+  display: false
+  sequence: 1
+pch_acq_ipaddress:
+  coreg_id: 30
+  name: acq_ipaddress
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+pch_member_dob:
+  coreg_id: 30
+  name: member_dob
+  display: false
+  sequence: 1
+  match: "$('#member_dob_1i').val()+d($('#member_dob_3i').val())+d($('#member_dob_2i').val())"
+SC_Johnson_Ziplock__email:
+  coreg_id: 31
+  name:  Email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+SC_Johnson_Ziplock__first_name:
+  coreg_id: 31
+  name: First_Name
+  label: First Name
+  match: "$('#member_first_name').val()"
+  field_type: text_field
+  display: false
+SC_Johnson_Ziplock_lastname:
+  coreg_id: 31
+  name:  Last_Name
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+SC_Johnson_Ziplock_postal_code:
+  coreg_id: 31
+  name:  Postal_Code
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+SC_Johnson_Ziplock_address1:
+  coreg_id: 31
+  name:  Address1
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address1').val()"
+SC_Johnson_Ziplock_address2:
+  coreg_id: 31
+  name:  Address2
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address2').val()"
+SC_Johnson_Ziplock_city:
+  coreg_id: 31
+  name:  City
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_city').val()"
+SC_Johnson_Ziplock_State_Territory:
+  coreg_id: 31
+  name:  State_Territory
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+SC_Johnson_Ziplock_Opt_In:
+  coreg_id: 31
+  name:  Opt_In
+  display: false
+  sequence: 1
+  value: "'Y'"
+SC_Johnson_Ziplock_Source_Channel:
+  coreg_id: 31
+  name:  Source_Channel
+  display: false
+  sequence: 1
+  value: "'Indirect'"
+SC_Johnson_Ziplock_Source_Program:
+  coreg_id: 31
+  name:  Source_Program
+  display: false
+  sequence: 1
+  value: "'Right@Home'"
+SC_Johnson_Ziplock_Source_Geo:
+  coreg_id: 31
+  name:  Source_Geo
+  display: false
+  sequence: 1
+  value: "'United States'"
+SC_Johnson_Ziplock_Source_Vehicle:
+  coreg_id: 31
+  name:  Source_Vehicle
+  display: false
+  sequence: 1
+  value: "'ParentMedia'"
+SC_Johnson_Ziplock_Source_Brand:
+  coreg_id: 31
+  name:  Source_Brand
+  display: false
+  sequence: 1
+  value: "'Ziploc'"
+SC_Johnson_Ziplock_Source_Description:
+  coreg_id: 31
+  name:  Source_Description
+  display: false
+  sequence: 1
+  #value: "'DealsForMommy'"
+  value: "'DealsForMommy FY1213'"
+SC_Johnson_Ziplock_Source_Type:
+  coreg_id: 31
+  name:  Source_Type
+  display: false
+  sequence: 1
+  value: "'Coregistration'"
+SC_Johnson_Ziplock_Language_Pref:
+  coreg_id: 31
+  name:  Language_Pref
+  display: false
+  sequence: 1
+  value: "'English'"
+SC_Johnson_Ziplock_Create_Date:
+  coreg_id: 31
+  name:  Create_Date
+  display: false
+  sequence: 1
+  value: Time.now.strftime('%Y-%m-%d %k:%M:%S')
+Virtual_Piggy_UserIdentifier:
+  coreg_id: 32
+  name:  UserIdentifier
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+Virtual_Piggy_FirstName:
+  coreg_id: 32
+  name: FirstName
+  label: FirstName
+  match: "$('#member_first_name').val()"
+  display: false
+Virtual_Piggy_LastName:
+  coreg_id: 32
+  name:  LastName
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+Virtual_Piggy_password:
+  coreg_id: 32
+  name: Password
+  label: Password
+  field_type: text_field
+  required: true
+  display: false
+  sequence: 1
+  match: "$('#vp_password').val()"
+Virtual_Piggy_ReferrerAttribution:
+  coreg_id: 32
+  name: ReferrerAttribution
+  value: "'parentsociety'"
+  required: true
+  display: false
+  sequence: 1
+Similac_fname:
+  coreg_id: 33
+  name: Fname
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+Similac_lname:
+  coreg_id: 33
+  name: Lname
+  display: false
+  sequence: 2
+  match: "$('#member_last_name').val()"
+Similac_address1:
+  coreg_id: 33
+  name:  Address1
+  display: false
+  sequence: 3
+  match: "$('#member_address_attributes_address1').val()"
+Similac_address2:
+  coreg_id: 33
+  name:  Address2
+  display: false
+  sequence: 4
+  match: "$('#member_address_attributes_address2').val()"
+Similac_city:
+  coreg_id: 33
+  name:  City
+  display: false
+  sequence: 5
+  match: "$('#member_address_attributes_city').val()"
+Similac_state:
+  coreg_id: 33
+  name:  State
+  display: false
+  sequence: 6
+  match: "$('#member_address_attributes_state').val()"
+Similac_Zip:
+  coreg_id: 33
+  name:  Zip
+  display: false
+  sequence: 7
+  match: "$('#member_address_attributes_postal').val()"
+Similac_Email:
+  coreg_id: 33
+  name:  Email
+  display: false
+  sequence: 8
+  match: "$('#member_email').val()"
+Similac_MothersDueDate :
+  coreg_id: 33
+  name: MothersDueDate
+  display: false
+  sequence: 9
+  match: "$('#member_child_attributes_dob_1i').val()+d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())"
+Similac_MothersDateofBirth :
+  coreg_id: 33
+  name: MothersDateofBirth
+  required: true
+  display: false
+  sequence: 10
+  match: "$('#member_dob_1i').val()+d($('#member_dob_2i').val())+d($('#member_dob_3i').val())"
+American_baby_email:
+  coreg_id: 34
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+American_baby_firstname:
+  coreg_id: 34
+  name:  firstName
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+American_baby_lastname:
+  coreg_id: 34
+  name:  lastName
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+American_baby_postalCode:
+  coreg_id: 34
+  name:  postalCode
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_postal').val()"
+American_baby_address1:
+  coreg_id: 34
+  name:  address1
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address1').val()"
+American_baby_address2:
+  coreg_id: 34
+  name:  address2
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_address2').val()"
+American_baby_city:
+  coreg_id: 34
+  name:  city
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_city').val()"
+American_baby_state:
+  coreg_id: 34
+  name:  state
+  display: false
+  sequence: 1
+  match: "$('#member_address_attributes_state').val()"
+American_baby_isFirstChild:
+  coreg_id: 34
+  name:  isFirstChild
+  display: false
+  sequence: 1
+  value: "'Y'"
+American_baby_allowContact:
+  coreg_id: 34
+  name:  allowContact
+  display: false
+  sequence: 1
+  value: "'Y'"
+American_baby_p:
+  coreg_id: 34
+  name:  p
+  display: false
+  sequence: 1
+  value: "'612'"
+American_baby_oid:
+  coreg_id: 34
+  name:  oid
+  display: false
+  sequence: 1
+  value: "'1063'"
+American_baby_gender:
+  coreg_id: 34
+  name:  gender
+  display: false
+  sequence: 1
+  value: "'F'"
+American_baby_motherBirthMonth:
+  coreg_id: 34
+  name: motherBirthMonth
+  display: false
+  sequence: 1
+  match: "d($('#member_dob_2i').val())"
+American_baby_motherBirthDay:
+  coreg_id: 34
+  name: motherBirthDay
+  display: false
+  sequence: 1
+  match: "d($('#member_dob_3i').val())"
+American_baby_motherBirthYear:
+  coreg_id: 34
+  name: motherBirthYear
+  display: false
+  sequence: 1
+  match: "$('#member_dob_1i').val()"
+American_baby_babyDueDate:
+  coreg_id: 34
+  name: babyDueDate
+  display: false
+  sequence: 9
+  match: "d($('#member_child_attributes_dob_2i').val())+'/'+d($('#member_child_attributes_dob_3i').val())+'/'+$('#member_child_attributes_dob_1i').val()"
+American_baby_babydob:
+  coreg_id: 34
+  name: babydob
+  display: false
+  sequence: 10
+  match: "$('#member_child_attributes_dob_1i').val()+d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())"
+American_baby_xxTrustedFormCertUrl:
+  coreg_id: 34
+  name: xxTrustedFormCertUrl
+  display: false
+  sequence: 9
+  match: "$('#xxTrustedFormToken_0').val()"
+American_baby_babydob:
+  coreg_id: 34
+  name: babydob
+  display: false
+  sequence: 10
+  match: "$('#member_child_attributes_dob_1i').val()+d($('#member_child_attributes_dob_2i').val())+d($('#member_child_attributes_dob_3i').val())"
+Palm_Beach_rc:
+  coreg_id: 35
+  name: rc
+  display: false
+  sequence: 1
+  value: '"cp"'
+Palm_Beach_rti:
+  coreg_id: 35
+  name: rti
+  display: false
+  sequence: 2
+  value: '"v9234"'
+Palm_Beach_b:
+  coreg_id: 35
+  name: b
+  display: false
+  sequence: 3
+  value: '"y"'
+Palm_Beach_acq_ctrlid:
+  coreg_id: 35
+  name: acq_ctrlid
+  display: false
+  sequence: 4
+  value: '"8641"'
+Palm_Beach_acq_source:
+  coreg_id: 35
+  name: acq_source
+  display: false
+  sequence: 5
+  value: '"dealsformommy.com"'
+Palm_Beach_email:
+  coreg_id: 35
+  name: email
+  display: false
+  sequence: 6
+  match: "$('#member_email').val()"
+Palm_Beach_acq_optindate:
+  coreg_id: 35
+  name: acq_optindate
+  display: false
+  sequence: 7
+  value: Time.now.strftime("%m/%d/%Y %H:%M:%S")
+Palm_Beach_acq_ipaddress:
+  coreg_id: 35
+  name: acq_ipaddress
+  display: false
+  sequence: 8
+  value: Request.find_by_hashcode(serial).ip_address
+Palm_Beach_text4:
+  coreg_id: 35
+  name: text4
+  display: false
+  sequence: 9
+  value: '"PM-PBJ"'
+Palm_Beach_text3:
+  coreg_id: 35
+  name: text3
+  display: false
+  sequence: 10
+  value: '"364326"'
+Palm_Beach_firstName:
+  coreg_id: 35
+  name: firstName
+  display: false
+  sequence: 11
+  match: "$('#member_first_name').val()"
+Palm_Beach_lastName:
+  coreg_id: 35
+  name: lastName
+  display: false
+  sequence: 12
+  match: "$('#member_last_name').val()"
+Palm_Beach_text6:
+  coreg_id: 35
+  name: text6
+  display: false
+  sequence: 13
+  value: '"PM-PBJ"'
+Palm_Beach_text7:
+  coreg_id: 35
+  name: text7
+  display: false
+  sequence: 14
+  value: '"CPL"'
+Palm_Beach_companyName:
+  coreg_id: 35
+  name: companyName
+  display: false
+  sequence: 15
+  value: '"Parent+Media"'
+Daily_Moments_Email:
+  coreg_id: 36
+  name:  email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+Daily_Moments_ip:
+  coreg_id: 36
+  name:  ip
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Daily_moments_Newsletter:
+  coreg_id: 36
+  name:  newsletter
+  display: false
+  sequence: 1
+  value: "'12'"
+Arcamax_Horoscope_email:
+  coreg_id: 37
+  name: email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+Arcamax_Horoscope_fname:
+  coreg_id: 37
+  name: fname
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+Arcamax_Horoscope_lname:
+  coreg_id: 37
+  name: lname
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+Arcamax_Horoscope_ipaddr:
+  coreg_id: 37
+  name: ipaddr
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Arcamax_Horoscope_ts:
+  coreg_id: 37
+  name: ts
+  display: false
+  value: Time.now.strftime("%Y-%m-%d %H:%M:%S")
+Arcamax_Health_email:
+  coreg_id: 38
+  name: email
+  display: false
+  sequence: 1
+  match: "$('#member_email').val()"
+Arcamax_Health_fname:
+  coreg_id: 38
+  name: fname
+  display: false
+  sequence: 1
+  match: "$('#member_first_name').val()"
+Arcamax_Health_lname:
+  coreg_id: 38
+  name: lname
+  display: false
+  sequence: 1
+  match: "$('#member_last_name').val()"
+Arcamax_Health_ipaddr:
+  coreg_id: 38
+  name: ipaddr
+  display: false
+  sequence: 1
+  value: Request.find_by_hashcode(serial).ip_address
+Arcamax_Health_ts:
+  coreg_id: 38
+  name: ts
+  display: false
+  value: Time.now.strftime("%Y-%m-%d %H:%M:%S")
+Gerber_Nutrition_SourceCode:
+  coreg_id: 39
+  name: SourceCode
+  display: false
+  value: '"10491923"'
+  sequence: 1
+Gerber_Nutrition_ConsumerStatus:
+  coreg_id: 39
+  name: ConsumerStatus
+  display: false
+  value: '"SELF"'
+  sequence: 2
+Gerber_Nutrition_PermissionType:
+  coreg_id: 39
+  name: PermissionType
+  display: false
+  value: '"OPT IN"'
+  sequence: 3
+Gerber_Nutrition_ConsumerType:
+  coreg_id: 39
+  name: ConsumerType
+  display: false
+  value: '"INDIVIDUAL"'
+  sequence: 4
+Gerber_Nutrition_Channel:
+  coreg_id: 39
+  name: Channel
+  display: false
+  value: '"ALL"'
+  sequence: 5
+Gerber_Nutrition_MarketingPermissionLevel:
+  coreg_id: 39
+  name: MarketingPermissionLevel
+  display: false
+  value: '"Infant Nutrition"'
+  sequence: 6
+Gerber_Nutrition_DateModified:
+  coreg_id: 39
+  name: DateModified
+  display: false
+  value: Time.now.strftime('%Y-%m-%d')
+  sequence: 7
+Gerber_Nutrition_FirstName:
+  coreg_id: 39
+  name: FirstName
+  display: false
+  match: "$('#member_first_name').val()"
+  sequence: 8
+Gerber_Nutrition_LastName:
+  coreg_id: 39
+  name: LastName
+  display: false
+  sequence: 9
+  match: "$('#member_last_name').val()"
+Gerber_Nutrition_Address1:
+  coreg_id: 39
+  name: Address1
+  display: false
+  sequence: 10
+  match: "$('#member_address_attributes_address1').val()"
+Gerber_Nutrition_Address2:
+  coreg_id: 39
+  name: Address2
+  display: false
+  sequence: 11
+  match: "$('#member_address_attributes_address2').val()"
+Gerber_Nutrition_City:
+  coreg_id: 39
+  name: City
+  display: false
+  sequence: 12
+  match: "$('#member_address_attributes_city').val()"
+  sequence: 12
+Gerber_Nutrition_State:
+  coreg_id: 39
+  name: State
+  display: false
+  sequence: 13
+  match: "$('#member_address_attributes_state').val()"
+Gerber_Nutrition_Zip:
+  coreg_id: 39
+  name: Zip
+  display: false
+  match: "$('#member_address_attributes_postal').val()"
+  sequence: 14
+Gerber_Nutrition_Zip4:
+  coreg_id: 39
+  name: Zip4
+  display: false
+  value: '""'
+  sequence: 15
+Gerber_Nutrition_ChildDOB:
+  coreg_id: 39
+  name: ChildDOB
+  display: false
+  match: "$('#member_child_attributes_dob_1i').val()+'-'+d($('#member_child_attributes_dob_2i').val())+'-'+d($('#member_child_attributes_dob_3i').val())"
+  sequence: 16
+Gerber_Nutrition_QuestionID_1:
+  coreg_id: 39
+  name: QuestionID_1
+  display: false
+  value: '"015"'
+  sequence: 17
+Gerber_Nutrition_AnswerID_1:
+  coreg_id: 39
+  name: AnswerID_1
+  field_type: select
+  required: true
+  select_options: 'Yes:Y,No:N'
+  select_prompt: 'Select One'
+  label:  "Do you or will you participate in the government-sponsored nutrition program called Women, Infants and Children (WIC)? <br />"
+  display: true
+  sequence: 18
+Gerber_Nutrition_QuestionID_2:
+  coreg_id: 39
+  name: QuestionID_2
+  display: false
+  value: '"CZM"'
+  sequence: 19
+Gerber_Nutrition_AnswerID_2:
+  coreg_id: 39
+  name: AnswerID_2
+  display: false
+  match: "$('input[name=GNID2]:checked').val() == '1' ? 'CZM0':'CZM1'"
+  sequence: 20

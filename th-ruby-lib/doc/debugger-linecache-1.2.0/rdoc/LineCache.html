@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="IBM866"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=IBM866" http-equiv="Content-Type" />
+
+  <title>Module: LineCache</title>
+
+  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="./lib/linecache19_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/linecache19.rb">lib/linecache19.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-cache">::cache</a></li>
+          
+          <li><a href="#method-c-cached-3F">::cached?</a></li>
+          
+          <li><a href="#method-c-cached_files">::cached_files</a></li>
+          
+          <li><a href="#method-c-cached_script-3F">::cached_script?</a></li>
+          
+          <li><a href="#method-c-checkcache">::checkcache</a></li>
+          
+          <li><a href="#method-c-clear_file_cache">::clear_file_cache</a></li>
+          
+          <li><a href="#method-c-empty-3F">::empty?</a></li>
+          
+          <li><a href="#method-c-getline">::getline</a></li>
+          
+          <li><a href="#method-c-getlines">::getlines</a></li>
+          
+          <li><a href="#method-c-path">::path</a></li>
+          
+          <li><a href="#method-c-remap_file">::remap_file</a></li>
+          
+          <li><a href="#method-c-remap_file_lines">::remap_file_lines</a></li>
+          
+          <li><a href="#method-c-sha1">::sha1</a></li>
+          
+          <li><a href="#method-c-size">::size</a></li>
+          
+          <li><a href="#method-c-stat">::stat</a></li>
+          
+          <li><a href="#method-c-trace_line_numbers">::trace_line_numbers</a></li>
+          
+          <li><a href="#method-c-unmap_file">::unmap_file</a></li>
+          
+          <li><a href="#method-c-unmap_file_line">::unmap_file_line</a></li>
+          
+          <li><a href="#method-c-update_cache">::update_cache</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./Debugger.html">Debugger</a></li>
+        
+          <li><a href="./Debugger/Linecache.html">Debugger::Linecache</a></li>
+        
+          <li><a href="./LineCache.html">LineCache</a></li>
+        
+          <li><a href="./Object.html">Object</a></li>
+        
+          <li><a href="./TraceLineNumbers.html">TraceLineNumbers</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">LineCache</h1>
+
+    <div id="description" class="description">
+      
+<h1>module <a href="LineCache.html">LineCache</a></h1>
+
+<p>A module to read and cache lines of a Ruby program.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="LineCacheInfo">LineCacheInfo</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="cache-method" class="method-detail ">
+          <a name="method-c-cache"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cache</span><span
+              class="method-args">(filename, reload_on_change=false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Cache filename if it's not already cached. Return the expanded filename for
+it in the cache or nil if we can't find the file.</p>
+            
+
+            
+            <div class="method-source-code" id="cache-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cache</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">reload_on_change</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-identifier">checkcache</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">reload_on_change</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">update_cache</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- cache-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cache-method -->
+
+      
+        <div id="cached-3F-method" class="method-detail ">
+          <a name="method-c-cached-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cached?</span><span
+              class="method-args">(filename)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return true if filename is cached</p>
+            
+
+            
+            <div class="method-source-code" id="cached-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- cached-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cached-3F-method -->
+
+      
+        <div id="cached_files-method" class="method-detail ">
+          <a name="method-c-cached_files"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cached_files</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return an array of cached file names</p>
+            
+
+            
+            <div class="method-source-code" id="cached_files-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached_files</span>()
+  <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- cached_files-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cached_files-method -->
+
+      
+        <div id="cached_script-3F-method" class="method-detail ">
+          <a name="method-c-cached_script-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cached_script?</span><span
+              class="method-args">(filename)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cached_script-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cached_script?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-comment"># In 1.8.6, the SCRIPT_LINES__ filename key can be unqualified</span>
+  <span class="ruby-comment"># In 1.9.1 it's the fully qualified name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-string">&quot;1.9&quot;</span>
+    <span class="ruby-constant">SCRIPT_LINES__</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>))
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">SCRIPT_LINES__</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>)))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- cached_script-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cached_script-3F-method -->
+
+      
+        <div id="checkcache-method" class="method-detail ">
+          <a name="method-c-checkcache"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">checkcache</span><span
+              class="method-args">(filename=nil, use_script_lines=false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Discard cache entries that are out of date. If <tt>filename</tt> is
+<tt>nil</tt> all entries in the file cache +@@file_cache+ are checked. If
+we don't have stat information about a file, which can happen if the file
+was read from SCRIPT_LINES__ but no corresponding file is found, it will be
+kept. Return a list of invalidated filenames. nil is returned if a filename
+was given but not found cached.</p>
+            
+
+            
+            <div class="method-source-code" id="checkcache-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">checkcache</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">use_script_lines</span>=<span class="ruby-keyword">false</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">filename</span>
+    <span class="ruby-identifier">filenames</span> = <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">keys</span>()
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-identifier">filenames</span> = [<span class="ruby-identifier">filename</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">filename</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">filenames</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-identifier">path</span> = <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-identifier">cache_info</span> = <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">stat</span>
+      <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">stat</span> <span class="ruby-operator">&amp;&amp;</span>
+          (<span class="ruby-identifier">cache_info</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">cache_info</span>.<span class="ruby-identifier">mtime</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">mtime</span>)
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">filename</span>
+        <span class="ruby-identifier">update_cache</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">use_script_lines</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- checkcache-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- checkcache-method -->
+
+      
+        <div id="clear_file_cache-method" class="method-detail ">
+          <a name="method-c-clear_file_cache"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">clear_file_cache</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Clear the file cache entirely.</p>
+            
+
+            
+            <div class="method-source-code" id="clear_file_cache-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear_file_cache</span>()
+  <span class="ruby-identifier">@@file_cache</span> = {}
+  <span class="ruby-identifier">@@file2file_remap</span> = {}
+  <span class="ruby-identifier">@@file2file_remap_lines</span> = {}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- clear_file_cache-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- clear_file_cache-method -->
+
+      
+        <div id="empty-3F-method" class="method-detail ">
+          <a name="method-c-empty-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">empty?</span><span
+              class="method-args">(filename)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="empty-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">empty?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">filename</span>=<span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- empty-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- empty-3F-method -->
+
+      
+        <div id="getline-method" class="method-detail ">
+          <a name="method-c-getline"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getline</span><span
+              class="method-args">(filename, line_number, reload_on_change=true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get line <tt>line_number</tt> from file named <tt>filename</tt>. Return nil
+if there was a problem. If a file named filename is not found, the function
+will look for it in the $: array.</p>
+
+<p>Examples:</p>
+
+<pre>lines = LineCache::getline('/tmp/myfile.rb')
+# Same as above
+$: &lt;&lt; '/tmp'
+lines = LineCache.getlines('myfile.rb')</pre>
+            
+
+            
+            <div class="method-source-code" id="getline-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getline</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line_number</span>, <span class="ruby-identifier">reload_on_change</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line_number</span> = <span class="ruby-identifier">unmap_file_line</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line_number</span>)
+  <span class="ruby-identifier">lines</span> = <span class="ruby-identifier">getlines</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">reload_on_change</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">lines</span> <span class="ruby-keyword">and</span> (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">lines</span>.<span class="ruby-identifier">size</span>) <span class="ruby-operator">===</span> <span class="ruby-identifier">line_number</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">lines</span>[<span class="ruby-identifier">line_number</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>]
+  <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getline-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getline-method -->
+
+      
+        <div id="getlines-method" class="method-detail ">
+          <a name="method-c-getlines"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getlines</span><span
+              class="method-args">(filename, reload_on_change=false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Read lines of <tt>filename</tt> and cache the results. However
+<tt>filename</tt> was previously cached use the results from the cache.
+Return nil if we can't get lines</p>
+            
+
+            
+            <div class="method-source-code" id="getlines-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getlines</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">reload_on_change</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">checkcache</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">reload_on_change</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">lines</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">update_cache</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">lines</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getlines-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getlines-method -->
+
+      
+        <div id="path-method" class="method-detail ">
+          <a name="method-c-path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">path</span><span
+              class="method-args">(filename)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return full filename path for filename</p>
+            
+
+            
+            <div class="method-source-code" id="path-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">path</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- path-method -->
+
+      
+        <div id="remap_file-method" class="method-detail ">
+          <a name="method-c-remap_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">remap_file</span><span
+              class="method-args">(from_file, to_file)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="remap_file-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remap_file</span>(<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">to_file</span>)
+  <span class="ruby-identifier">@@file2file_remap</span>[<span class="ruby-identifier">to_file</span>] = <span class="ruby-identifier">from_file</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- remap_file-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- remap_file-method -->
+
+      
+        <div id="remap_file_lines-method" class="method-detail ">
+          <a name="method-c-remap_file_lines"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">remap_file_lines</span><span
+              class="method-args">(from_file, to_file, range, start)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="remap_file_lines-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remap_file_lines</span>(<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">to_file</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">start</span>)
+  <span class="ruby-identifier">range</span> = (<span class="ruby-identifier">range</span><span class="ruby-operator">..</span><span class="ruby-identifier">range</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fixnum</span>)
+  <span class="ruby-identifier">to_file</span> = <span class="ruby-identifier">from_file</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">to_file</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@file2file_remap_lines</span>[<span class="ruby-identifier">to_file</span>]
+    <span class="ruby-comment"># FIXME: need to check for overwriting ranges: whether</span>
+    <span class="ruby-comment"># they intersect or one encompasses another.</span>
+    <span class="ruby-identifier">@@file2file_remap_lines</span>[<span class="ruby-identifier">to_file</span>] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">start</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">@@file2file_remap_lines</span>[<span class="ruby-identifier">to_file</span>]  = [[<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">start</span>]]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- remap_file_lines-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- remap_file_lines-method -->
+
+      
+        <div id="sha1-method" class="method-detail ">
+          <a name="method-c-sha1"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sha1</span><span
+              class="method-args">(filename)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return SHA1 of filename.</p>
+            
+
+            
+            <div class="method-source-code" id="sha1-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sha1</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">sha1</span>.<span class="ruby-identifier">hexdigest</span> <span class="ruby-keyword">if</span>
+    <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">sha1</span>
+  <span class="ruby-identifier">sha1</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA1</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sha1</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">sha1</span> = <span class="ruby-identifier">sha1</span>
+  <span class="ruby-identifier">sha1</span>.<span class="ruby-identifier">hexdigest</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sha1-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sha1-method -->
+
+      
+        <div id="size-method" class="method-detail ">
+          <a name="method-c-size"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">size</span><span
+              class="method-args">(filename)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return the number of lines in filename</p>
+            
+
+            
+            <div class="method-source-code" id="size-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">size</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- size-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- size-method -->
+
+      
+        <div id="stat-method" class="method-detail ">
+          <a name="method-c-stat"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stat</span><span
+              class="method-args">(filename)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return File.stat in the cache for filename.</p>
+            
+
+            
+            <div class="method-source-code" id="stat-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stat</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>].<span class="ruby-identifier">stat</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- stat-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stat-method -->
+
+      
+        <div id="trace_line_numbers-method" class="method-detail ">
+          <a name="method-c-trace_line_numbers"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">trace_line_numbers</span><span
+              class="method-args">(filename, reload_on_change=false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return an Array of breakpoints in filename. The list will contain an entry
+for each distinct line event call so it is possible (and possibly useful)
+for a line number appear more than once.</p>
+            
+
+            
+            <div class="method-source-code" id="trace_line_numbers-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trace_line_numbers</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">reload_on_change</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">fullname</span> = <span class="ruby-identifier">cache</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">reload_on_change</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fullname</span>
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>]
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">line_numbers</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">line_numbers</span> =
+      <span class="ruby-constant">TraceLineNumbers</span>.<span class="ruby-identifier">lnums_for_str_array</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">lines</span>)
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">line_numbers</span> = <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">line_numbers</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">line_numbers</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- trace_line_numbers-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- trace_line_numbers-method -->
+
+      
+        <div id="unmap_file-method" class="method-detail ">
+          <a name="method-c-unmap_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unmap_file</span><span
+              class="method-args">(file)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="unmap_file-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 291</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unmap_file</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">@@file2file_remap</span>[<span class="ruby-identifier">file</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">@@file2file_remap</span>[<span class="ruby-identifier">file</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">file</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- unmap_file-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unmap_file-method -->
+
+      
+        <div id="unmap_file_line-method" class="method-detail ">
+          <a name="method-c-unmap_file_line"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unmap_file_line</span><span
+              class="method-args">(file, line)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="unmap_file_line-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unmap_file_line</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@file2file_remap_lines</span>[<span class="ruby-identifier">file</span>]
+    <span class="ruby-identifier">@@file2file_remap_lines</span>[<span class="ruby-identifier">file</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">start</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">range</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">line</span>
+        <span class="ruby-identifier">from_file</span> = <span class="ruby-identifier">from_file</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">file</span>
+        <span class="ruby-keyword">return</span> [<span class="ruby-identifier">from_file</span>, <span class="ruby-identifier">start</span><span class="ruby-operator">+</span><span class="ruby-identifier">line</span><span class="ruby-operator">-</span><span class="ruby-identifier">range</span>.<span class="ruby-identifier">begin</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- unmap_file_line-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unmap_file_line-method -->
+
+      
+        <div id="update_cache-method" class="method-detail ">
+          <a name="method-c-update_cache"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">update_cache</span><span
+              class="method-args">(filename, use_script_lines=false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Update a cache entry.  If something's wrong, return nil. Return true if the
+cache was updated and false if not.  If use_script_lines is true, use that
+as the source for the lines of the file</p>
+            
+
+            
+            <div class="method-source-code" id="update_cache-source">
+<pre>
+<span class="ruby-comment"># File lib/linecache19.rb, line 313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_cache</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">use_script_lines</span>=<span class="ruby-keyword">false</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">filename</span>
+
+  <span class="ruby-identifier">@@file_cache</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">filename</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">use_script_lines</span>
+    <span class="ruby-identifier">list</span> = [<span class="ruby-identifier">filename</span>]
+    <span class="ruby-identifier">list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">@@file2file_remap</span>[<span class="ruby-identifier">path</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@file2file_remap</span>[<span class="ruby-identifier">path</span>]
+    <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">SCRIPT_LINES__</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">SCRIPT_LINES__</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">name</span>)
+        <span class="ruby-keyword">rescue</span>
+          <span class="ruby-identifier">stat</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">lines</span> = <span class="ruby-constant">SCRIPT_LINES__</span>[<span class="ruby-identifier">name</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-string">&quot;ruby19&quot;</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:force_encoding</span>)
+          <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">default_external</span>) }
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>] = <span class="ruby-constant">LineCacheInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">stat</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">lines</span>, <span class="ruby-identifier">path</span>, <span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">@@file2file_remap</span>[<span class="ruby-identifier">path</span>] = <span class="ruby-identifier">filename</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">filename</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">filename</span>
+    <span class="ruby-comment"># try looking through the search path.</span>
+    <span class="ruby-identifier">stat</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">dirname</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">$:</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dirname</span>, <span class="ruby-identifier">filename</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">path</span>)
+          <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">path</span>)
+          <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">stat</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">fp</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'r'</span>)
+    <span class="ruby-identifier">lines</span> = <span class="ruby-identifier">fp</span>.<span class="ruby-identifier">readlines</span>()
+    <span class="ruby-identifier">fp</span>.<span class="ruby-identifier">close</span>()
+  <span class="ruby-keyword">rescue</span>
+    <span class="ruby-comment">##  print '*** cannot open', path, ':', msg</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">@@file_cache</span>[<span class="ruby-identifier">filename</span>] = <span class="ruby-constant">LineCacheInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">path</span>), <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">lines</span>,
+                                             <span class="ruby-identifier">path</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">@@file2file_remap</span>[<span class="ruby-identifier">path</span>] = <span class="ruby-identifier">filename</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- update_cache-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- update_cache-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

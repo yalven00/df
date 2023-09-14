@@ -1,0 +1,17 @@
+
+    <div style="float:left;width:100%">
+      <%= f.fields_for :coreg_optins do |builder| %>
+        <%= render "coreg_optin_fields", :f => builder if builder.object.new_record?%>
+      <% end %>
+    </div>
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+$('input.coreg_taken_yes').change(function() {
+  $(this).parents('div.coreg_header').next('div.coreg_body').show();
+});
+$('input.coreg_taken_no').change(function() {
+  $(this).parents('div.coreg_header').next('div.coreg_body').hide();
+});
+//]]>
+</script>
+

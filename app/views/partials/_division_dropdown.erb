@@ -1,0 +1,16 @@
+<h3 class="blockHead">Deals of the Day near <span style="color:#f00"><%= @location_display %>&nbsp;&nbsp;
+		<% if @groupon_divisions %>
+			<% if controller.controller_name == 'members' %>
+				<%= form_tag '/home', :style => "display:inline" do |f| %>
+					<%= select_tag "divisions", options_from_collection_for_select(@groupon_divisions, "id", "name",@division_id),{:onchange => "this.form.submit();", :style => "float:none;font-size:11px;height:auto" } %>
+				<% end %>
+			<% else %>
+				<%= form_tag '/offers', :style => "display:inline" do |f| %>
+					<%= select_tag "divisions", options_from_collection_for_select(@groupon_divisions, "id", "name",@division_id),{:onchange => "this.form.submit();", :style => "float:none;font-size:11px;height:auto" } %>
+				<% end %>
+			<% end %>
+		<% end %></span>
+	<% if !@other_deals.nil? and @other_deals.length > 2 %>
+		<div style="float:right;text-align:right;font-size:13px;margin:0 20px 0 0; *margin:-30px 20px 0 0"><%= link_to "See More Deals >>", offers_path %></div>
+	<% end %>
+</h3>

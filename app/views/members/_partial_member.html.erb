@@ -1,0 +1,36 @@
+<%= simple_form_for(@member, :html => {:novalidate => true, :class => 'registerForm1'}) do |f| %>
+  <fieldset>
+    <legend class="">
+      <script>utmx_section("section2")</script>
+      <h2>Join Now. <span class="color2">Start Saving Today</span></h2>
+      </noscript>
+    </legend>
+    <%= f.error_messages :header_message => '' %>
+    <%= f.input :first_name, :label => 'First Name', :input_html =>{ :class => 'floatLeft formFieldInputInline'} %>
+    <%= f.input :last_name, :label => 'Last Name ', :input_html =>{ :class => 'floatLeft formFieldInputInline'}   %>
+    <%= f.input :email, :label => 'Email' , :input_html =>{ :class => 'floatLeft formFieldInputInline'}  %>
+    <%= f.input :postal_code, :label => 'Zip Code' ,  :input_html =>{ :class => 'floatLeft formFieldInputSmall'}  %>
+    <%= hidden_field_tag 'member[partial_member]'  %>
+    <div class="clear"></div>
+    <!-- Vee Code -->
+
+
+      <div id="coregs" class="coregs"></div>
+    <% if Rails.env.staging? %>
+    <script src="http://staging.dealsformommy.com/javascripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="http://staging.dealsformommy.com/api/optins/coregs.js?key=dfm_home" type="text/javascript"></script>
+    <% else %>
+    <script src="/javascripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/api/optins/coregs.js?key=<%=@js_key%>" type="text/javascript"></script>
+    <% end %>  
+    
+    <!-- Vee Code -->
+    <div class="actions">
+      <script>utmx_section("section3")</script>
+      <%= image_submit_tag 'bt-join.png', :name => 'submitButton',  :class => 'ml10', :style => 'width:119px;height:38px' %>
+      </noscript>
+    </div>
+  </fieldset>
+<% end %>
+<br style="clear:both;" />
+<div style="width:483px; font-size:11px;text-align: center;line-height: 20px;">by joining dealsformommy.com, you agree to the <%= link_to 'terms of use', 'terms-of-use', :target=>'_blank' %> and <%= link_to 'privacy policy', 'privacy-policy' , :target=>'_blank' %> </div>

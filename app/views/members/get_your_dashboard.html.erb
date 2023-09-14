@@ -1,0 +1,176 @@
+<style>
+	body{
+		font-family: Arial
+	}
+</style>
+<!--[if IE]>
+
+   <style type="text/css">
+
+   #modal-container {
+       background:transparent;
+       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#60000000,endColorstr=#60000000);
+       zoom: 1;
+    } 
+
+    </style>
+
+<![endif]-->
+<div id="modal-container">
+	<div style="background: transparent url(/images/pop2.png) top left no-repeat;width:791px;height: 623px;margin:175px auto 0">
+		<a href="#" class="close">Close X</a>
+		<div style="position:relative;top:50px;left:60px">
+			<h1 style="color:#0e76bc;font-size:38px;margin-bottom: 20px">Get Your Deal Dashboard</h1>
+				<%= simple_form_for(Member.new,:html => {:novalidate => true}, :url => reset_password_path+'/?token='+params[:token] ) do |f| %>
+				<fieldset id="loginForm" style="float:left;">
+					<span style="color:#fff;font-weight:bold">Access Your Local Deal Dashboard</span><br />
+					<span style="color:#fff">It's simple! Complete the fields below.</span>
+					<% if flash[:notice] %>
+						<p class="notice"><%= flash[:notice] %></p>
+					<% end %>
+					<% if flash[:error] %>
+						<p class="error"><%= flash[:error] %></p>
+					<% end %>
+					<div>
+						<%= f.input :email, :required => false,:label_html =>{:style => 'color:#fff;float:left;width:75px;margin:20px 0 0 0'}, :input_html => { :style => 'width:230px;margin:20px 0 0 8px;float:left', :value => @member.email,  :readonly => 'readonly'} %>
+						<%= f.input :password, :required => false,:label_html =>{:style => 'color:#fff;float:left;width:75px;margin:10px 0 0 0'}, :placeholder => 'password', :input_html => { :style => 'width:230px;margin:10px 0 0 8px;float:left;'} %>
+						<%= f.hidden_field :redirect, :value => 'offers' %>
+						<%= image_submit_tag 'bt-join-in.png', :name => 'submitButton', :style => 'clear:both;width:144px;height:49px;margin-top:10px' %>
+					</div>
+				</fieldset>
+			<% end %>
+			<br class="clear" />
+			<div class="modal-list">
+			<ul>
+				<li>Daily Deals - 50-90% OFF</li>
+				<li>Grocery Coupons</li>
+				<li>Free Family Savings</li>
+				<li>Local Savings</li>
+				<li>Shop and Save</li>
+			</ul>
+			</div>
+			<div class="modal-deal">
+				<h4>Deal of the Day <span style="font-size:13px;color:#0059a1"><%= Time.now.strftime '%b %d, %Y' %></span></h4>
+				<div>
+					<p style="margin-bottom:8px">All new members receive<br />A <strong>free 8x10 Canvas Portrait</strong> or<br />$50 towards a larger size. <span style="font-size:10px">(pay only s&amp;h)</span></p>
+					<%= image_tag 'cp-promo/canvas-snap-shot.jpg' , :size=>'124x75', :style => 'float:right' %>
+					<ul style="float:left">
+						<li style="padding:1px 0;background-color:#fffbb9;font-size:17px;font-weight:bold;text-align: center;line-height: 22px;height:22px">FREE</li>
+						<li style="padding:1px 0;background-color:#2c90be;font-size:13px;font-weight:bold;text-align: center;line-height: 22px;height:22px;color:#fff">$50 value</li>
+						<li style="padding:3px 0;height:22px;line-height: 22px;text-align:center"><%= image_tag 'cp-promo/canvas-logo.gif', :size => '83x27' %></li>
+					</ul>
+				</div>
+			</div>
+			</p>
+		</div>
+	</div>
+</div>
+<div id="mainDiv" class="member-offers">
+	<% if @show_deals %>
+		<!-- Start of Members Deals of the Day Section -->
+		<div id="mem-deal-of-day">
+			<%
+			# Check Groupon Deal Count
+			if @groupon_deals.length then
+				flag = 0
+				@groupon_deals.each do |other_deal|
+					if flag%2 == 0
+						concat raw '<br class="clear" />'
+					end
+					flag += 1
+					# need to run the address fields otherwise website will break
+					other_deal_address1 = 'Redeem From Home'
+					unless other_deal.options.first.redemptionLocations[0].nil?
+						if other_deal.options.first.redemptionLocations.count > 1 then
+							other_deal_address1 = 'Multiple Locations'
+						else
+							other_deal_address1 = ''
+							other_deal_city =  other_deal.options.first.redemptionLocations.first.city ||= ''
+							other_deal_state = other_deal.options.first.redemptionLocations.first.state ||= ''
+							other_deal_address1 = other_deal_city + ", " + other_deal_state
+						end
+					end
+				%>
+					<!-- Featured Deal Div -->
+					<div class="offer">
+						<div class="offer-header" style="color:white;background-color: #2c90be;line-height:30px;height:30px;text-indent:10px">
+							<h4><%= link_to other_deal.merchant.name, APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl), :target=>'_blank',:style=>'color:#fff;text-decoration:none' %></h4>
+						</div>
+						<div class="offer-body">
+							<div class="fdb-top">
+								<span><%= other_deal_address1 %></span><br />
+								<p><%= link_to(truncate(other_deal.title , :length => 216, :separator => ' ', :omission => '... more'), APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl),:target => '_blank',:style=>'text-decoration:none;color:#000;') %></p>
+							</div>
+							<br class="clear" />
+							<div style="margin-top:10px">
+								<div class="fdb-column-1"><%= image_tag other_deal.sidebarImageUrl, :size => '200x121', :style => 'align:left' %></div>
+								<div class="fdb-column-2" style="width:125px">
+									<ul class="featured-price-details" style="margin-left:28px !important;width:140px;">
+										<li class="fpd-first">$<%= (other_deal.options[0].price.amount/100) %></li>
+										<li><span>Value:</span> <strong>$<%= (other_deal.options[0].value.amount/100) %></strong></li>
+										<li><span>Discount:</span> <strong><%= (other_deal .options[0].discountPercent).to_s + '%' %></strong></li>
+										<li><span>Savings:</span> <strong>$<%= (other_deal.options[0].discount.amount/100) %></strong></li>
+									</ul>
+								</div>
+								<div class="fdb-column-3" style="width:85px !important;">
+									<ul>
+										<li><%= link_to (image_tag 'see-deal-link.gif',:size => '85x28'),  APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl), :target=>'_blank' %></li>
+										<li>&nbsp;</li>
+										<li>&nbsp;</li>
+										<li><span><br /><%= other_deal.soldQuantity %> Sold</span><br /><%= image_tag 'logo-groupon-sm.jpg',:size => "74x34", :alt=>"" %></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End of Featured Deal Div -->
+				<% end %>
+			<% else %>
+				<div id="no-deal-notice">Sorry, we are unable to locate any deals</div>
+			<% end %>
+			<br class="clear" />
+		</div>
+	<% else %>
+		<div id="mem-deal-of-day">
+			<%= render :partial => 'partials/cp_offer' %>
+		</div>
+	<% end %>
+</div>
+<br class="clear" />
+<script>
+	// in application.js
+	$(function(){
+		var $modal = $('#modal'),
+		$modal_close = $modal.find('.close'),
+		$modal_container = $('#modal-container');
+
+		// This bit can be confusing. Since Rails.js sends an accept header asking for
+		// javascript, but we want it to return HTML, we need to override this instead.
+		$('a[data-remote]').live('ajax:beforeSend', function(e, xhr, settings){
+			xhr.setRequestHeader('accept', '*/*;q=0.5, text/html, ' + settings.accepts.html);
+		});
+
+		// Handle modal links with the data-remote attribute
+		$('a[data-remote]').live('ajax:success', function(xhr, data, status){
+			$modal
+      .html(data)
+      .prepend($modal_close)
+      .show();
+			$modal_container.show();
+		});
+
+		// Hide close button click
+		$('.close').live('click', function(){
+			window.document.location.href = '/offers';
+			return false;
+			$modal_container.hide();
+			$modal.hide();
+			return false;
+		});
+	});
+	var $modal = $('#modal'),
+	$modal_container = $('#modal-container');
+  $modal.show();
+  $modal_container.show();
+	$('body').css({'overflow':'hidden'})
+</script>

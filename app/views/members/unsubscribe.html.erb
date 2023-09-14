@@ -1,0 +1,21 @@
+<div id="mainDiv">
+  <% if @unsubscribe %>
+  	<div style="padding:15px 0 0">
+		You will no longer receive any publications from us. If you wish to resubscribe in the future you must email our <%= mail_to("support@dealsformommy.com","administrator")%> directly.<br /><br />
+	</div>
+  <% else %>
+	<div style="padding:15px 0 0">
+		To never receive an email from DealsForMommy.com again, please enter your <br />
+		email address and click the "Unsubscribe" button.<br /><br />
+	</div>
+    <% if defined? @message %>
+  <div class="error"><%= @message %></div>
+    <% end %>
+  	<%= simple_form_for :a do |f| %>
+   	  <%= f.input :email,:label => "Enter email", :placeholder => 'enter your email here' %><br /><br />
+	  <%= image_submit_tag 'btn-unsubscribe.gif', :class=>'unsubscribeButton', :name => 'submitButton', :style => 'width:175px;height:50px' %>
+	  <%= link_to(image_tag("btn-cancel.gif"), home_path) %>
+	<% end %>
+  <% end %>
+	<br /><br />
+</div>

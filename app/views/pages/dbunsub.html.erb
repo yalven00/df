@@ -1,0 +1,38 @@
+<div id="mainDiv">
+	<div id="mem-hot-stuff">
+		To never receive an email from DealsForMommy.com again, please enter your <br />
+		email address and click the "Unsubscribe" button.<br /><br />
+	</div>
+
+	<form action="http://link.onlinedialog.com/s/link/rmv" method="POST">
+	<input type="hidden" name="rc" value="cp">
+	<input type="hidden" name="rti" value="y8346">
+	<input type="hidden" name="b" value="y"><br /><br />
+	Enter email:<br /> 
+	<input type="text" name="email"><br /><br />
+	<input type="image" src="images/btn-unsubscribe.gif" height="50" width="176" />
+
+	<%= link_to(image_tag("btn-cancel.gif"), home_path) %>
+	</form>
+	<br />	<br />
+	
+	
+	
+<!-- ruby code
+	<%= simple_form_for :a, :url => 'http://link.onlinedialog.com/s/link/rmv' do |f| %>
+	  <%= f.input :title, :as => :hidden, :input_html => {:name => "rc",  :value => "cp" } %>
+	  <%= f.input :title, :as => :hidden, :input_html => {:name => "rti", :value => "y8346"} %>
+	  <%= f.input :title, :as => :hidden, :input_html => {:name => "b",   :value => "y"} %>
+   	  <%= f.input :email, :placeholder => 'enter your email here' %>  
+	  <%= f.button :submit,:input_html => {:value => 'foad'} %>
+	<% end %>
+	-->
+	
+	
+	
+</div>
+
+
+<!--[if IE ]>
+</div>
+<![endif]-->

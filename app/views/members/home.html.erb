@@ -1,0 +1,240 @@
+<!--[if lte ie 7]>
+<style type="text/css">
+
+    #featured-deal-header {
+        display: inline-block;
+    }
+
+    #featured-deal-header b {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+</style>
+<![endif]-->
+<div id="mainDiv" class="member-home">
+  <div id="mem-top-left">
+    <p><span>Welcome <%= current_member.first_name %></span><br/>I put together a Deal Dashboard for you. Here you'll
+      find top daily deals, restaurant savings, grocery coupons and free samples. Come back daily to see all the new
+      things we'll be adding.</p>
+
+    <p><%= link_to "Edit Account", "/profile" %> | Refer a Friend</p>
+  </div>
+  <div id="mem-top-right">
+    <p><span>Free Canvas Portrait</span><br/>As a member of DFM. You receive a free 8x10 Canvas Portrait or $50 towards a larger size&nbsp;&nbsp;<em>Limited Time Offer</em><br/><%= link_to "Create Your Canvas", 'http://parentmediagroup.go2jump.org/aff_c?offer_id=9&aff_id=640&aff_sub=member_home&url_id=86', :target=>'_blank' %></p>
+  </div>
+  <br class="clear"/>
+
+  <br class="clear"/>
+	<% if @show_deals %>
+	<!-- Start of Members Deals of the Day Section -->
+  <div id="mem-deal-of-day">
+  	<%= render :partial => 'partials/division_dropdown' %>
+    <!-- Featured Deal Div -->
+    <div id="featured-deal">
+      <div id="featured-deal-header">
+        <h4><%= link_to @featured.merchant.name, APP_CONFIG['cj_link'] + CGI::escape(@featured.dealUrl), :target=>'_blank' %></h4><!--[if lte ie 7]>
+      <b></b><![endif]-->
+      </div>
+      <div class="featured-deal-body">
+        <div class="fdb-top">
+          <span><%= @featured.street_address1 %></span><br/>
+
+          <p><%= link_to(truncate(@featured.title, :length => 216, :separator => ' ', :omission => '... more'), APP_CONFIG['cj_link'] + CGI::escape(@featured.dealUrl), :target => '_blank', :style=>'text-decoration:none;color:#000;') %></p>
+        </div>
+        <br class="clear"/>
+
+        <div>
+          <div class="fdb-column-1"><%= image_tag @featured.sidebarImageUrl, :size => '213x129', :style => 'align:left' %></div>
+          <div class="fdb-column-2">
+            <ul class="featured-price-details">
+              <li class="fpd-first">$<%= (@featured.options[0].price.amount/100) %></li>
+              <li><span>Value:</span> <strong>$<%= (@featured.options[0].value.amount/100) %></strong></li>
+              <li><span>Discount:</span> <strong><%= (@featured.options[0].discountPercent).to_s + '%' %></strong></li>
+              <li><span>Savings:</span> <strong>$<%= (@featured.options[0].discount.amount/100) %></strong></li>
+            </ul>
+          </div>
+          <div class="fdb-column-3">
+            <ul>
+              <li><%= link_to (image_tag 'see-deal-link.gif', :size => '85x28'), APP_CONFIG['cj_link'] + CGI::escape(@featured.dealUrl), :target=>'_blank' %></li>
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
+              <li><span><br/><%= @featured.soldQuantity %>
+                Sold</span><br/><%= image_tag 'logo-groupon-sm.jpg', :size => "74x34", :alt=>"" %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Featured Deal Div -->
+
+    <!-- Start of Other Deals Div -->
+    <div id="other-deals-container">
+      <%
+         # Set flag
+         flag = 0
+         @other_deals.first(8).each do |other_deal|
+
+             # need to run the address fields otherwise website will break
+             other_deal_address1 = 'Redeem From Home'
+             unless other_deal.options.first.redemptionLocations[0].nil?
+                 if other_deal.options.first.redemptionLocations.count > 1 then
+                     other_deal_address1 = 'Multiple Locations'
+                 else
+                     other_deal_address1 = ''
+                     other_deal_city     = other_deal.options.first.redemptionLocations.first.city ||= ''
+                     other_deal_state    = other_deal.options.first.redemptionLocations.first.state ||= ''
+                     other_deal_address1 = other_deal_city + ", " + other_deal_state
+                 end
+             end
+             if flag < 2 then
+                 #count flag
+                 flag +=1
+      %>
+              <div class="other-deal-block">
+                <div class="deal-block">
+                  <h6><%= other_deal.tags[0].present? ? other_deal.tags[0].name : 'Special Offer' %></h6>
+
+                  <p><%= other_deal_address1 %></p>
+
+                  <p style="margin:5px 0">
+                    <span style="background-color:#fffbb9;border:1px solid #f4e247;padding:2px 16px;font-weight: bold">$<%= (other_deal.options[0].price.amount/100) -%></span>&nbsp;&nbsp;<%= link_to (image_tag 'see-deal-link-51x17.gif', :size => '51x17', :style => 'vertical-align:middle'), APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl), :target=>'_blank' -%>
+                  </p>
+
+                  <p><%= truncate(other_deal.title, :length => 170, :separator => ' ', :omission => '... more') %></p>
+
+                  <div class="deal-price-link">
+                    <ul class="dealList">
+                      <li>value</li>
+                      <li>discount</li>
+                      <li>saving</li>
+                    </ul>
+                    <ul class="dealList" style="border:1px solid #2c90be;float:left">
+                      <li>$<%= (other_deal.options[0].value.amount/100) %></li>
+                      <li><%= other_deal.options[0].discountPercent %>%</li>
+                      <li>$<%= (other_deal.options[0].discount.amount/100) %></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          <% else
+                 if flag == 2 then
+                     concat raw '<br class="clear" /><h6 style="margin-top:8px;">other deals near you</h6>'
+                 end
+                 flag +=1
+          %>
+              <span class="fs13"><%= link_to (!other_deal.merchant.name.nil? ? other_deal.merchant.name : 'Special Offer'), APP_CONFIG['cj_link'] + CGI::escape(other_deal.dealUrl), :target=>'_blank' %>&nbsp;</span>
+          <% end %>
+      <% end %>
+      <% if @other_deals.length > 2 %>
+          <div style="width:95%;text-align:right;font-size:13px;"><%= link_to "See More Deals >>", offers_path %></div>
+      <% end %>
+      <br class="clear"/>
+    </div>
+    <!-- End of other deals -->
+  </div>
+  <!-- End of Members Deals of the Day Section -->
+  <br class="clear"/>
+
+  <div id="yummy-deals">
+    <h3 class="blockHead">Yummy Deals</h3>
+
+    <div id="yummy-deals-container">
+      <% @yummy_deals.first(3).each do |yummy_deal| %>
+          <%
+             #validate returned values for
+             ymcity = 'Redeem From Home'
+             unless yummy_deal.options.first.redemptionLocations.first.nil?
+                 ymcity = yummy_deal.options.first.redemptionLocations.first.city ||= ' '
+             end
+          %>
+
+          <div class="yummy-deal-block">
+            <h6><%= ymcity %></h6>
+
+            <p><b><%= yummy_deal.merchant.name ||= '' %></b></p>
+
+            <p><%= truncate yummy_deal.title, :length => 100, :separator => ' ', :omission => '... more' %></p><br/>
+
+            <div style="position:absolute;bottom:0;width:100%">
+              <ul>
+                <li class="ydli-1"><%= image_tag yummy_deal.mediumImageUrl, :size=>'125x75', :style=>"float:right" %></li>
+                <li class="ydli-2">$<%= (yummy_deal.options[0].price.amount/100) %></li>
+                <li class="ydli-3">$<%= (yummy_deal.options[0].value.amount/100) %> Value</li>
+                <li class="ydli-4"><%= link_to (image_tag 'see-deal-link-80x26.gif', :size => '80x26', :style => 'vertical-align:middle'), APP_CONFIG['cj_link'] + CGI::escape(yummy_deal.dealUrl), :target=>'_blank' %></li>
+              </ul>
+            </div>
+          </div>
+      <% end %>
+	<%# Show a default restaurant.com coupon when
+		we have less than 3 yummy deals
+	%>
+	<% if @yummy_deals.length < 3 %>
+         <div class="yummy-deal-block">
+            <h6>Restaurant.com</h6>
+            <p><strong>Good for Restaurants Near You</strong><br />Get a $25 Restaurant Gift Certificates for only $10.</p><br/>
+            <div style="position:absolute;bottom:0;width:100%">
+              <ul>
+                <li class="ydli-1"><%= image_tag 'rest_125x75.jpg', :size=>'125x75', :style=>"float:right" %></li>
+                <li class="ydli-2">$10</li>
+                <li class="ydli-3">$25 Value</li>
+                <li class="ydli-4"><%= link_to (image_tag 'see-deal-link-80x26.gif', :size => '80x26', :style => 'vertical-align:middle'),"http://www.jdoqocy.com/click-5256398-10678063?sid=image&zip=#{@postal}", :target=>'_blank' %></li>
+              </ul>
+            </div>
+         </div>
+	<% end %>
+      <br class="clear"/>
+    </div>
+    <div id="yummy-deals-container-foot"><%= image_tag 'logos/restaurants.com.gif', :alt=>'Restaurants.com', :size=>'110x22' %> <%= link_to "$25 Restaurant Gift Certificates for only $10!", "http://www.jdoqocy.com/click-5256398-10678063?sid=link&zip=#{@postal}", :target=>"_blank" %></div>
+  </div>
+	<% else %>
+	<div id="mem-deal-of-day">
+    <%= render :partial => 'partials/division_dropdown' %>
+		<%= render :partial => 'partials/cp_offer' %>
+	 <div id="yummy-deals-container-foot"><%= image_tag 'logos/restaurants.com.gif', :alt=>'Restaurants.com', :size=>'110x22' %> <%= link_to  "$25 Restaurant Gift Certificates for only $10!", "http://www.jdoqocy.com/click-5256398-10678063?sid=link&zip=#{@postal}", :target=>"_blank" %></div>
+	</div>
+	<% end %>
+  <br class="clear"/>
+
+  <div id="sample-discounts">
+    <h3 class="blockHead">Free Samples and Discounts</h3>
+    <script language="javascript" type="text/javascript" charset="ISO-8859-1" src="http://ss.mysavings.com/ss.asp?pid=3738&cid=1&tw=440&max=8&lay=v&spn=0&roo=1&tag=js"></script>
+    <br class="clear"/>
+  </div>
+  <div id="grocery-coupons" class="ml10">
+    <h3 class="blockHead">Grocery Coupons</h3>
+    <ul style="margin:0 auto;width:320px;">
+      <li style="width:190px;margin:0 auto"><%= link_to image_tag('bt-logo-coupons.gif', :size=>'116x98', :alt=>"Coupons"), '/coupons' %>
+        <br/>Amazing Daily Deals<br/>50-90% Off Restaurants, Spas, Events and More
+      </li>
+      <!--li style="margin-left:38px;width:126px"><img src="/images/bt-logo-red-plum.gif" width="126" height="98" alt="Red Plum" /><br />Group Buying<br />Tippr helps you get the best deals in your city guaranteed.</li-->
+       
+    </ul>
+  </div>
+  <div id="ad-socket1">
+    <script language="javascript" type="text/javascript">var ci_cap_scriptId = "29670";var ci_cap_bid = "1158370001";var ci_cap_format = "300x250";var ci_cap_channel = "dfm member home";</script><script language="javascript" type="text/javascript" src="http://bc.coupons.com/"></script>
+  </div>
+  <br class="clear"/>
+</div>
+<br class="clear"/>
+<%
+   # FIRE OFF pontiflex code on new member
+   if session[:pontiflex] then %>
+    <script type="text/javascript">
+
+        // Confirmation tag for ad size 800x305
+        pontiflex_data = {};
+        pontiflex_data["first_name"] = "<%= current_member.first_name %>";
+        pontiflex_data["last_name"] = "<%= current_member.last_name %>";
+        pontiflex_data["email"] = "<%= current_member.email %>";
+        pontiflex_data["postal_code"] = "<%= current_member.postal_code %>";
+
+        pontiflex_ad = {pid: 545, options: {format:"iframe"}};
+        pontiflex_ad.options.subSourceId = "";
+        pontiflex_ad.options.trackingURL = "";
+    </script>
+    <script type="text/javascript" src="http://fkj2kw3kwd6z.pflexads.com/ads-confirm.js"></script>
+<%
+   # unset pontiflex session
+   session[:pontiflex] = nil
+   end %>

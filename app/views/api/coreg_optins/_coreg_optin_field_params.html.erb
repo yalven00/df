@@ -1,0 +1,17 @@
+<% if coreg_param.id && coreg_param.on_screen? %>
+  <% if coreg_param.displayable? %>
+    <div  id='<%=coreg_param.name%>' class='coreg_field' <%="style='display:none'" if coreg_param.dependent %>>
+      <label><%= coreg_param.label.html_safe %>
+        <% if coreg_param.required != 1 %>
+            </label>
+        <%else%>
+            </label>
+        <%end%>
+      <%= coreg_field_tag coreg_param %>
+    </div>
+    <div class="clear"></div>
+  <% else %>
+  <%= coreg_virtual_field_tag coreg_param %> 
+  <% end %>
+<% end %>
+

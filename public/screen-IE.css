@@ -1,0 +1,66 @@
+#footerContainer li{
+	background-color:#fff;
+	color: #0059a1;
+	display:inline;
+	border-color: #d2e5f2 #b0d2e9 #99bdd9 #539dcf;
+	border-style: solid;
+	border-width: 1px;
+	font-size:13px;
+	height:32px;
+	line-height:32px;
+	padding:4px 8px;
+	position: relative;
+	border-radius: 5px;
+	behavior: url(/javascript/border-radius.htc);
+  zoom: 1;
+}
+
+#stats{
+	background:transparent url(/images/bg-stats.gif) top left repeat-x;
+	border:1px solid #c7e4fb;
+	float:left;
+	font-size: 28px;
+	font-weight: bold;
+	height: 37px;
+	margin-top:5px;
+	width: 410px;
+	/**
+		for IE
+  **/
+	border-radius: 5px;
+	/*behavior: url(/javascript/border-radius.htc);*/
+	z-index: 888;
+	zoom: 1;
+}
+
+#stats span, #promoContainer span{
+	display:block;
+	float:left;
+	width:130px;
+	text-align: center;
+	margin:0 auto;
+	z-index: 888
+}
+#stats span{
+	height: 39px;
+	line-height: 39px;
+	z-index: 888
+}
+.mainNav-right {
+    float:right;
+    margin-right: 8px;
+		margin-top:-60px !important;
+}
+.mainNav-right img {vertical-align:text-bottom}
+
+.roundify{
+	background-color:#fff;
+	border:1px solid #fff;
+	color: #0059a1;
+	display:inline !important;
+	float:none !important;
+	font-size:12px !important;
+	font-weight: bold;
+	height:32px;
+	line-height:32px;
+}

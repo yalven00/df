@@ -1,0 +1,13 @@
+/* 
+    Document   : active_admin_custom
+    Created on : Nov 3, 2011, 2:30:10 PM
+    Author     : chris
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+table.dashboard td { vertical-align:top !important;}
+td {vertical-align:top !important;}
+
+.full_query{width:200px; word-wrap: break-word;}
+.response{width:200px;word-wrap: break-word;}
